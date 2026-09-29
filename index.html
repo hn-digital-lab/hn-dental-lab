@@ -6,851 +6,1723 @@
 <title>HN Dental Digital Lab</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-family:Arial,sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body{
-  background:#f3f7f6;
-  color:#173b3b;
+:root {
+    --black: #111111;
+    --dark: #1c1c1c;
+    --white: #ffffff;
+    --cream: #f7f6f3;
+    --gray: #777777;
+    --light-gray: #e8e7e4;
+    --border: #deddda;
+    --success: #333333;
 }
 
-button{
-  cursor:pointer;
+body {
+    font-family: "DM Sans", sans-serif;
+    background: var(--cream);
+    color: var(--black);
 }
 
-.auth{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:25px;
+/* ---------- LOGIN ---------- */
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    background: var(--white);
 }
 
-.auth-box{
-  width:950px;
-  max-width:100%;
-  min-height:600px;
-  background:white;
-  border-radius:24px;
-  overflow:hidden;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  box-shadow:0 20px 60px rgba(0,0,0,.08);
+.auth-left {
+    width: 48%;
+    background: var(--black);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 70px;
 }
 
-.auth-image{
-  background:
-  linear-gradient(rgba(10,40,40,.35),rgba(10,40,40,.7)),
-  url("https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1000&q=80")
-  center/cover;
-  color:white;
-  padding:45px;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
+.brand {
+    font-family: "Playfair Display", serif;
+    font-size: 38px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
 }
 
-.auth-image h1{
-  font-size:38px;
-  line-height:1.15;
-  margin-bottom:15px;
+.auth-left p {
+    color: #bdbdbd;
+    max-width: 420px;
+    line-height: 1.8;
+    font-size: 15px;
 }
 
-.auth-image p{
-  opacity:.9;
+.auth-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
 }
 
-.auth-form{
-  padding:45px 50px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+.auth-box {
+    width: 100%;
+    max-width: 440px;
 }
 
-.logo{
-  font-size:21px;
-  font-weight:bold;
-  margin-bottom:35px;
+.auth-box h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 38px;
+    margin-bottom: 8px;
 }
 
-.logo span{
-  color:#559b92;
+.subtitle {
+    color: var(--gray);
+    margin-bottom: 35px;
 }
 
-.auth-form h2{
-  font-size:30px;
-  margin-bottom:8px;
+.form-group {
+    margin-bottom: 18px;
 }
 
-.subtitle{
-  color:#7d8c8c;
-  margin-bottom:25px;
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
 }
 
-label{
-  font-size:13px;
-  font-weight:bold;
-  margin-bottom:7px;
-  display:block;
+input, select, textarea {
+    width: 100%;
+    border: 1px solid var(--border);
+    background: white;
+    padding: 14px 15px;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: .2s;
 }
 
-input,select,textarea{
-  width:100%;
-  padding:13px;
-  border:1px solid #dce5e4;
-  border-radius:9px;
-  margin-bottom:15px;
-  outline:none;
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--black);
 }
 
-input:focus{
-  border-color:#559b92;
+textarea {
+    resize: vertical;
+    min-height: 110px;
 }
 
-.btn{
-  width:100%;
-  padding:14px;
-  border:none;
-  border-radius:9px;
-  background:#173f40;
-  color:white;
-  font-weight:bold;
-  margin-top:5px;
+.btn {
+    border: none;
+    padding: 14px 22px;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s;
 }
 
-.btn:hover{
-  background:#245d5c;
+.btn-black {
+    background: var(--black);
+    color: white;
 }
 
-.switch{
-  text-align:center;
-  margin-top:20px;
-  color:#7d8c8c;
-  font-size:14px;
+.btn-black:hover {
+    background: #333;
 }
 
-.switch button{
-  border:none;
-  background:none;
-  color:#397c76;
-  font-weight:bold;
+.btn-outline {
+    background: white;
+    color: var(--black);
+    border: 1px solid var(--black);
 }
 
-/* APP */
-
-#app{
-  display:none;
+.full {
+    width: 100%;
 }
 
-.sidebar{
-  position:fixed;
-  left:0;
-  top:0;
-  bottom:0;
-  width:240px;
-  background:#123838;
-  color:white;
-  padding:28px 18px;
+.switch-auth {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 14px;
+    color: var(--gray);
 }
 
-.brand{
-  font-weight:bold;
-  font-size:17px;
-  padding:0 12px 35px;
+.switch-auth span {
+    color: var(--black);
+    font-weight: 700;
+    cursor: pointer;
 }
 
-.brand small{
-  display:block;
-  color:#9ab6b3;
-  font-weight:normal;
-  margin-top:5px;
+/* ---------- APP ---------- */
+
+.app {
+    display: none;
+    min-height: 100vh;
 }
 
-.nav button{
-  width:100%;
-  border:none;
-  background:transparent;
-  color:#b9cecb;
-  text-align:left;
-  padding:13px;
-  border-radius:9px;
-  margin-bottom:6px;
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 245px;
+    background: var(--black);
+    color: white;
+    padding: 32px 22px;
 }
 
-.nav button:hover,
-.nav button.active{
-  background:#28615f;
-  color:white;
+.sidebar-brand {
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    letter-spacing: 1.5px;
+    padding: 0 12px 35px;
 }
 
-.logout{
-  position:absolute;
-  bottom:25px;
-  left:18px;
-  right:18px;
+.nav-item {
+    padding: 13px 14px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    color: #b9b9b9;
+    font-size: 14px;
 }
 
-.main{
-  margin-left:240px;
-  padding:35px;
+.nav-item:hover,
+.nav-item.active {
+    color: white;
+    background: #292929;
 }
 
-.page{
-  display:none;
+.logout {
+    position: absolute;
+    bottom: 30px;
+    left: 36px;
+    color: #aaa;
+    cursor: pointer;
+    font-size: 14px;
 }
 
-.page.active{
-  display:block;
+.main {
+    margin-left: 245px;
+    padding: 38px 45px;
 }
 
-.topbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:30px;
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
 }
 
-.topbar h1{
-  font-size:28px;
+.page-title {
+    font-family: "Playfair Display", serif;
+    font-size: 34px;
 }
 
-.user{
-  background:white;
-  padding:10px 16px;
-  border-radius:25px;
+.user-info {
+    text-align: right;
 }
 
-.cards{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-  margin-bottom:25px;
+.user-info strong {
+    display: block;
+    font-size: 14px;
 }
 
-.card{
-  background:white;
-  padding:22px;
-  border-radius:15px;
+.user-info span {
+    color: var(--gray);
+    font-size: 12px;
 }
 
-.card p{
-  color:#879494;
-  font-size:13px;
-  margin-bottom:12px;
+/* ---------- CARDS ---------- */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 35px;
 }
 
-.card strong{
-  font-size:28px;
+.stat-card {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 25px;
 }
 
-.section{
-  background:white;
-  padding:25px;
-  border-radius:16px;
+.stat-card span {
+    color: var(--gray);
+    font-size: 13px;
 }
 
-.section h2{
-  margin-bottom:20px;
+.stat-card strong {
+    display: block;
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    margin-top: 8px;
 }
 
-table{
-  width:100%;
-  border-collapse:collapse;
+/* ---------- TABLE ---------- */
+
+.section {
+    background: white;
+    border: 1px solid var(--border);
+    margin-bottom: 25px;
 }
 
-th,td{
-  padding:14px 8px;
-  border-bottom:1px solid #edf1f1;
-  text-align:left;
+.section-header {
+    padding: 22px 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-th{
-  color:#899696;
-  font-size:12px;
+.section-header h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 21px;
 }
 
-.status{
-  background:#edf5f4;
-  color:#28615f;
-  padding:6px 10px;
-  border-radius:20px;
-  font-size:12px;
+.table-wrapper {
+    overflow-x: auto;
 }
 
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.upload{
-  border:2px dashed #cbdad8;
-  padding:35px;
-  text-align:center;
-  border-radius:12px;
-  margin-bottom:20px;
-  color:#718180;
+th {
+    text-align: left;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gray);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
 }
 
-textarea{
-  min-height:120px;
-  resize:vertical;
+td {
+    padding: 17px 20px;
+    border-bottom: 1px solid #eeeeee;
+    font-size: 13px;
 }
 
-@media(max-width:800px){
+tr:last-child td {
+    border-bottom: none;
+}
 
-  .auth-box{
-    grid-template-columns:1fr;
-  }
+.case-name {
+    font-weight: 700;
+}
 
-  .auth-image{
-    display:none;
-  }
+.status {
+    display: inline-block;
+    padding: 6px 10px;
+    font-size: 11px;
+    border: 1px solid var(--border);
+    background: var(--cream);
+}
 
-  .sidebar{
-    width:70px;
-  }
+.status.new {
+    border-color: #999;
+}
 
-  .brand,
-  .nav span{
-    display:none;
-  }
+.status.seen {
+    background: #eeeeee;
+}
 
-  .main{
-    margin-left:70px;
-    padding:20px;
-  }
+.status.progress {
+    background: #dedede;
+}
 
-  .cards{
-    grid-template-columns:1fr 1fr;
-  }
+.status.ready {
+    background: #cfcfcf;
+}
 
-  .form-grid{
-    grid-template-columns:1fr;
-  }
+.status.sent {
+    background: var(--black);
+    color: white;
+}
+
+/* ---------- NEW CASE ---------- */
+
+.form-section {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 28px;
+    margin-bottom: 22px;
+}
+
+.form-section h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 21px;
+    margin-bottom: 22px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+/* ---------- TEETH ---------- */
+
+.teeth-chart {
+    background: #faf9f7;
+    border: 1px solid var(--border);
+    padding: 25px 15px;
+}
+
+.jaw-title {
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--gray);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.teeth-row {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.tooth {
+    width: 40px;
+    height: 46px;
+    border: 1px solid #cfcfcf;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 12px;
+    transition: .2s;
+}
+
+.tooth:hover {
+    border-color: black;
+}
+
+.tooth.selected {
+    background: var(--black);
+    color: white;
+    border-color: var(--black);
+}
+
+.selected-teeth {
+    margin-top: 18px;
+    padding: 12px;
+    background: white;
+    border: 1px solid var(--border);
+    font-size: 13px;
+}
+
+.action-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+/* ---------- CASE DETAIL ---------- */
+
+.case-detail {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 22px;
+}
+
+.detail-card {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 28px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid #eeeeee;
+    font-size: 14px;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    color: var(--gray);
+}
+
+.timeline {
+    margin-top: 15px;
+}
+
+.timeline-item {
+    border-left: 1px solid #222;
+    padding: 0 0 22px 18px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: black;
+    position: absolute;
+    left: -4px;
+    top: 4px;
+}
+
+.timeline-item strong {
+    display: block;
+    font-size: 13px;
+}
+
+.timeline-item span {
+    color: var(--gray);
+    font-size: 11px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width: 900px) {
+
+    .auth-left {
+        display: none;
+    }
+
+    .sidebar {
+        width: 75px;
+        padding: 25px 10px;
+    }
+
+    .sidebar-brand {
+        font-size: 0;
+    }
+
+    .sidebar-brand::after {
+        content: "HN";
+        font-size: 20px;
+    }
+
+    .nav-item {
+        font-size: 0;
+        text-align: center;
+    }
+
+    .nav-item::first-letter {
+        font-size: 18px;
+    }
+
+    .logout {
+        left: 25px;
+        font-size: 0;
+    }
+
+    .main {
+        margin-left: 75px;
+        padding: 25px 18px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .grid-2,
+    .grid-3,
+    .case-detail {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 550px) {
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .main {
+        padding: 20px 12px;
+    }
+
+    .page-title {
+        font-size: 27px;
+    }
+
+    .form-section {
+        padding: 20px;
+    }
+
+    .tooth {
+        width: 34px;
+        height: 40px;
+        font-size: 10px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- LOGIN -->
+<!-- ================= AUTH ================= -->
 
-<div class="auth" id="loginPage">
+<div id="authPage" class="auth-page">
 
-<div class="auth-box">
+    <div class="auth-left">
+        <div class="brand">HN DENTAL DIGITAL LAB</div>
+        <p>
+            Precision digital dental design.
+            A professional workspace for dental laboratories
+            and clinics to manage cases with clarity and efficiency.
+        </p>
+    </div>
 
-<div class="auth-image">
-<h1>Digital Design.<br>Better Smiles.</h1>
-<p>Precision in every detail.</p>
-</div>
+    <div class="auth-right">
 
-<div class="auth-form">
+        <!-- LOGIN -->
 
-<div class="logo">
-HN <span>Dental Digital Lab</span>
-</div>
+        <div id="loginBox" class="auth-box">
 
-<h2>Welcome back</h2>
+            <h1>Welcome back.</h1>
+            <p class="subtitle">Sign in to your workspace.</p>
 
-<p class="subtitle">
-Sign in to your laboratory account
-</p>
+            <div class="form-group">
+                <label>Email</label>
+                <input id="loginEmail" type="email" placeholder="your@email.com">
+            </div>
 
-<label>Email address</label>
-<input type="email" id="loginEmail" placeholder="yourname@lab.com">
+            <div class="form-group">
+                <label>Password</label>
+                <input id="loginPassword" type="password" placeholder="••••••••">
+            </div>
 
-<label>Password</label>
-<input type="password" id="loginPassword" placeholder="Enter your password">
+            <button class="btn btn-black full" onclick="login()">
+                Sign In
+            </button>
 
-<button class="btn" onclick="login()">
-Login
-</button>
+            <div class="switch-auth">
+                Don't have an account?
+                <span onclick="showSignup()">Create account</span>
+            </div>
 
-<div class="switch">
-Don't have an account?
-<button onclick="showSignup()">Create account</button>
-</div>
+        </div>
 
-</div>
-</div>
-</div>
+        <!-- SIGNUP -->
 
+        <div id="signupBox" class="auth-box" style="display:none">
 
-<!-- CREATE ACCOUNT -->
+            <h1>Create account.</h1>
+            <p class="subtitle">Create your professional workspace.</p>
 
-<div class="auth" id="signupPage" style="display:none;">
+            <div class="form-group">
+                <label>Laboratory / Clinic Name</label>
+                <input id="signupLab" type="text" placeholder="Laboratory name">
+            </div>
 
-<div class="auth-box">
+            <div class="form-group">
+                <label>Doctor / Contact Name</label>
+                <input id="signupName" type="text" placeholder="Full name">
+            </div>
 
-<div class="auth-image">
-<h1>Welcome to<br>HN Dental Lab.</h1>
-<p>Digital dental design made simple.</p>
-</div>
+            <div class="form-group">
+                <label>Email</label>
+                <input id="signupEmail" type="email" placeholder="your@email.com">
+            </div>
 
-<div class="auth-form">
+            <div class="form-group">
+                <label>Password</label>
+                <input id="signupPassword" type="password" placeholder="••••••••">
+            </div>
 
-<div class="logo">
-HN <span>Dental Digital Lab</span>
-</div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input id="signupConfirm" type="password" placeholder="••••••••">
+            </div>
 
-<h2>Create account</h2>
+            <button class="btn btn-black full" onclick="createAccount()">
+                Create Account
+            </button>
 
-<p class="subtitle">
-Register your laboratory or clinic
-</p>
+            <div class="switch-auth">
+                Already have an account?
+                <span onclick="showLogin()">Sign in</span>
+            </div>
 
-<label>Laboratory / Clinic Name</label>
-<input type="text" id="labName" placeholder="Your laboratory name">
+        </div>
 
-<label>Full Name</label>
-<input type="text" id="fullName" placeholder="Your full name">
-
-<label>Email address</label>
-<input type="email" id="signupEmail" placeholder="yourname@lab.com">
-
-<label>Password</label>
-<input type="password" id="signupPassword" placeholder="Create a password">
-
-<label>Confirm Password</label>
-<input type="password" id="confirmPassword" placeholder="Confirm your password">
-
-<button class="btn" onclick="createAccount()">
-Create Account
-</button>
-
-<div class="switch">
-Already have an account?
-<button onclick="showLogin()">Login</button>
-</div>
-
-</div>
-</div>
+    </div>
 </div>
 
 
-<!-- APP -->
+<!-- ================= APP ================= -->
 
-<div id="app">
+<div id="app" class="app">
 
-<aside class="sidebar">
+    <aside class="sidebar">
 
-<div class="brand">
-HN Dental Digital Lab
-<small>Digital Design Services</small>
-</div>
+        <div class="sidebar-brand">
+            HN DENTAL
+        </div>
 
-<div class="nav">
+        <div class="nav-item active" onclick="showPage('dashboard', this)">
+            Dashboard
+        </div>
 
-<button class="active" onclick="showPage('dashboard',this)">
-🏠 <span>Dashboard</span>
-</button>
+        <div class="nav-item" onclick="showPage('newcase', this)">
+            + New Case
+        </div>
 
-<button onclick="showPage('newcase',this)">
-➕ <span>New Case</span>
-</button>
+        <div class="nav-item" onclick="showPage('cases', this)">
+            My Cases
+        </div>
 
-<button onclick="showPage('cases',this)">
-📁 <span>My Cases</span>
-</button>
+        <div class="nav-item" onclick="showPage('profile', this)">
+            Profile
+        </div>
 
-<button onclick="showPage('messages',this)">
-💬 <span>Messages</span>
-</button>
+        <div class="logout" onclick="logout()">
+            Logout
+        </div>
 
-<button onclick="showPage('profile',this)">
-👤 <span>Profile</span>
-</button>
+    </aside>
 
-</div>
 
-<button class="nav button logout" onclick="logout()">
-🚪 Logout
-</button>
+    <main class="main">
 
-</aside>
+        <!-- DASHBOARD -->
 
+        <section id="dashboardPage">
 
-<main class="main">
+            <div class="topbar">
+                <div>
+                    <div class="page-title">Dashboard</div>
+                    <p class="subtitle">Your dental cases overview.</p>
+                </div>
 
-<!-- DASHBOARD -->
+                <div class="user-info">
+                    <strong id="topName">Doctor</strong>
+                    <span id="topLab">Laboratory</span>
+                </div>
+            </div>
 
-<section id="dashboard" class="page active">
 
-<div class="topbar">
+            <div class="stats">
 
-<div>
-<h1>Good morning 👋</h1>
-<p>Here's what's happening with your cases today.</p>
-</div>
+                <div class="stat-card">
+                    <span>Total Cases</span>
+                    <strong id="totalCases">0</strong>
+                </div>
 
-<div class="user" id="userName">
-My Laboratory
-</div>
+                <div class="stat-card">
+                    <span>New</span>
+                    <strong id="newCases">0</strong>
+                </div>
 
-</div>
+                <div class="stat-card">
+                    <span>In Progress</span>
+                    <strong id="progressCases">0</strong>
+                </div>
 
-<div class="cards">
+                <div class="stat-card">
+                    <span>Completed</span>
+                    <strong id="completedCases">0</strong>
+                </div>
 
-<div class="card">
-<p>Total Cases</p>
-<strong>12</strong>
-</div>
+            </div>
 
-<div class="card">
-<p>In Design</p>
-<strong>5</strong>
-</div>
 
-<div class="card">
-<p>Ready</p>
-<strong>4</strong>
-</div>
+            <div class="section">
 
-<div class="card">
-<p>Delivered</p>
-<strong>3</strong>
-</div>
+                <div class="section-header">
 
-</div>
+                    <h2>Recent Cases</h2>
 
-<div class="section">
+                    <button class="btn btn-black"
+                            onclick="showPage('newcase')">
+                        + New Case
+                    </button>
 
-<h2>Recent Cases</h2>
+                </div>
 
-<table>
+                <div class="table-wrapper">
 
-<tr>
-<th>Case ID</th>
-<th>Type</th>
-<th>Status</th>
-<th>Date</th>
-</tr>
+                    <table>
 
-<tr>
-<td>#C-001</td>
-<td>Crown</td>
-<td><span class="status">In Design</span></td>
-<td>Today</td>
-</tr>
+                        <thead>
+                            <tr>
+                                <th>Doctor</th>
+                                <th>Date / Time</th>
+                                <th>Patient</th>
+                                <th>Work</th>
+                                <th>Teeth</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
 
-<tr>
-<td>#C-002</td>
-<td>Bridge 3 elements</td>
-<td><span class="status">Received</span></td>
-<td>Yesterday</td>
-</tr>
+                        <tbody id="caseTable"></tbody>
 
-<tr>
-<td>#C-003</td>
-<td>Implant Crown</td>
-<td><span class="status">Ready</span></td>
-<td>2 days ago</td>
-</tr>
+                    </table>
 
-</table>
+                </div>
 
-</div>
+            </div>
 
-</section>
+        </section>
 
 
-<!-- NEW CASE -->
+        <!-- NEW CASE -->
 
-<section id="newcase" class="page">
+        <section id="newcasePage" style="display:none">
 
-<div class="topbar">
-<div>
-<h1>New Case</h1>
-<p>Send a new case to HN Dental Digital Lab.</p>
-</div>
-</div>
+            <div class="topbar">
+                <div>
+                    <div class="page-title">New Case</div>
+                    <p class="subtitle">Create a new dental case.</p>
+                </div>
+            </div>
 
-<div class="section">
 
-<div class="form-grid">
+            <div class="form-section">
 
-<div>
-<label>Patient / Case Name</label>
-<input type="text" placeholder="Example: Patient A">
-</div>
+                <h3>Patient Information</h3>
 
-<div>
-<label>Case Type</label>
+                <div class="grid-2">
 
-<select>
+                    <div class="form-group">
+                        <label>Patient Name</label>
+                        <input id="patientName" type="text"
+                               placeholder="Patient name">
+                    </div>
 
-<option>Chape</option>
-<option>Crown</option>
-<option>Crown on Implant</option>
-<option>Bridge 2 elements</option>
-<option>Bridge 3 elements</option>
-<option>Bridge totals</option>
-<option>Bridge b-maxillaire</option>
-<option>Bridge on Implant</option>
-<option>DSD</option>
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <select id="gender">
+                            <option value="">Select gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
 
-</select>
+                </div>
 
-</div>
+            </div>
 
-</div>
 
-<label>Instructions</label>
+            <div class="form-section">
 
-<textarea placeholder="Write your instructions here..."></textarea>
+                <h3>Case Information</h3>
 
-<label>Upload Files</label>
+                <div class="grid-2">
 
-<div class="upload">
+                    <div class="form-group">
+                        <label>Type of Work</label>
 
-<strong>Drag & Drop your files here</strong>
+                        <select id="workType">
 
-<p>STL, PLY, OBJ, PDF, JPG, PNG</p>
+                            <option value="">Select work</option>
 
-<input type="file" multiple>
+                            <option>Chape</option>
+                            <option>Crown</option>
+                            <option>Crown on Implant</option>
+                            <option>Inlay / Onlay</option>
+                            <option>Bridge 2 Units</option>
+                            <option>Bridge 3 Units</option>
+                            <option>Bridge 4-5 Units</option>
+                            <option>Bridge 6+ Units</option>
+                            <option>Bridge on Implant</option>
+                            <option>Full Arch</option>
+                            <option>Full Arch on Implant</option>
+                            <option>All-on-4</option>
+                            <option>All-on-6</option>
+                            <option>DSD / Smile Design</option>
+                            <option>Digital Mock-up</option>
 
-</div>
+                        </select>
 
-<button class="btn" onclick="alert('Case submitted successfully!')">
-Send Case
-</button>
+                    </div>
 
-</div>
 
-</section>
+                    <div class="form-group">
 
+                        <label>Due Date</label>
 
-<!-- CASES -->
+                        <input id="dueDate" type="date">
 
-<section id="cases" class="page">
+                    </div>
 
-<div class="topbar">
+                </div>
 
-<div>
-<h1>My Cases</h1>
-<p>Track the status of your cases.</p>
-</div>
+            </div>
 
-</div>
 
-<div class="section">
+            <div class="form-section">
 
-<table>
+                <h3>Select Teeth</h3>
 
-<tr>
-<th>Case ID</th>
-<th>Type</th>
-<th>Patient</th>
-<th>Status</th>
-<th>Date</th>
-</tr>
+                <div class="teeth-chart">
 
-<tr>
-<td>#C-001</td>
-<td>Crown</td>
-<td>Patient A</td>
-<td><span class="status">In Design</span></td>
-<td>Today</td>
-</tr>
+                    <div class="jaw-title">
+                        Upper Jaw
+                    </div>
 
-<tr>
-<td>#C-002</td>
-<td>Bridge</td>
-<td>Patient B</td>
-<td><span class="status">Received</span></td>
-<td>Yesterday</td>
-</tr>
+                    <div class="teeth-row">
 
-</table>
+                        <div class="tooth" onclick="toggleTooth(this)">17</div>
+                        <div class="tooth" onclick="toggleTooth(this)">16</div>
+                        <div class="tooth" onclick="toggleTooth(this)">15</div>
+                        <div class="tooth" onclick="toggleTooth(this)">14</div>
+                        <div class="tooth" onclick="toggleTooth(this)">13</div>
+                        <div class="tooth" onclick="toggleTooth(this)">12</div>
+                        <div class="tooth" onclick="toggleTooth(this)">11</div>
 
-</div>
+                        <div style="width:10px"></div>
 
-</section>
+                        <div class="tooth" onclick="toggleTooth(this)">21</div>
+                        <div class="tooth" onclick="toggleTooth(this)">22</div>
+                        <div class="tooth" onclick="toggleTooth(this)">23</div>
+                        <div class="tooth" onclick="toggleTooth(this)">24</div>
+                        <div class="tooth" onclick="toggleTooth(this)">25</div>
+                        <div class="tooth" onclick="toggleTooth(this)">26</div>
+                        <div class="tooth" onclick="toggleTooth(this)">27</div>
 
+                    </div>
 
-<!-- MESSAGES -->
 
-<section id="messages" class="page">
+                    <div class="jaw-title">
+                        Lower Jaw
+                    </div>
 
-<div class="topbar">
-<div>
-<h1>Messages</h1>
-<p>Communicate with HN Dental Digital Lab.</p>
-</div>
-</div>
+                    <div class="teeth-row">
 
-<div class="section">
+                        <div class="tooth" onclick="toggleTooth(this)">47</div>
+                        <div class="tooth" onclick="toggleTooth(this)">46</div>
+                        <div class="tooth" onclick="toggleTooth(this)">45</div>
+                        <div class="tooth" onclick="toggleTooth(this)">44</div>
+                        <div class="tooth" onclick="toggleTooth(this)">43</div>
+                        <div class="tooth" onclick="toggleTooth(this)">42</div>
+                        <div class="tooth" onclick="toggleTooth(this)">41</div>
 
-<h3>HN Dental Lab</h3>
+                        <div style="width:10px"></div>
 
-<p style="margin-top:10px;color:#718180;">
-Welcome to your digital case portal.
-</p>
+                        <div class="tooth" onclick="toggleTooth(this)">31</div>
+                        <div class="tooth" onclick="toggleTooth(this)">32</div>
+                        <div class="tooth" onclick="toggleTooth(this)">33</div>
+                        <div class="tooth" onclick="toggleTooth(this)">34</div>
+                        <div class="tooth" onclick="toggleTooth(this)">35</div>
+                        <div class="tooth" onclick="toggleTooth(this)">36</div>
+                        <div class="tooth" onclick="toggleTooth(this)">37</div>
 
-</div>
+                    </div>
 
-</section>
 
+                    <div class="selected-teeth">
 
-<!-- PROFILE -->
+                        Selected teeth:
+                        <strong id="selectedTeeth">None</strong>
 
-<section id="profile" class="page">
+                    </div>
 
-<div class="topbar">
+                </div>
 
-<div>
-<h1>Profile</h1>
-<p>Your laboratory information.</p>
-</div>
+            </div>
 
-</div>
 
-<div class="section">
+            <div class="form-section">
 
-<label>Laboratory / Clinic Name</label>
-<input id="profileLab">
+                <h3>Additional Information</h3>
 
-<label>Full Name</label>
-<input id="profileName">
+                <div class="grid-2">
 
-<label>Email</label>
-<input id="profileEmail">
+                    <div class="form-group">
 
-<button class="btn">
-Save Changes
-</button>
+                        <label>Material</label>
 
-</div>
+                        <select id="material">
 
-</section>
+                            <option value="">Select material</option>
+                            <option>Zirconia</option>
+                            <option>E.max</option>
+                            <option>PMMA</option>
+                            <option>Other</option>
 
-</main>
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Shade</label>
+
+                        <input id="shade"
+                               type="text"
+                               placeholder="A1, A2, A3...">
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Instructions / Notes</label>
+
+                    <textarea id="instructions"
+                              placeholder="Additional instructions..."></textarea>
+
+                </div>
+
+                <p style="font-size:13px;color:#777;">
+                    Files such as STL, PLY, photos or scans should be sent
+                    separately by email.
+                </p>
+
+            </div>
+
+
+            <div class="action-row">
+
+                <button class="btn btn-outline"
+                        onclick="showPage('dashboard')">
+                    Cancel
+                </button>
+
+                <button class="btn btn-black"
+                        onclick="createCase()">
+                    Create Case
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- CASES -->
+
+        <section id="casesPage" style="display:none">
+
+            <div class="topbar">
+
+                <div>
+                    <div class="page-title">My Cases</div>
+                    <p class="subtitle">
+                        Track your submitted cases.
+                    </p>
+                </div>
+
+                <button class="btn btn-black"
+                        onclick="showPage('newcase')">
+                    + New Case
+                </button>
+
+            </div>
+
+
+            <div class="section">
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Case</th>
+                                <th>Date</th>
+                                <th>Patient</th>
+                                <th>Work</th>
+                                <th>Teeth</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="allCasesTable"></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROFILE -->
+
+        <section id="profilePage" style="display:none">
+
+            <div class="topbar">
+
+                <div>
+                    <div class="page-title">Profile</div>
+                    <p class="subtitle">
+                        Your account information.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="detail-card">
+
+                <div class="detail-row">
+                    <span class="detail-label">Laboratory / Clinic</span>
+                    <strong id="profileLab"></strong>
+                </div>
+
+                <div class="detail-row">
+                    <span class="detail-label">Doctor / Contact</span>
+                    <strong id="profileName"></strong>
+                </div>
+
+                <div class="detail-row">
+                    <span class="detail-label">Email</span>
+                    <strong id="profileEmail"></strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CASE DETAIL -->
+
+        <section id="detailPage" style="display:none">
+
+            <div class="topbar">
+
+                <div>
+                    <div class="page-title">Case Details</div>
+                    <p class="subtitle">
+                        Case information and status history.
+                    </p>
+                </div>
+
+                <button class="btn btn-outline"
+                        onclick="showPage('dashboard')">
+                    Back
+                </button>
+
+            </div>
+
+
+            <div class="case-detail">
+
+                <div class="detail-card">
+
+                    <div id="caseDetails"></div>
+
+                    <br>
+
+                    <a id="emailLink"
+                       class="btn btn-black"
+                       style="display:inline-block;text-decoration:none;"
+                       href="#">
+                       Send Files by Email
+                    </a>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <h3 style="font-family:'Playfair Display';margin-bottom:25px;">
+                        Status History
+                    </h3>
+
+                    <div id="timeline" class="timeline"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
 
 </div>
 
 
 <script>
 
-function showSignup(){
+/* ================= DATA ================= */
 
-document.getElementById("loginPage").style.display="none";
-document.getElementById("signupPage").style.display="flex";
+let currentUser = null;
+let cases = JSON.parse(localStorage.getItem("hn_cases") || "[]");
 
-}
+const statuses = [
+    "New",
+    "Seen - Not Started",
+    "In Progress",
+    "Completed",
+    "Sent"
+];
 
-function showLogin(){
 
-document.getElementById("signupPage").style.display="none";
-document.getElementById("loginPage").style.display="flex";
+/* ================= AUTH ================= */
 
-}
+function showSignup() {
 
-function createAccount(){
-
-let lab=document.getElementById("labName").value;
-let name=document.getElementById("fullName").value;
-let email=document.getElementById("signupEmail").value;
-let password=document.getElementById("signupPassword").value;
-let confirm=document.getElementById("confirmPassword").value;
-
-if(!lab || !name || !email || !password || !confirm){
-
-alert("Please complete all fields.");
-return;
+    document.getElementById("loginBox").style.display = "none";
+    document.getElementById("signupBox").style.display = "block";
 
 }
 
-if(password !== confirm){
+function showLogin() {
 
-alert("Passwords do not match.");
-return;
-
-}
-
-localStorage.setItem("labName",lab);
-localStorage.setItem("fullName",name);
-localStorage.setItem("email",email);
-localStorage.setItem("password",password);
-
-alert("Account created successfully!");
-
-showLogin();
+    document.getElementById("signupBox").style.display = "none";
+    document.getElementById("loginBox").style.display = "block";
 
 }
 
-function login(){
 
-let email=document.getElementById("loginEmail").value;
-let password=document.getElementById("loginPassword").value;
+function createAccount() {
 
-let savedEmail=localStorage.getItem("email");
-let savedPassword=localStorage.getItem("password");
+    const lab = document.getElementById("signupLab").value.trim();
+    const name = document.getElementById("signupName").value.trim();
+    const email = document.getElementById("signupEmail").value.trim();
+    const password = document.getElementById("signupPassword").value;
+    const confirm = document.getElementById("signupConfirm").value;
 
-if(!email || !password){
+    if (!lab || !name || !email || !password) {
+        alert("Please complete all fields.");
+        return;
+    }
 
-alert("Please enter your email and password.");
-return;
+    if (password !== confirm) {
+        alert("Passwords do not match.");
+        return;
+    }
 
-}
+    const user = {
+        lab,
+        name,
+        email,
+        password
+    };
 
-if(savedEmail && email===savedEmail && password===savedPassword){
+    localStorage.setItem("hn_user", JSON.stringify(user));
 
-openApp();
+    alert("Account created successfully.");
 
-}else{
-
-alert("Account not found or incorrect password.");
-
-}
-
-}
-
-function openApp(){
-
-document.getElementById("loginPage").style.display="none";
-document.getElementById("signupPage").style.display="none";
-document.getElementById("app").style.display="block";
-
-let lab=localStorage.getItem("labName") || "My Laboratory";
-let name=localStorage.getItem("fullName") || "";
-
-document.getElementById("userName").innerText=lab;
-
-document.getElementById("profileLab").value=lab;
-document.getElementById("profileName").value=name;
-document.getElementById("profileEmail").value=localStorage.getItem("email") || "";
+    showLogin();
 
 }
 
-function logout(){
 
-document.getElementById("app").style.display="none";
-document.getElementById("loginPage").style.display="flex";
+function login() {
+
+    const email = document.getElementById("loginEmail").value.trim();
+    const password = document.getElementById("loginPassword").value;
+
+    const user = JSON.parse(localStorage.getItem("hn_user"));
+
+    if (!user) {
+        alert("No account found. Please create an account first.");
+        return;
+    }
+
+    if (email !== user.email || password !== user.password) {
+        alert("Incorrect email or password.");
+        return;
+    }
+
+    currentUser = user;
+
+    openApp();
 
 }
 
-function showPage(page,button){
 
-document.querySelectorAll(".page").forEach(function(p){
-p.classList.remove("active");
-});
+function logout() {
 
-document.getElementById(page).classList.add("active");
+    currentUser = null;
 
-document.querySelectorAll(".nav button").forEach(function(b){
-b.classList.remove("active");
-});
-
-if(button){
-button.classList.add("active");
-}
+    document.getElementById("app").style.display = "none";
+    document.getElementById("authPage").style.display = "flex";
 
 }
+
+
+/* ================= APP ================= */
+
+function openApp() {
+
+    document.getElementById("authPage").style.display = "none";
+    document.getElementById("app").style.display = "block";
+
+    document.getElementById("topName").textContent = currentUser.name;
+    document.getElementById("topLab").textContent = currentUser.lab;
+
+    document.getElementById("profileLab").textContent = currentUser.lab;
+    document.getElementById("profileName").textContent = currentUser.name;
+    document.getElementById("profileEmail").textContent = currentUser.email;
+
+    renderCases();
+
+}
+
+
+function showPage(page, clickedElement) {
+
+    const pages = [
+        "dashboard",
+        "newcase",
+        "cases",
+        "profile",
+        "detail"
+    ];
+
+    pages.forEach(p => {
+
+        const element = document.getElementById(p + "Page");
+
+        if (element) {
+            element.style.display = "none";
+        }
+
+    });
+
+    const target = document.getElementById(page + "Page");
+
+    if (target) {
+        target.style.display = "block";
+    }
+
+    if (clickedElement) {
+
+        document.querySelectorAll(".nav-item")
+            .forEach(item => item.classList.remove("active"));
+
+        clickedElement.classList.add("active");
+
+    }
+
+    if (page === "dashboard" || page === "cases") {
+        renderCases();
+    }
+
+}
+
+
+/* ================= TEETH ================= */
+
+function toggleTooth(element) {
+
+    element.classList.toggle("selected");
+
+    updateSelectedTeeth();
+
+}
+
+
+function updateSelectedTeeth() {
+
+    const selected =
+        [...document.querySelectorAll(".tooth.selected")]
+        .map(t => t.textContent);
+
+    document.getElementById("selectedTeeth").textContent =
+        selected.length ? selected.join(", ") : "None";
+
+}
+
+
+/* ================= CREATE CASE ================= */
+
+function createCase() {
+
+    const patient =
+        document.getElementById("patientName").value.trim();
+
+    const gender =
+        document.getElementById("gender").value;
+
+    const work =
+        document.getElementById("workType").value;
+
+    const dueDate =
+        document.getElementById("dueDate").value;
+
+    const material =
+        document.getElementById("material").value;
+
+    const shade =
+        document.getElementById("shade").value.trim();
+
+    const instructions =
+        document.getElementById("instructions").value.trim();
+
+    const teeth =
+        [...document.querySelectorAll(".tooth.selected")]
+        .map(t => t.textContent);
+
+
+    if (!patient || !gender || !work) {
+
+        alert("Please complete the patient and case information.");
+
+        return;
+
+    }
+
+
+    const now = new Date();
+
+    const id =
+        "HN-" +
+        String(cases.length + 1).padStart(4, "0");
+
+
+    const newCase = {
+
+        id,
+        doctor: currentUser.name,
+        lab: currentUser.lab,
+
+        patient,
+        gender,
+        work,
+        teeth,
+
+        material,
+        shade,
+        dueDate,
+        instructions,
+
+        status: "New",
+
+        createdAt: now.toLocaleString(),
+
+        history: [
+            {
+                status: "New",
+                date: now.toLocaleString()
+            }
+        ]
+
+    };
+
+
+    cases.unshift(newCase);
+
+    localStorage.setItem(
+        "hn_cases",
+        JSON.stringify(cases)
+    );
+
+
+    const subject =
+        encodeURIComponent(
+            `New Case ${id} - Patient: ${patient}`
+        );
+
+    const body =
+        encodeURIComponent(
+`New Dental Case
+
+Case ID: ${id}
+Doctor: ${currentUser.name}
+Laboratory / Clinic: ${currentUser.lab}
+
+Patient: ${patient}
+Gender: ${gender}
+
+Work: ${work}
+
+Teeth: ${teeth.length ? teeth.join(", ") : "Not specified"}
+
+Material: ${material || "Not specified"}
+Shade: ${shade || "Not specified"}
+
+Due Date: ${dueDate || "Not specified"}
+
+Instructions:
+${instructions || "None"}
+
+Please attach the required dental files to this email.`
+        );
+
+
+    const email =
+        `mailto:hndentaldigitallab@gmail.com?subject=${subject}&body=${body}`;
+
+
+    document.getElementById("patientName").value = "";
+    document.getElementById("gender").value = "";
+    document.getElementById("workType").value = "";
+    document.getElementById("dueDate").value = "";
+    document.getElementById("material").value = "";
+    document.getElementById("shade").value = "";
+    document.getElementById("instructions").value = "";
+
+    document.querySelectorAll(".tooth.selected")
+        .forEach(t => t.classList.remove("selected"));
+
+    updateSelectedTeeth();
+
+
+    renderCases();
+
+    alert(
+        "Case created successfully.\n\n" +
+        "Your email application will open so you can send the dental files."
+    );
+
+    window.location.href = email;
+
+}
+
+
+/* ================= RENDER CASES ================= */
+
+function renderCases() {
+
+    const total =
+        cases.length;
+
+    const newCount =
+        cases.filter(c => c.status === "New").length;
+
+    const progress =
+        cases.filter(c => c.status === "In Progress").length;
+
+    const completed =
+        cases.filter(c =>
+            c.status === "Completed" ||
+            c.status === "Sent"
+        ).length;
+
+
+    document.getElementById("totalCases").textContent = total;
+    document.getElementById("newCases").textContent = newCount;
+    document.getElementById("progressCases").textContent = progress;
+    document.getElementById("completedCases").textContent = completed;
+
+
+    const rows =
+        cases.map(c => {
+
+            return `
+                <tr>
+
+                    <td>
+                        <span class="case-name">
+                            ${c.id}
+                        </span>
+                    </td>
+
+                    <td>
+                        ${c.createdAt}
+                    </td>
+
+                    <td>
+                        ${c.patient}
+                    </td>
+
+                    <td>
+                        ${c.work}
+                    </td>
+
+                    <td>
+                        ${c.teeth.length
+                            ? c.teeth.join(", ")
+                            : "—"}
+                    </td>
+
+                    <td>
+                        ${statusHTML(c.status)}
+                    </td>
+
+                    <td>
+                        <button
+                            class="btn btn-outline"
+                            style="padding:8px 12px;font-size:11px"
+                            onclick="openCase('${c.id}')">
+                            View
+                        </button>
+                    </td>
+
+                </tr>
+            `;
+
+        }).join("");
+
+
+    document.getElementById("caseTable").innerHTML =
+        rows || emptyRow();
+
+    document.getElementById("allCasesTable").innerHTML =
+        rows || emptyRow();
+
+}
+
+
+function emptyRow() {
+
+    return `
+        <tr>
+            <td colspan="7"
+                style="text-align:center;padding:40px;color:#888">
+                No cases yet.
+            </td>
+        </tr>
+    `;
+
+}
+
+
+function statusHTML(status) {
+
+    let cls = "";
+
+    if (status === "New") cls = "new";
+    if (status.includes("Seen")) cls = "seen";
+    if (status === "In Progress") cls = "progress";
+    if (status === "Completed") cls = "ready";
+    if (status === "Sent") cls = "sent";
+
+    return `<span class="status ${cls}">${status}</span>`;
+
+}
+
+
+/* ================= CASE DETAIL ================= */
+
+function openCase(id) {
+
+    const c =
+        cases.find(item => item.id === id);
+
+    if (!c) return;
+
+
+    document.getElementById("caseDetails").innerHTML = `
+
+        <h2 style="font-family:'Playfair Display';margin-bottom:20px;">
+            ${c.id}
+        </h2>
+
+        <div class="detail-row">
+            <span class="detail-label">Patient</span>
+            <strong>${c.patient}</strong>
+        </div>
+
+        <div class="detail-row">
+            <span class="detail-label">Gender</span>
+            <strong>${c.gender}</strong>
+        </div>
+
+        <div class="detail-row">
+            <span class="detail-label">Work</span>
+            <strong>${c.work}</strong>
+        </div>
+
+        <div class="detail-row">
+            <span class="detail-label">Teeth</span>
+            <strong>
+                ${c.teeth.length ? c.teeth.join(", ") : "—"}
+            </strong>
+        </div>
+
+        <div class="detail-row">
+            <span class="detail-label">Material</span>
+            <strong>${c.material || "—"}</strong>
+        </div>
+
+        <div class="detail-row">
+            <span class="detail-label">Shade</span>
+            <strong>${c.shade || "—"}</strong>
+        </div>
+
+        <div class="detail-row">
+            <span class="detail-label">Due Date</span>
+            <strong>${c.dueDate || "—"}</strong>
+        </div>
+
+        <div class="detail-row">
+            <span class="detail-label">Current Status</span>
+            <strong>${statusHTML(c.status)}</strong>
+        </div>
+
+        <div class="detail-row">
+            <span class="detail-label">Instructions</span>
+            <strong>${c.instructions || "—"}</strong>
+        </div>
+
+    `;
+
+
+    const subject =
+        encodeURIComponent(
+            `Case ${c.id} - Patient: ${c.patient}`
+        );
+
+    const body =
+        encodeURIComponent(
+            `Case ID: ${c.id}\nPatient: ${c.patient}\nWork: ${c.work}\nTeeth: ${c.teeth.join(", ")}`
+        );
+
+
+    document.getElementById("emailLink").href =
+        `mailto:hndentaldigitallab@gmail.com?subject=${subject}&body=${body}`;
+
+
+    document.getElementById("timeline").innerHTML =
+        c.history.map(h => `
+
+            <div class="timeline-item">
+
+                <strong>${h.status}</strong>
+
+                <span>${h.date}</span>
+
+            </div>
+
+        `).join("");
+
+
+    showPage("detail");
+
+}
+
+
+/* ================= START ================= */
+
+window.onload = function() {
+
+    const savedUser =
+        JSON.parse(localStorage.getItem("hn_user"));
+
+    if (savedUser) {
+
+        currentUser = savedUser;
+
+        openApp();
+
+    }
+
+};
 
 </script>
 
