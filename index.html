@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HN Dental Digital Lab</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#f3f7f6;
+  color:#173b3b;
+}
+
+button{
+  cursor:pointer;
+}
+
+.auth{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:25px;
+}
+
+.auth-box{
+  width:950px;
+  max-width:100%;
+  min-height:600px;
+  background:white;
+  border-radius:24px;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  box-shadow:0 20px 60px rgba(0,0,0,.08);
+}
+
+.auth-image{
+  background:
+  linear-gradient(rgba(10,40,40,.35),rgba(10,40,40,.7)),
+  url("https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1000&q=80")
+  center/cover;
+  color:white;
+  padding:45px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+
+.auth-image h1{
+  font-size:38px;
+  line-height:1.15;
+  margin-bottom:15px;
+}
+
+.auth-image p{
+  opacity:.9;
+}
+
+.auth-form{
+  padding:45px 50px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.logo{
+  font-size:21px;
+  font-weight:bold;
+  margin-bottom:35px;
+}
+
+.logo span{
+  color:#559b92;
+}
+
+.auth-form h2{
+  font-size:30px;
+  margin-bottom:8px;
+}
+
+.subtitle{
+  color:#7d8c8c;
+  margin-bottom:25px;
+}
+
+label{
+  font-size:13px;
+  font-weight:bold;
+  margin-bottom:7px;
+  display:block;
+}
+
+input,select,textarea{
+  width:100%;
+  padding:13px;
+  border:1px solid #dce5e4;
+  border-radius:9px;
+  margin-bottom:15px;
+  outline:none;
+}
+
+input:focus{
+  border-color:#559b92;
+}
+
+.btn{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:9px;
+  background:#173f40;
+  color:white;
+  font-weight:bold;
+  margin-top:5px;
+}
+
+.btn:hover{
+  background:#245d5c;
+}
+
+.switch{
+  text-align:center;
+  margin-top:20px;
+  color:#7d8c8c;
+  font-size:14px;
+}
+
+.switch button{
+  border:none;
+  background:none;
+  color:#397c76;
+  font-weight:bold;
+}
+
+/* APP */
+
+#app{
+  display:none;
+}
+
+.sidebar{
+  position:fixed;
+  left:0;
+  top:0;
+  bottom:0;
+  width:240px;
+  background:#123838;
+  color:white;
+  padding:28px 18px;
+}
+
+.brand{
+  font-weight:bold;
+  font-size:17px;
+  padding:0 12px 35px;
+}
+
+.brand small{
+  display:block;
+  color:#9ab6b3;
+  font-weight:normal;
+  margin-top:5px;
+}
+
+.nav button{
+  width:100%;
+  border:none;
+  background:transparent;
+  color:#b9cecb;
+  text-align:left;
+  padding:13px;
+  border-radius:9px;
+  margin-bottom:6px;
+}
+
+.nav button:hover,
+.nav button.active{
+  background:#28615f;
+  color:white;
+}
+
+.logout{
+  position:absolute;
+  bottom:25px;
+  left:18px;
+  right:18px;
+}
+
+.main{
+  margin-left:240px;
+  padding:35px;
+}
+
+.page{
+  display:none;
+}
+
+.page.active{
+  display:block;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:30px;
+}
+
+.topbar h1{
+  font-size:28px;
+}
+
+.user{
+  background:white;
+  padding:10px 16px;
+  border-radius:25px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  margin-bottom:25px;
+}
+
+.card{
+  background:white;
+  padding:22px;
+  border-radius:15px;
+}
+
+.card p{
+  color:#879494;
+  font-size:13px;
+  margin-bottom:12px;
+}
+
+.card strong{
+  font-size:28px;
+}
+
+.section{
+  background:white;
+  padding:25px;
+  border-radius:16px;
+}
+
+.section h2{
+  margin-bottom:20px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th,td{
+  padding:14px 8px;
+  border-bottom:1px solid #edf1f1;
+  text-align:left;
+}
+
+th{
+  color:#899696;
+  font-size:12px;
+}
+
+.status{
+  background:#edf5f4;
+  color:#28615f;
+  padding:6px 10px;
+  border-radius:20px;
+  font-size:12px;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.upload{
+  border:2px dashed #cbdad8;
+  padding:35px;
+  text-align:center;
+  border-radius:12px;
+  margin-bottom:20px;
+  color:#718180;
+}
+
+textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+@media(max-width:800px){
+
+  .auth-box{
+    grid-template-columns:1fr;
+  }
+
+  .auth-image{
+    display:none;
+  }
+
+  .sidebar{
+    width:70px;
+  }
+
+  .brand,
+  .nav span{
+    display:none;
+  }
+
+  .main{
+    margin-left:70px;
+    padding:20px;
+  }
+
+  .cards{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+
+<div class="auth" id="loginPage">
+
+<div class="auth-box">
+
+<div class="auth-image">
+<h1>Digital Design.<br>Better Smiles.</h1>
+<p>Precision in every detail.</p>
+</div>
+
+<div class="auth-form">
+
+<div class="logo">
+HN <span>Dental Digital Lab</span>
+</div>
+
+<h2>Welcome back</h2>
+
+<p class="subtitle">
+Sign in to your laboratory account
+</p>
+
+<label>Email address</label>
+<input type="email" id="loginEmail" placeholder="yourname@lab.com">
+
+<label>Password</label>
+<input type="password" id="loginPassword" placeholder="Enter your password">
+
+<button class="btn" onclick="login()">
+Login
+</button>
+
+<div class="switch">
+Don't have an account?
+<button onclick="showSignup()">Create account</button>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- CREATE ACCOUNT -->
+
+<div class="auth" id="signupPage" style="display:none;">
+
+<div class="auth-box">
+
+<div class="auth-image">
+<h1>Welcome to<br>HN Dental Lab.</h1>
+<p>Digital dental design made simple.</p>
+</div>
+
+<div class="auth-form">
+
+<div class="logo">
+HN <span>Dental Digital Lab</span>
+</div>
+
+<h2>Create account</h2>
+
+<p class="subtitle">
+Register your laboratory or clinic
+</p>
+
+<label>Laboratory / Clinic Name</label>
+<input type="text" id="labName" placeholder="Your laboratory name">
+
+<label>Full Name</label>
+<input type="text" id="fullName" placeholder="Your full name">
+
+<label>Email address</label>
+<input type="email" id="signupEmail" placeholder="yourname@lab.com">
+
+<label>Password</label>
+<input type="password" id="signupPassword" placeholder="Create a password">
+
+<label>Confirm Password</label>
+<input type="password" id="confirmPassword" placeholder="Confirm your password">
+
+<button class="btn" onclick="createAccount()">
+Create Account
+</button>
+
+<div class="switch">
+Already have an account?
+<button onclick="showLogin()">Login</button>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- APP -->
+
+<div id="app">
+
+<aside class="sidebar">
+
+<div class="brand">
+HN Dental Digital Lab
+<small>Digital Design Services</small>
+</div>
+
+<div class="nav">
+
+<button class="active" onclick="showPage('dashboard',this)">
+🏠 <span>Dashboard</span>
+</button>
+
+<button onclick="showPage('newcase',this)">
+➕ <span>New Case</span>
+</button>
+
+<button onclick="showPage('cases',this)">
+📁 <span>My Cases</span>
+</button>
+
+<button onclick="showPage('messages',this)">
+💬 <span>Messages</span>
+</button>
+
+<button onclick="showPage('profile',this)">
+👤 <span>Profile</span>
+</button>
+
+</div>
+
+<button class="nav button logout" onclick="logout()">
+🚪 Logout
+</button>
+
+</aside>
+
+
+<main class="main">
+
+<!-- DASHBOARD -->
+
+<section id="dashboard" class="page active">
+
+<div class="topbar">
+
+<div>
+<h1>Good morning 👋</h1>
+<p>Here's what's happening with your cases today.</p>
+</div>
+
+<div class="user" id="userName">
+My Laboratory
+</div>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+<p>Total Cases</p>
+<strong>12</strong>
+</div>
+
+<div class="card">
+<p>In Design</p>
+<strong>5</strong>
+</div>
+
+<div class="card">
+<p>Ready</p>
+<strong>4</strong>
+</div>
+
+<div class="card">
+<p>Delivered</p>
+<strong>3</strong>
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Recent Cases</h2>
+
+<table>
+
+<tr>
+<th>Case ID</th>
+<th>Type</th>
+<th>Status</th>
+<th>Date</th>
+</tr>
+
+<tr>
+<td>#C-001</td>
+<td>Crown</td>
+<td><span class="status">In Design</span></td>
+<td>Today</td>
+</tr>
+
+<tr>
+<td>#C-002</td>
+<td>Bridge 3 elements</td>
+<td><span class="status">Received</span></td>
+<td>Yesterday</td>
+</tr>
+
+<tr>
+<td>#C-003</td>
+<td>Implant Crown</td>
+<td><span class="status">Ready</span></td>
+<td>2 days ago</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- NEW CASE -->
+
+<section id="newcase" class="page">
+
+<div class="topbar">
+<div>
+<h1>New Case</h1>
+<p>Send a new case to HN Dental Digital Lab.</p>
+</div>
+</div>
+
+<div class="section">
+
+<div class="form-grid">
+
+<div>
+<label>Patient / Case Name</label>
+<input type="text" placeholder="Example: Patient A">
+</div>
+
+<div>
+<label>Case Type</label>
+
+<select>
+
+<option>Chape</option>
+<option>Crown</option>
+<option>Crown on Implant</option>
+<option>Bridge 2 elements</option>
+<option>Bridge 3 elements</option>
+<option>Bridge totals</option>
+<option>Bridge b-maxillaire</option>
+<option>Bridge on Implant</option>
+<option>DSD</option>
+
+</select>
+
+</div>
+
+</div>
+
+<label>Instructions</label>
+
+<textarea placeholder="Write your instructions here..."></textarea>
+
+<label>Upload Files</label>
+
+<div class="upload">
+
+<strong>Drag & Drop your files here</strong>
+
+<p>STL, PLY, OBJ, PDF, JPG, PNG</p>
+
+<input type="file" multiple>
+
+</div>
+
+<button class="btn" onclick="alert('Case submitted successfully!')">
+Send Case
+</button>
+
+</div>
+
+</section>
+
+
+<!-- CASES -->
+
+<section id="cases" class="page">
+
+<div class="topbar">
+
+<div>
+<h1>My Cases</h1>
+<p>Track the status of your cases.</p>
+</div>
+
+</div>
+
+<div class="section">
+
+<table>
+
+<tr>
+<th>Case ID</th>
+<th>Type</th>
+<th>Patient</th>
+<th>Status</th>
+<th>Date</th>
+</tr>
+
+<tr>
+<td>#C-001</td>
+<td>Crown</td>
+<td>Patient A</td>
+<td><span class="status">In Design</span></td>
+<td>Today</td>
+</tr>
+
+<tr>
+<td>#C-002</td>
+<td>Bridge</td>
+<td>Patient B</td>
+<td><span class="status">Received</span></td>
+<td>Yesterday</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- MESSAGES -->
+
+<section id="messages" class="page">
+
+<div class="topbar">
+<div>
+<h1>Messages</h1>
+<p>Communicate with HN Dental Digital Lab.</p>
+</div>
+</div>
+
+<div class="section">
+
+<h3>HN Dental Lab</h3>
+
+<p style="margin-top:10px;color:#718180;">
+Welcome to your digital case portal.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- PROFILE -->
+
+<section id="profile" class="page">
+
+<div class="topbar">
+
+<div>
+<h1>Profile</h1>
+<p>Your laboratory information.</p>
+</div>
+
+</div>
+
+<div class="section">
+
+<label>Laboratory / Clinic Name</label>
+<input id="profileLab">
+
+<label>Full Name</label>
+<input id="profileName">
+
+<label>Email</label>
+<input id="profileEmail">
+
+<button class="btn">
+Save Changes
+</button>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+
+<script>
+
+function showSignup(){
+
+document.getElementById("loginPage").style.display="none";
+document.getElementById("signupPage").style.display="flex";
+
+}
+
+function showLogin(){
+
+document.getElementById("signupPage").style.display="none";
+document.getElementById("loginPage").style.display="flex";
+
+}
+
+function createAccount(){
+
+let lab=document.getElementById("labName").value;
+let name=document.getElementById("fullName").value;
+let email=document.getElementById("signupEmail").value;
+let password=document.getElementById("signupPassword").value;
+let confirm=document.getElementById("confirmPassword").value;
+
+if(!lab || !name || !email || !password || !confirm){
+
+alert("Please complete all fields.");
+return;
+
+}
+
+if(password !== confirm){
+
+alert("Passwords do not match.");
+return;
+
+}
+
+localStorage.setItem("labName",lab);
+localStorage.setItem("fullName",name);
+localStorage.setItem("email",email);
+localStorage.setItem("password",password);
+
+alert("Account created successfully!");
+
+showLogin();
+
+}
+
+function login(){
+
+let email=document.getElementById("loginEmail").value;
+let password=document.getElementById("loginPassword").value;
+
+let savedEmail=localStorage.getItem("email");
+let savedPassword=localStorage.getItem("password");
+
+if(!email || !password){
+
+alert("Please enter your email and password.");
+return;
+
+}
+
+if(savedEmail && email===savedEmail && password===savedPassword){
+
+openApp();
+
+}else{
+
+alert("Account not found or incorrect password.");
+
+}
+
+}
+
+function openApp(){
+
+document.getElementById("loginPage").style.display="none";
+document.getElementById("signupPage").style.display="none";
+document.getElementById("app").style.display="block";
+
+let lab=localStorage.getItem("labName") || "My Laboratory";
+let name=localStorage.getItem("fullName") || "";
+
+document.getElementById("userName").innerText=lab;
+
+document.getElementById("profileLab").value=lab;
+document.getElementById("profileName").value=name;
+document.getElementById("profileEmail").value=localStorage.getItem("email") || "";
+
+}
+
+function logout(){
+
+document.getElementById("app").style.display="none";
+document.getElementById("loginPage").style.display="flex";
+
+}
+
+function showPage(page,button){
+
+document.querySelectorAll(".page").forEach(function(p){
+p.classList.remove("active");
+});
+
+document.getElementById(page).classList.add("active");
+
+document.querySelectorAll(".nav button").forEach(function(b){
+b.classList.remove("active");
+});
+
+if(button){
+button.classList.add("active");
+}
+
+}
+
+</script>
+
+</body>
+</html>
