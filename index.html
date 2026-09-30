@@ -3,40 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HN Dental Lab</title>
+<title>HN Dental Digital Lab</title>
 
 <style>
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
-}
-
-:root{
-  --blue:#2F63D8;
-  --blue-dark:#204FAF;
-  --navy:#182638;
-  --text:#243447;
-  --muted:#718096;
-  --bg:#F3F6FA;
-  --card:#FFFFFF;
-  --border:#DCE4EE;
-  --soft:#EAF1FB;
-  --green:#3A9B72;
-  --orange:#E5A23C;
-  --red:#D95757;
+  font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:var(--bg);
-  color:var(--text);
+  background:#f5f7fa;
+  color:#1e293b;
 }
 
-button,
-input,
-select,
-textarea{
+button,input,select,textarea{
   font:inherit;
 }
 
@@ -48,186 +30,130 @@ button{
   display:none!important;
 }
 
-/* ================= LOGO ================= */
-
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  user-select:none;
-}
-
-.logo-mark{
-  font-size:38px;
-  font-weight:900;
-  letter-spacing:-4px;
-  color:#111827;
-  line-height:1;
-}
-
-.logo-text{
-  border-left:2px solid #1F2937;
-  padding-left:12px;
-}
-
-.logo-main{
-  font-size:25px;
-  font-weight:800;
-  color:#111827;
-}
-
-.logo-sub{
-  font-size:10px;
-  letter-spacing:4px;
-  color:#596579;
-  margin-top:4px;
-}
-
-/* ================= AUTH ================= */
+/* ================= LOGIN ================= */
 
 .auth-page{
   min-height:100vh;
   display:flex;
-  justify-content:center;
   align-items:center;
-  padding:30px 16px;
-  background:
-    radial-gradient(circle at top left,#E8F0FC 0,#F3F6FA 38%,#EEF2F7 100%);
-}
-
-.auth-card{
-  width:100%;
-  max-width:570px;
-  background:white;
-  border:1px solid var(--border);
-  border-radius:28px;
-  padding:42px;
-  box-shadow:0 25px 70px rgba(36,52,71,.12);
-}
-
-.auth-logo{
   justify-content:center;
-  margin-bottom:38px;
+  padding:25px;
+  background:linear-gradient(135deg,#f8fafc,#e8eef5);
 }
 
-.portal-tabs{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  background:#EDF2F8;
-  border-radius:18px;
-  padding:5px;
-  margin-bottom:34px;
-}
-
-.portal-tab{
-  border:0;
-  background:transparent;
-  padding:15px;
-  border-radius:14px;
-  color:#66758B;
-  font-weight:700;
-  font-size:17px;
-}
-
-.portal-tab.active{
+.auth-box{
+  width:100%;
+  max-width:430px;
   background:white;
-  color:var(--blue);
-  box-shadow:0 7px 20px rgba(36,52,71,.09);
+  border-radius:22px;
+  padding:38px;
+  box-shadow:0 15px 45px rgba(15,23,42,.10);
 }
 
-.auth-title{
-  font-size:42px;
-  margin-bottom:8px;
-  color:#182638;
-}
-
-.auth-subtitle{
-  color:#708099;
-  font-size:18px;
+.logo-area{
+  text-align:center;
   margin-bottom:30px;
 }
 
+.logo-circle{
+  width:65px;
+  height:65px;
+  margin:auto;
+  border-radius:18px;
+  background:#1677c8;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  font-size:20px;
+}
+
+.logo-area h1{
+  margin-top:13px;
+  font-size:21px;
+}
+
+.logo-area p{
+  color:#64748b;
+  font-size:13px;
+  margin-top:5px;
+}
+
+.auth-box h2{
+  margin-bottom:20px;
+}
+
 .form-group{
-  margin-bottom:19px;
+  margin-bottom:15px;
 }
 
-.form-label{
+.form-group label{
   display:block;
-  font-weight:700;
-  margin-bottom:8px;
-  color:#243447;
+  font-size:13px;
+  font-weight:600;
+  margin-bottom:7px;
 }
 
-.form-input,
-.form-select,
-.form-textarea{
+.form-group input,
+.form-group select,
+.form-group textarea{
   width:100%;
-  border:2px solid #DCE4EE;
-  background:#fff;
-  border-radius:15px;
-  padding:15px 16px;
+  border:1px solid #d8e0e8;
+  border-radius:10px;
+  padding:12px 13px;
   outline:none;
-  color:#243447;
-  transition:.2s;
+  background:#fff;
 }
 
-.form-input:focus,
-.form-select:focus,
-.form-textarea:focus{
-  border-color:var(--blue);
-  box-shadow:0 0 0 4px rgba(47,99,216,.10);
-}
-
-.form-textarea{
-  min-height:120px;
-  resize:vertical;
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+  border-color:#1677c8;
 }
 
 .primary-btn{
   width:100%;
   border:0;
-  border-radius:15px;
-  padding:16px;
-  background:var(--blue);
+  border-radius:11px;
+  padding:13px;
+  background:#1677c8;
   color:white;
-  font-weight:800;
-  font-size:17px;
-  box-shadow:0 10px 24px rgba(47,99,216,.22);
-  transition:.2s;
+  font-weight:700;
+  margin-top:5px;
 }
 
 .primary-btn:hover{
-  background:var(--blue-dark);
-  transform:translateY(-1px);
+  background:#1267ad;
 }
 
 .secondary-btn{
-  border:2px solid var(--border);
+  border:1px solid #d7e0e8;
   background:white;
-  color:var(--text);
-  border-radius:15px;
-  padding:14px 20px;
-  font-weight:700;
+  color:#334155;
+  border-radius:10px;
+  padding:10px 14px;
+}
+
+.auth-switch{
+  text-align:center;
+  margin-top:20px;
+  color:#64748b;
+  font-size:13px;
+}
+
+.auth-switch span{
+  color:#1677c8;
+  cursor:pointer;
+  font-weight:bold;
 }
 
 .forgot{
-  display:block;
   text-align:right;
-  margin:-3px 0 20px;
-  color:var(--blue);
-  font-weight:700;
-  cursor:pointer;
-}
-
-.switch-auth{
-  text-align:center;
-  color:#718096;
-  margin-top:22px;
-}
-
-.switch-auth span{
-  color:var(--blue);
-  font-weight:800;
+  font-size:12px;
+  color:#1677c8;
+  margin-top:-5px;
+  margin-bottom:15px;
   cursor:pointer;
 }
 
@@ -238,264 +164,224 @@ button{
 }
 
 .topbar{
-  height:76px;
+  height:72px;
   background:white;
-  border-bottom:1px solid var(--border);
+  border-bottom:1px solid #e5eaf0;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 30px;
+  padding:0 28px;
   position:sticky;
   top:0;
-  z-index:50;
+  z-index:20;
 }
 
-.topbar-logo .logo-mark{
-  font-size:30px;
-}
-
-.topbar-logo .logo-main{
-  font-size:20px;
-}
-
-.topbar-logo .logo-sub{
-  font-size:8px;
-}
-
-.top-actions{
+.brand{
   display:flex;
   align-items:center;
   gap:12px;
 }
 
-.icon-btn{
-  width:44px;
-  height:44px;
-  border:1px solid var(--border);
-  background:white;
-  border-radius:13px;
-  position:relative;
-  font-size:20px;
-}
-
-.notification-dot{
-  position:absolute;
-  top:7px;
-  right:7px;
-  width:9px;
-  height:9px;
-  background:#3478E5;
-  border:2px solid white;
-  border-radius:50%;
-}
-
-.profile-btn{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  border:1px solid var(--border);
-  background:white;
-  border-radius:14px;
-  padding:6px 12px 6px 6px;
-}
-
-.avatar{
-  width:34px;
-  height:34px;
-  border-radius:50%;
-  background:#DDE8FA;
-  color:var(--blue);
+.brand-logo{
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  background:#1677c8;
+  color:white;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-weight:800;
+  font-size:13px;
+  font-weight:bold;
+}
+
+.brand-name{
+  font-weight:700;
+  font-size:15px;
+}
+
+.top-actions{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.notification{
+  position:relative;
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  background:#f3f6f9;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+
+.notification-count{
+  position:absolute;
+  top:-3px;
+  right:-3px;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:#1677c8;
+  color:white;
+  font-size:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.profile-mini{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  cursor:pointer;
+}
+
+.avatar{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:#dbeafe;
+  color:#1677c8;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+}
+
+.profile-name{
+  font-size:13px;
+  font-weight:600;
 }
 
 .layout{
-  display:flex;
-  min-height:calc(100vh - 76px);
+  display:grid;
+  grid-template-columns:240px 1fr;
+  min-height:calc(100vh - 72px);
 }
 
 .sidebar{
-  width:245px;
   background:#fff;
-  border-right:1px solid var(--border);
-  padding:25px 16px;
+  border-right:1px solid #e5eaf0;
+  padding:25px 15px;
 }
 
-.nav-title{
-  font-size:12px;
-  text-transform:uppercase;
-  letter-spacing:1.5px;
-  color:#94A0B1;
-  padding:0 12px;
-  margin:10px 0;
-}
-
-.nav-item{
+.nav-btn{
   width:100%;
+  text-align:left;
   border:0;
   background:transparent;
-  color:#65748A;
-  text-align:left;
-  padding:13px 14px;
-  border-radius:12px;
+  padding:12px 14px;
+  border-radius:10px;
+  color:#64748b;
   margin-bottom:5px;
+}
+
+.nav-btn.active,
+.nav-btn:hover{
+  background:#eaf4fc;
+  color:#1677c8;
   font-weight:700;
 }
 
-.nav-item:hover,
-.nav-item.active{
-  background:#EAF1FB;
-  color:var(--blue);
-}
-
 .main{
-  flex:1;
-  padding:32px;
-  min-width:0;
+  padding:30px;
+  max-width:1500px;
+  width:100%;
+  margin:auto;
 }
 
-.page-heading{
+.page-title{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:20px;
-  margin-bottom:26px;
+  margin-bottom:25px;
 }
 
-.page-heading h1{
-  font-size:31px;
+.page-title h2{
+  font-size:25px;
 }
 
-.page-heading p{
-  color:var(--muted);
-  margin-top:6px;
-}
-
-.add-case-btn{
-  border:0;
-  background:var(--blue);
-  color:white;
-  border-radius:13px;
-  padding:14px 20px;
-  font-weight:800;
-  white-space:nowrap;
+.page-title p{
+  color:#64748b;
+  font-size:13px;
+  margin-top:5px;
 }
 
 .stats{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:17px;
+  gap:16px;
   margin-bottom:25px;
 }
 
 .stat-card{
   background:white;
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:22px;
-  box-shadow:0 5px 20px rgba(36,52,71,.04);
+  border:1px solid #e7edf3;
+  border-radius:16px;
+  padding:20px;
 }
 
-.stat-label{
-  color:#78869A;
-  font-size:14px;
-  font-weight:700;
+.stat-card span{
+  font-size:12px;
+  color:#64748b;
 }
 
-.stat-value{
-  font-size:31px;
-  font-weight:900;
-  margin-top:9px;
-  color:#1D2B3A;
+.stat-card strong{
+  display:block;
+  font-size:28px;
+  margin-top:8px;
 }
-
-/* ================= DOCTOR OVERVIEW ================= */
 
 .dashboard-grid{
   display:grid;
-  grid-template-columns:1.1fr 1.9fr;
+  grid-template-columns:1.4fr 1fr;
   gap:20px;
-  margin-bottom:25px;
 }
 
-.panel{
+.card{
   background:white;
-  border:1px solid var(--border);
-  border-radius:20px;
+  border:1px solid #e7edf3;
+  border-radius:18px;
   padding:22px;
-  box-shadow:0 5px 20px rgba(36,52,71,.04);
 }
 
-.panel-title{
-  font-size:19px;
-  font-weight:800;
+.card-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
   margin-bottom:20px;
 }
 
-.case-chart{
-  min-height:270px;
+.card-header h3{
+  font-size:16px;
+}
+
+.chart-row{
+  margin-bottom:15px;
+}
+
+.chart-label{
   display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:25px;
-}
-
-.donut{
-  width:170px;
-  height:170px;
-  border-radius:50%;
-  background:conic-gradient(
-    #2F63D8 0 32%,
-    #4C82E6 32% 54%,
-    #6A9AEF 54% 68%,
-    #8DB2F5 68% 79%,
-    #B9D0F8 79% 100%
-  );
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.donut-center{
-  width:105px;
-  height:105px;
-  border-radius:50%;
-  background:white;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-}
-
-.donut-center strong{
-  font-size:27px;
-}
-
-.donut-center span{
+  justify-content:space-between;
   font-size:12px;
-  color:#7B8798;
+  margin-bottom:7px;
 }
 
-.legend{
-  display:flex;
-  flex-direction:column;
-  gap:11px;
+.chart-bg{
+  height:9px;
+  border-radius:20px;
+  background:#edf1f5;
+  overflow:hidden;
 }
 
-.legend-row{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  font-size:13px;
-}
-
-.legend-dot{
-  width:10px;
-  height:10px;
-  border-radius:50%;
-  background:#2F63D8;
+.chart-fill{
+  height:100%;
+  background:#1677c8;
+  border-radius:20px;
 }
 
 /* ================= TABLE ================= */
@@ -507,556 +393,234 @@ button{
 table{
   width:100%;
   border-collapse:collapse;
-  min-width:680px;
 }
 
 th{
   text-align:left;
-  font-size:12px;
-  color:#8793A5;
-  text-transform:uppercase;
-  letter-spacing:.7px;
-  padding:13px 12px;
-  border-bottom:1px solid var(--border);
+  font-size:11px;
+  color:#64748b;
+  padding:13px;
+  background:#f8fafc;
 }
 
 td{
-  padding:17px 12px;
-  border-bottom:1px solid #EDF1F5;
-  font-size:14px;
+  padding:14px 13px;
+  border-bottom:1px solid #edf1f5;
+  font-size:13px;
 }
 
-.case-id{
-  font-weight:800;
-  color:var(--blue);
+.case-row{
+  cursor:pointer;
+}
+
+.case-row:hover{
+  background:#f8fbfe;
+}
+
+.case-row.unread{
+  background:#eef7ff;
+  font-weight:600;
+}
+
+.blue-dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#1677c8;
+  display:inline-block;
+  margin-right:7px;
 }
 
 .status{
-  display:inline-flex;
-  padding:7px 10px;
+  display:inline-block;
+  padding:6px 9px;
   border-radius:20px;
-  font-size:12px;
-  font-weight:800;
+  font-size:10px;
+  font-weight:bold;
+  background:#eef2f6;
 }
 
-.status.new{
-  background:#E5EEFF;
-  color:#2F63D8;
-}
-
-.status.seen{
-  background:#F0F3F7;
-  color:#68788D;
-}
-
-.status.progress{
-  background:#FFF1D8;
-  color:#B87812;
+.status.received{
+  background:#e8f4ff;
+  color:#1677c8;
 }
 
 .status.completed{
-  background:#E4F6ED;
-  color:#28835D;
+  background:#e9f8ef;
+  color:#15803d;
 }
 
-.status.sent{
-  background:#E8E8F8;
-  color:#5B58A4;
+/* ================= CASE ================= */
+
+.case-details{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:20px;
 }
 
-.view-btn{
-  border:0;
-  background:#EDF3FF;
-  color:var(--blue);
-  border-radius:9px;
-  padding:8px 12px;
-  font-weight:800;
+.info-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
 }
 
-/* ================= TEETH ================= */
-
-.arch-box{
-  border:1px solid var(--border);
-  background:#FBFCFE;
-  border-radius:20px;
-  padding:25px 15px 30px;
-  overflow:hidden;
+.info-box{
+  background:#f8fafc;
+  border-radius:12px;
+  padding:13px;
 }
 
-.arch-title{
-  text-align:center;
-  font-size:18px;
-  font-weight:800;
-  color:#52637A;
-  margin-bottom:10px;
+.info-box small{
+  display:block;
+  color:#64748b;
+  font-size:10px;
+  margin-bottom:5px;
 }
 
-.arch{
-  width:min(620px,100%);
-  height:250px;
-  margin:auto;
+.info-box strong{
+  font-size:13px;
+}
+
+.file-box{
+  padding:15px;
+  background:#f8fafc;
+  border-radius:12px;
+  margin-top:15px;
+}
+
+/* ================= DENTAL ARCH ================= */
+
+.arch-wrapper{
+  display:flex;
+  justify-content:center;
+  padding:15px 0;
+}
+
+.dental-arch{
+  width:330px;
+  height:500px;
   position:relative;
 }
 
 .tooth{
   position:absolute;
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  border:2px solid #C9D3DF;
-  background:linear-gradient(145deg,#fff,#E7EDF4);
-  box-shadow:
-    0 5px 10px rgba(37,52,71,.12),
-    inset 0 1px 2px white;
+  width:45px;
+  height:53px;
+  border:2px solid #b8c0c8;
+  background:#fff;
+  border-radius:45% 45% 40% 40%;
   display:flex;
   align-items:center;
   justify-content:center;
+  font-size:13px;
   color:#334155;
-  font-weight:800;
-  font-size:12px;
-  transition:.18s;
-  z-index:2;
+  cursor:pointer;
+  transition:.2s;
 }
 
 .tooth:hover{
-  transform:scale(1.08);
-  border-color:var(--blue);
+  border-color:#1677c8;
+  transform:scale(1.07);
 }
 
 .tooth.selected{
-  background:#2F63D8;
-  border-color:#204FAF;
+  background:#1677c8;
+  border-color:#1677c8;
   color:white;
-  box-shadow:0 7px 18px rgba(47,99,216,.30);
+  box-shadow:0 5px 15px rgba(22,119,200,.25);
 }
 
-.work-badge{
-  position:absolute;
-  bottom:-7px;
-  right:-5px;
-  min-width:17px;
-  height:17px;
-  border-radius:50%;
-  background:#E5A23C;
-  border:2px solid white;
-  display:none;
+/* Upper arch */
+.t11{top:0;left:120px}
+.t12{top:7px;left:72px}
+.t13{top:32px;left:32px}
+.t14{top:70px;left:5px}
+.t15{top:116px;left:-10px}
+.t16{top:165px;left:-17px}
+.t17{top:218px;left:-18px}
+.t18{top:272px;left:-13px}
+
+.t21{top:0;right:120px}
+.t22{top:7px;right:72px}
+.t23{top:32px;right:32px}
+.t24{top:70px;right:5px}
+.t25{top:116px;right:-10px}
+.t26{top:165px;right:-17px}
+.t27{top:218px;right:-18px}
+.t28{top:272px;right:-13px}
+
+/* Lower arch */
+.t38{bottom:272px;left:-13px}
+.t37{bottom:218px;left:-18px}
+.t36{bottom:165px;left:-17px}
+.t35{bottom:116px;left:-10px}
+.t34{bottom:70px;left:5px}
+.t33{bottom:32px;left:32px}
+.t32{bottom:7px;left:72px}
+.t31{bottom:0;left:120px}
+
+.t48{bottom:272px;right:-13px}
+.t47{bottom:218px;right:-18px}
+.t46{bottom:165px;right:-17px}
+.t45{bottom:116px;right:-10px}
+.t44{bottom:70px;right:5px}
+.t43{bottom:32px;right:32px}
+.t42{bottom:7px;right:72px}
+.t41{bottom:0;right:120px}
+
+/* ================= PROFILE ================= */
+
+.profile-panel{
+  max-width:600px;
 }
 
-.tooth.has-work .work-badge{
-  display:block;
-}
-
-.tooth-popup{
-  position:fixed;
-  z-index:1000;
-  width:220px;
-  background:white;
-  border:1px solid var(--border);
-  border-radius:15px;
-  box-shadow:0 20px 45px rgba(0,0,0,.18);
-  padding:10px;
-}
-
-.tooth-popup-title{
-  font-size:12px;
-  color:#7A8798;
-  font-weight:700;
-  padding:5px 8px 8px;
-}
-
-.work-option{
-  width:100%;
-  border:0;
-  background:white;
-  text-align:left;
-  padding:10px;
-  border-radius:9px;
-  font-size:13px;
-}
-
-.work-option:hover{
-  background:#EDF3FF;
-  color:var(--blue);
-}
-
-/* ================= MODAL ================= */
-
-.modal-backdrop{
-  position:fixed;
-  inset:0;
-  background:rgba(19,31,45,.48);
-  z-index:200;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-}
-
-.modal{
-  background:white;
-  width:100%;
-  max-width:850px;
-  max-height:92vh;
-  overflow-y:auto;
-  border-radius:24px;
-  padding:28px;
-}
-
-.modal-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-  margin-bottom:24px;
-}
-
-.close-btn{
-  width:40px;
-  height:40px;
-  border:0;
-  background:#EEF2F6;
-  border-radius:12px;
-  font-size:20px;
-}
-
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-}
-
-.full{
-  grid-column:1/-1;
-}
-
-.gender{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-}
-
-.gender label{
-  border:2px solid var(--border);
-  padding:13px;
-  border-radius:13px;
-  text-align:center;
-  cursor:pointer;
-}
-
-.gender input{
-  display:none;
-}
-
-.gender input:checked + span{
-  color:var(--blue);
-  font-weight:800;
-}
-
-.upload{
-  border:2px dashed #B8C9E3;
-  background:#F7FAFE;
-  border-radius:16px;
-  padding:28px;
-  text-align:center;
-}
-
-.upload strong{
-  display:block;
-  margin-bottom:7px;
-}
-
-.upload small{
-  color:#8190A4;
-}
-
-.modal-actions{
-  display:flex;
-  justify-content:flex-end;
-  gap:12px;
-  margin-top:25px;
-}
-
-.modal-actions .primary-btn{
-  width:auto;
-  padding:14px 25px;
-}
-
-/* ================= PROFILE / NOTIFICATIONS ================= */
-
-.dropdown{
-  position:absolute;
-  right:25px;
-  top:65px;
-  width:300px;
-  background:white;
-  border:1px solid var(--border);
-  border-radius:16px;
-  box-shadow:0 20px 45px rgba(0,0,0,.14);
-  padding:12px;
-  z-index:80;
-}
-
-.notification-item{
-  padding:13px;
-  border-bottom:1px solid #EDF1F5;
-}
-
-.notification-item:last-child{
-  border-bottom:0;
-}
-
-.profile-card{
-  text-align:center;
-}
-
-.profile-photo{
-  width:90px;
-  height:90px;
-  border-radius:50%;
-  background:#E7EEF9;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin:5px auto 15px;
-  font-size:30px;
-  color:var(--blue);
-  font-weight:900;
-  overflow:hidden;
-}
-
-.profile-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-/* ================= ADMIN ================= */
-
-.case-unseen{
-  background:#F5F9FF;
-}
-
-.unseen-dot{
-  width:9px;
-  height:9px;
-  background:#3478E5;
-  border-radius:50%;
-  display:inline-block;
-  margin-right:7px;
-}
-
-.case-details{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
-}
-
-.detail-box{
-  background:#F7F9FC;
-  border-radius:14px;
-  padding:15px;
-}
-
-.detail-box label{
-  display:block;
-  color:#8491A3;
-  font-size:12px;
-  margin-bottom:5px;
-}
-
-.detail-box strong{
-  font-size:15px;
-}
-
-.status-buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-top:18px;
-}
-
-.status-btn{
-  border:1px solid var(--border);
-  background:white;
-  padding:10px 13px;
-  border-radius:10px;
-  font-weight:700;
-}
-
-.status-btn.active{
-  background:var(--blue);
-  color:white;
-  border-color:var(--blue);
-}
-
-/* ================= TOAST ================= */
-
-.toast{
-  position:fixed;
-  right:22px;
-  bottom:22px;
-  z-index:500;
-  background:#182638;
-  color:white;
-  padding:15px 20px;
-  border-radius:14px;
-  box-shadow:0 15px 35px rgba(0,0,0,.2);
-}
-
-/* ================= MOBILE ================= */
+/* ================= RESPONSIVE ================= */
 
 @media(max-width:900px){
+  .layout{
+    grid-template-columns:1fr;
+  }
 
   .sidebar{
     display:none;
   }
 
-  .main{
-    padding:20px 15px;
-  }
-
   .stats{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:1fr 1fr;
   }
 
-  .dashboard-grid{
+  .dashboard-grid,
+  .case-details{
     grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:600px){
+  .main{
+    padding:18px;
   }
 
   .topbar{
     padding:0 15px;
   }
 
-  .topbar-logo .logo-main{
-    font-size:17px;
-  }
-
-  .topbar-logo .logo-sub{
+  .brand-name,
+  .profile-name{
     display:none;
-  }
-
-  .profile-btn span{
-    display:none;
-  }
-
-  .page-heading{
-    align-items:flex-start;
-    flex-direction:column;
-  }
-
-  .add-case-btn{
-    width:100%;
-  }
-
-  .form-grid{
-    grid-template-columns:1fr;
-  }
-
-  .full{
-    grid-column:auto;
-  }
-}
-
-@media(max-width:600px){
-
-  .auth-page{
-    padding:12px;
-    align-items:flex-start;
-  }
-
-  .auth-card{
-    margin-top:12px;
-    padding:25px 18px;
-    border-radius:23px;
-  }
-
-  .auth-logo .logo-mark{
-    font-size:34px;
-  }
-
-  .auth-logo .logo-main{
-    font-size:21px;
-  }
-
-  .auth-title{
-    font-size:34px;
-  }
-
-  .auth-subtitle{
-    font-size:16px;
-  }
-
-  .topbar{
-    height:68px;
   }
 
   .stats{
     grid-template-columns:1fr 1fr;
-    gap:10px;
   }
 
-  .stat-card{
-    padding:16px;
+  .auth-box{
+    padding:25px;
   }
 
-  .stat-value{
-    font-size:25px;
-  }
-
-  .case-chart{
-    flex-direction:column;
-  }
-
-  .donut{
-    width:145px;
-    height:145px;
-  }
-
-  .arch-box{
-    padding:20px 5px 25px;
-  }
-
-  .arch{
-    height:210px;
-    transform:scale(.84);
-    transform-origin:center top;
-    margin-bottom:-30px;
-  }
-
-  .tooth{
-    width:37px;
-    height:37px;
-    font-size:10px;
-  }
-
-  .modal-backdrop{
-    padding:8px;
-    align-items:flex-end;
-  }
-
-  .modal{
-    max-height:95vh;
-    border-radius:22px 22px 0 0;
-    padding:20px 15px;
-  }
-
-  .modal-actions{
-    flex-direction:column-reverse;
-  }
-
-  .modal-actions button{
-    width:100%!important;
-  }
-
-  .case-details{
-    grid-template-columns:1fr;
-  }
-
-  .toast{
-    left:15px;
-    right:15px;
-    bottom:15px;
-    text-align:center;
+  .dental-arch{
+    transform:scale(.78);
+    transform-origin:top center;
+    margin-bottom:-100px;
   }
 }
 </style>
@@ -1064,1606 +628,1483 @@ td{
 
 <body>
 
-<div id="app"></div>
+<!-- ================= AUTH ================= -->
+
+<div id="authPage" class="auth-page">
+
+  <!-- LOGIN -->
+  <div id="loginBox" class="auth-box">
+
+    <div class="logo-area">
+      <div class="logo-circle">HN</div>
+      <h1>HN Dental Digital Lab</h1>
+      <p>Digital Dental Design</p>
+    </div>
+
+    <h2>Welcome Back</h2>
+
+    <div class="form-group">
+      <label>Name or Email</label>
+      <input id="loginIdentifier" type="text" placeholder="Enter your name or email">
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input id="loginPassword" type="password" placeholder="Enter your password">
+    </div>
+
+    <div class="forgot" onclick="forgotPassword()">Forgot Password?</div>
+
+    <button class="primary-btn" onclick="login()">Login</button>
+
+    <div class="auth-switch">
+      Don't have an account?
+      <span onclick="showRegister()">Create Account</span>
+    </div>
+
+    <div class="auth-switch">
+      <span onclick="showAdminLogin()">Admin Login</span>
+    </div>
+
+  </div>
+
+
+  <!-- REGISTER -->
+
+  <div id="registerBox" class="auth-box hidden">
+
+    <div class="logo-area">
+      <div class="logo-circle">HN</div>
+      <h1>HN Dental Digital Lab</h1>
+      <p>Create your account</p>
+    </div>
+
+    <h2>Create Account</h2>
+
+    <div class="form-group">
+      <label>Name</label>
+      <input id="registerName" type="text"
+      placeholder="Doctor, Clinic, Laboratory or Hospital name">
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input id="registerEmail" type="email"
+      placeholder="Enter your email">
+    </div>
+
+    <div class="form-group">
+      <label>Account Type</label>
+      <select id="registerType">
+        <option value="Doctor">Doctor</option>
+        <option value="Clinic">Clinic</option>
+        <option value="Laboratory">Laboratory</option>
+        <option value="Hospital">Hospital</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input id="registerPassword" type="password"
+      placeholder="Create password">
+    </div>
+
+    <div class="form-group">
+      <label>Confirm Password</label>
+      <input id="registerConfirm" type="password"
+      placeholder="Confirm password">
+    </div>
+
+    <button class="primary-btn" onclick="register()">
+      Create Account
+    </button>
+
+    <div class="auth-switch">
+      Already have an account?
+      <span onclick="showLogin()">Login</span>
+    </div>
+
+  </div>
+
+
+  <!-- ADMIN LOGIN -->
+
+  <div id="adminLoginBox" class="auth-box hidden">
+
+    <div class="logo-area">
+      <div class="logo-circle">HN</div>
+      <h1>HN Dental Digital Lab</h1>
+      <p>Administration Portal</p>
+    </div>
+
+    <h2>Admin Login</h2>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input id="adminEmail" type="email"
+      placeholder="Admin email">
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input id="adminPassword" type="password"
+      placeholder="Admin password">
+    </div>
+
+    <div class="forgot" onclick="forgotAdminPassword()">
+      Forgot Password?
+    </div>
+
+    <button class="primary-btn" onclick="adminLogin()">
+      Login as Admin
+    </button>
+
+    <div class="auth-switch">
+      <span onclick="showLogin()">Back to Client Login</span>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= APP ================= -->
+
+<div id="app" class="app hidden">
+
+  <header class="topbar">
+
+    <div class="brand">
+      <div class="brand-logo">HN</div>
+      <div class="brand-name">HN Dental Digital Lab</div>
+    </div>
+
+    <div class="top-actions">
+
+      <div class="notification" onclick="showNotifications()">
+        🔔
+        <div id="notificationCount" class="notification-count">0</div>
+      </div>
+
+      <div class="profile-mini" onclick="openProfile()">
+        <div id="avatar" class="avatar">HN</div>
+        <div id="profileName" class="profile-name">User</div>
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <div class="layout">
+
+    <aside class="sidebar">
+
+      <button class="nav-btn active"
+      onclick="showDashboard()">
+        Overview
+      </button>
+
+      <button class="nav-btn"
+      onclick="showCases()">
+        Cases
+      </button>
+
+      <button id="newCaseNav"
+      class="nav-btn"
+      onclick="showNewCase()">
+        + New Case
+      </button>
+
+      <button class="nav-btn"
+      onclick="openProfile()">
+        Profile
+      </button>
+
+      <button class="nav-btn"
+      onclick="logout()">
+        Logout
+      </button>
+
+    </aside>
+
+
+    <main id="mainContent" class="main"></main>
+
+  </div>
+
+</div>
+
 
 <script>
 
-/* =========================================================
+/* =====================================================
    DATA
-========================================================= */
+===================================================== */
 
 const ADMIN_EMAIL = "admin@hndentaldigitallab.com";
-const ADMIN_PASSWORD = "admin123";
+const ADMIN_PASSWORD = "Admin1234";
 
-const WORK_TYPES = [
-  "Chape",
-  "Crown",
-  "Crown on Implant",
-  "Inlay / Onlay",
-  "Bridge 2 Units",
-  "Bridge 3 Units",
-  "Bridge 4–5 Units",
-  "Bridge 6+ Units",
-  "Bridge on Implant",
-  "Full Arch",
-  "Full Arch on Implant",
-  "All-on-4",
-  "All-on-6",
-  "DSD / Smile Design",
-  "Digital Mock-up"
-];
-
-const UPPER = [
-  "18","17","16","15","14","13","12","11",
-  "21","22","23","24","25","26","27","28"
-];
-
-const LOWER = [
-  "48","47","46","45","44","43","42","41",
-  "31","32","33","34","35","36","37","38"
-];
-
-let users = JSON.parse(localStorage.getItem("hn_users") || "[]");
-let cases = JSON.parse(localStorage.getItem("hn_cases") || "[]");
-let currentUser = JSON.parse(localStorage.getItem("hn_current_user") || "null");
-
-let activePortal = "doctor";
-let activePage = "dashboard";
-let selectedTeeth = {};
-let selectedTooth = null;
-let notificationOpen = false;
-let profileOpen = false;
+let currentUser = null;
+let currentRole = null;
 
 
-/* =========================================================
-   HELPERS
-========================================================= */
+/* =====================================================
+   STORAGE
+===================================================== */
 
-function save(){
-  localStorage.setItem("hn_users",JSON.stringify(users));
-  localStorage.setItem("hn_cases",JSON.stringify(cases));
-  localStorage.setItem("hn_current_user",JSON.stringify(currentUser));
+function getUsers(){
+  return JSON.parse(localStorage.getItem("hn_users") || "[]");
 }
 
-function esc(str=""){
-  return String(str)
-    .replaceAll("&","&amp;")
-    .replaceAll("<","&lt;")
-    .replaceAll(">","&gt;")
-    .replaceAll('"',"&quot;");
+function saveUsers(users){
+  localStorage.setItem("hn_users", JSON.stringify(users));
 }
 
-function toast(message){
-  const old=document.querySelector(".toast");
-  if(old) old.remove();
-
-  const el=document.createElement("div");
-  el.className="toast";
-  el.textContent=message;
-  document.body.appendChild(el);
-
-  setTimeout(()=>el.remove(),2800);
+function getCases(){
+  return JSON.parse(localStorage.getItem("hn_cases") || "[]");
 }
 
-function initials(name){
-  return (name||"U")
-    .split(" ")
-    .filter(Boolean)
-    .slice(0,2)
-    .map(x=>x[0])
-    .join("")
-    .toUpperCase();
-}
-
-function statusClass(status){
-  if(status==="New") return "new";
-  if(status==="Seen - Not Started") return "seen";
-  if(status==="In Progress") return "progress";
-  if(status==="Completed") return "completed";
-  return "sent";
-}
-
-function formatDate(date){
-  if(!date) return "-";
-  return new Date(date).toLocaleDateString("en-GB");
+function saveCases(cases){
+  localStorage.setItem("hn_cases", JSON.stringify(cases));
 }
 
 
-/* =========================================================
+/* =====================================================
    AUTH PAGE
-========================================================= */
+===================================================== */
 
-function authPage(mode="login"){
+function showLogin(){
 
-  activePortal = activePortal || "doctor";
+  document.getElementById("authPage").classList.remove("hidden");
 
-  const isSignup = mode==="signup";
-
-  document.getElementById("app").innerHTML = `
-    <div class="auth-page">
-
-      <div class="auth-card">
-
-        <div class="logo auth-logo">
-          <div class="logo-mark">HN</div>
-          <div class="logo-text">
-            <div class="logo-main">DENTAL LAB</div>
-            <div class="logo-sub">DENTAL DIGITAL LAB</div>
-          </div>
-        </div>
-
-        <div class="portal-tabs">
-          <button class="portal-tab ${activePortal==="doctor"?"active":""}"
-            onclick="switchPortal('doctor')">
-            Doctor
-          </button>
-
-          <button class="portal-tab ${activePortal==="admin"?"active":""}"
-            onclick="switchPortal('admin')">
-            Admin
-          </button>
-        </div>
-
-        ${
-          activePortal==="doctor"
-          ? doctorAuth(mode,isSignup)
-          : adminAuth()
-        }
-
-      </div>
-    </div>
-  `;
+  document.getElementById("loginBox").classList.remove("hidden");
+  document.getElementById("registerBox").classList.add("hidden");
+  document.getElementById("adminLoginBox").classList.add("hidden");
 }
 
-function doctorAuth(mode,isSignup){
+function showRegister(){
 
-  if(isSignup){
+  document.getElementById("authPage").classList.remove("hidden");
 
-    return `
-      <h1 class="auth-title">Create Account</h1>
-      <p class="auth-subtitle">
-        Create your dental professional account.
-      </p>
-
-      <form onsubmit="doctorSignup(event)">
-
-        <div class="form-group">
-          <label class="form-label">Name</label>
-          <input id="signupName"
-                 class="form-input"
-                 placeholder="Your name, clinic, lab or hospital"
-                 required>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Email</label>
-          <input id="signupEmail"
-                 type="email"
-                 class="form-input"
-                 placeholder="your@email.com"
-                 required>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Password</label>
-          <input id="signupPassword"
-                 type="password"
-                 class="form-input"
-                 placeholder="Create a password"
-                 required>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Confirm Password</label>
-          <input id="signupConfirm"
-                 type="password"
-                 class="form-input"
-                 placeholder="Confirm your password"
-                 required>
-        </div>
-
-        <button class="primary-btn">
-          Create Account
-        </button>
-
-      </form>
-
-      <div class="switch-auth">
-        Already have an account?
-        <span onclick="authPage('login')">Sign In</span>
-      </div>
-    `;
-  }
-
-  return `
-    <h1 class="auth-title">Doctor Portal</h1>
-    <p class="auth-subtitle">
-      Sign in to manage your dental cases.
-    </p>
-
-    <form onsubmit="doctorLogin(event)">
-
-      <div class="form-group">
-        <label class="form-label">Name or Email</label>
-        <input id="loginIdentity"
-               class="form-input"
-               placeholder="Name or email"
-               required>
-      </div>
-
-      <div class="form-group">
-        <label class="form-label">Password</label>
-        <input id="loginPassword"
-               type="password"
-               class="form-input"
-               placeholder="Password"
-               required>
-      </div>
-
-      <span class="forgot" onclick="forgotPassword()">
-        Forgot Password?
-      </span>
-
-      <button class="primary-btn">
-        Sign In
-      </button>
-
-    </form>
-
-    <div class="switch-auth">
-      Don't have an account?
-      <span onclick="authPage('signup')">Create Account</span>
-    </div>
-  `;
+  document.getElementById("loginBox").classList.add("hidden");
+  document.getElementById("registerBox").classList.remove("hidden");
+  document.getElementById("adminLoginBox").classList.add("hidden");
 }
 
-function adminAuth(){
+function showAdminLogin(){
 
-  return `
-    <h1 class="auth-title">Admin Portal</h1>
+  document.getElementById("authPage").classList.remove("hidden");
 
-    <p class="auth-subtitle">
-      Sign in to manage all dental cases.
-    </p>
-
-    <form onsubmit="adminLogin(event)">
-
-      <div class="form-group">
-        <label class="form-label">Name or Email</label>
-
-        <input id="adminIdentity"
-               class="form-input"
-               value=""
-               placeholder="Admin email"
-               autocomplete="username"
-               required>
-      </div>
-
-      <div class="form-group">
-        <label class="form-label">Password</label>
-
-        <input id="adminPassword"
-               type="password"
-               class="form-input"
-               placeholder="Password"
-               autocomplete="current-password"
-               required>
-      </div>
-
-      <span class="forgot" onclick="forgotAdmin()">
-        Forgot Password?
-      </span>
-
-      <button class="primary-btn">
-        Sign In
-      </button>
-
-    </form>
-
-    <div class="switch-auth">
-      Doctor Portal?
-      <span onclick="switchPortal('doctor')">Sign In</span>
-    </div>
-  `;
+  document.getElementById("loginBox").classList.add("hidden");
+  document.getElementById("registerBox").classList.add("hidden");
+  document.getElementById("adminLoginBox").classList.remove("hidden");
 }
 
 
-/* =========================================================
-   AUTH ACTIONS
-========================================================= */
+/* =====================================================
+   REGISTER
+===================================================== */
 
-function switchPortal(portal){
-  activePortal=portal;
-  authPage("login");
-}
+function register(){
 
-function doctorSignup(e){
-  e.preventDefault();
+  const name =
+  document.getElementById("registerName").value.trim();
 
-  const name=document.getElementById("signupName").value.trim();
-  const email=document.getElementById("signupEmail").value.trim().toLowerCase();
-  const password=document.getElementById("signupPassword").value;
-  const confirm=document.getElementById("signupConfirm").value;
+  const email =
+  document.getElementById("registerEmail").value.trim().toLowerCase();
 
-  if(password!==confirm){
-    toast("Passwords do not match.");
+  const type =
+  document.getElementById("registerType").value;
+
+  const password =
+  document.getElementById("registerPassword").value;
+
+  const confirm =
+  document.getElementById("registerConfirm").value;
+
+
+  if(!name || !email || !password || !confirm){
+
+    alert("Please complete all fields.");
     return;
   }
 
-  if(users.some(u=>u.email===email)){
-    toast("This email is already registered.");
+  if(password !== confirm){
+
+    alert("Passwords do not match.");
     return;
   }
 
-  users.push({
-    id:"USR-"+Date.now(),
-    name,
-    email,
-    password,
-    photo:"",
+  if(password.length < 6){
+
+    alert("Password must contain at least 6 characters.");
+    return;
+  }
+
+
+  let users = getUsers();
+
+  if(users.some(u => u.email === email)){
+
+    alert("This email is already registered.");
+    return;
+  }
+
+
+  const user = {
+
+    id: "USR-" + Date.now(),
+
+    name:name,
+
+    email:email,
+
+    type:type,
+
+    password:password,
+
     createdAt:new Date().toISOString()
-  });
 
-  save();
-
-  toast("Account created successfully.");
-
-  setTimeout(()=>authPage("login"),700);
-}
-
-function doctorLogin(e){
-  e.preventDefault();
-
-  const identity=document.getElementById("loginIdentity").value.trim().toLowerCase();
-  const password=document.getElementById("loginPassword").value;
-
-  const user=users.find(u=>
-    (u.email.toLowerCase()===identity ||
-     u.name.toLowerCase()===identity) &&
-    u.password===password
-  );
-
-  if(!user){
-    toast("Invalid name/email or password.");
-    return;
-  }
-
-  currentUser={
-    role:"doctor",
-    ...user
   };
 
-  save();
-  renderDoctor();
+
+  users.push(user);
+
+  saveUsers(users);
+
+
+  /* IMPORTANT:
+     AUTOMATIC LOGIN AFTER REGISTER
+  */
+
+  currentUser = user;
+  currentRole = "client";
+
+  localStorage.setItem(
+    "hn_current_user",
+    JSON.stringify(user)
+  );
+
+  localStorage.setItem(
+    "hn_role",
+    "client"
+  );
+
+
+  openApp();
+
 }
 
-function adminLogin(e){
-  e.preventDefault();
 
-  const identity=document
-    .getElementById("adminIdentity")
-    .value
-    .trim()
-    .toLowerCase();
+/* =====================================================
+   LOGIN
+===================================================== */
 
-  const password=document
-    .getElementById("adminPassword")
-    .value;
+function login(){
 
-  if(
-    identity===ADMIN_EMAIL.toLowerCase() &&
-    password===ADMIN_PASSWORD
-  ){
-    currentUser={
-      role:"admin",
-      name:"HN Dental Lab",
-      email:ADMIN_EMAIL
-    };
+  const identifier =
+  document.getElementById("loginIdentifier").value
+  .trim()
+  .toLowerCase();
 
-    save();
-    renderAdmin();
+  const password =
+  document.getElementById("loginPassword").value;
+
+
+  const users = getUsers();
+
+  const user = users.find(u =>
+
+    (
+      u.email.toLowerCase() === identifier ||
+      u.name.toLowerCase() === identifier
+    )
+    &&
+    u.password === password
+
+  );
+
+
+  if(!user){
+
+    alert("Incorrect name/email or password.");
     return;
   }
 
-  toast("Invalid admin login.");
-}
 
-function forgotPassword(){
+  currentUser = user;
+  currentRole = "client";
 
-  const email=prompt("Enter your registered email:");
 
-  if(!email) return;
-
-  const user=users.find(
-    u=>u.email.toLowerCase()===email.trim().toLowerCase()
+  localStorage.setItem(
+    "hn_current_user",
+    JSON.stringify(user)
   );
 
-  if(user){
-    toast("Password recovery instructions would be sent by email.");
-  }else{
-    toast("No account found with this email.");
+  localStorage.setItem(
+    "hn_role",
+    "client"
+  );
+
+
+  openApp();
+
+}
+
+
+/* =====================================================
+   ADMIN LOGIN
+===================================================== */
+
+function adminLogin(){
+
+  const email =
+  document.getElementById("adminEmail").value
+  .trim()
+  .toLowerCase();
+
+  const password =
+  document.getElementById("adminPassword").value;
+
+
+  if(
+    email !== ADMIN_EMAIL ||
+    password !== ADMIN_PASSWORD
+  ){
+
+    alert("Incorrect admin email or password.");
+    return;
   }
+
+
+  currentUser = {
+
+    id:"ADMIN",
+
+    name:"HN Dental Admin",
+
+    email:ADMIN_EMAIL,
+
+    type:"Admin"
+
+  };
+
+  currentRole = "admin";
+
+
+  localStorage.setItem(
+    "hn_current_user",
+    JSON.stringify(currentUser)
+  );
+
+  localStorage.setItem(
+    "hn_role",
+    "admin"
+  );
+
+
+  openApp();
+
 }
 
-function forgotAdmin(){
-  toast("Admin password recovery will be connected to email in the final backend version.");
+
+/* =====================================================
+   OPEN APP
+===================================================== */
+
+function openApp(){
+
+  document.getElementById("authPage")
+  .classList.add("hidden");
+
+  document.getElementById("app")
+  .classList.remove("hidden");
+
+
+  document.getElementById("profileName")
+  .textContent = currentUser.name;
+
+  document.getElementById("avatar")
+  .textContent =
+  currentUser.name
+  .substring(0,2)
+  .toUpperCase();
+
+
+  if(currentRole === "admin"){
+
+    document.getElementById("newCaseNav")
+    .classList.add("hidden");
+
+    showAdminDashboard();
+
+  }else{
+
+    document.getElementById("newCaseNav")
+    .classList.remove("hidden");
+
+    showDashboard();
+
+  }
+
+  updateNotifications();
+
 }
 
-function logout(){
-  currentUser=null;
-  localStorage.removeItem("hn_current_user");
-  activePortal="doctor";
-  authPage("login");
-}
 
+/* =====================================================
+   DASHBOARD
+===================================================== */
 
-/* =========================================================
-   DOCTOR APP
-========================================================= */
+function showDashboard(){
 
-function renderDoctor(){
+  const cases =
+  getCases().filter(c =>
+    c.userId === currentUser.id
+  );
 
-  activePage="dashboard";
+  const total = cases.length;
 
-  document.getElementById("app").innerHTML=`
-    <div class="app">
-
-      ${topbar("doctor")}
-
-      <div class="layout">
-
-        <aside class="sidebar">
-
-          <div class="nav-title">Doctor Portal</div>
-
-          <button class="nav-item active"
-            onclick="doctorPage('dashboard')">
-            ◫ &nbsp; Dashboard
-          </button>
-
-          <button class="nav-item"
-            onclick="doctorPage('cases')">
-            ▣ &nbsp; My Cases
-          </button>
-
-          <button class="nav-item"
-            onclick="openNewCase()">
-            ＋ &nbsp; New Case
-          </button>
-
-          <button class="nav-item"
-            onclick="openProfile()">
-            ◯ &nbsp; Profile
-          </button>
-
-          <div style="margin-top:30px">
-            <button class="nav-item" onclick="logout()">
-              ↪ &nbsp; Sign Out
-            </button>
-          </div>
-
-        </aside>
-
-        <main class="main" id="doctorMain"></main>
-
-      </div>
-
-      <div id="overlayArea"></div>
-
-    </div>
-  `;
-
-  doctorDashboard();
-}
-
-function topbar(role){
-
-  const unread=cases.filter(c=>
-    role==="admin" ? c.adminUnread : c.doctorUnread
+  const active =
+  cases.filter(c =>
+    c.status !== "Completed"
   ).length;
 
-  return `
-    <header class="topbar">
+  const completed =
+  cases.filter(c =>
+    c.status === "Completed"
+  ).length;
 
-      <div class="logo topbar-logo">
-        <div class="logo-mark">HN</div>
-        <div class="logo-text">
-          <div class="logo-main">DENTAL LAB</div>
-          <div class="logo-sub">DENTAL DIGITAL LAB</div>
-        </div>
-      </div>
 
-      <div class="top-actions">
+  document.getElementById("mainContent").innerHTML = `
 
-        <button class="icon-btn"
-          onclick="toggleNotifications('${role}')">
-          🔔
-          ${unread ? `<span class="notification-dot"></span>` : ""}
-        </button>
-
-        <button class="profile-btn"
-          onclick="toggleProfile()">
-          <div class="avatar">
-            ${initials(currentUser?.name)}
-          </div>
-          <span>${esc(currentUser?.name || "Profile")}</span>
-          ▾
-        </button>
-
-      </div>
-
-    </header>
-  `;
-}
-
-function doctorPage(page){
-  activePage=page;
-
-  if(page==="dashboard") doctorDashboard();
-  if(page==="cases") doctorCases();
-}
-
-function doctorDashboard(){
-
-  const mine=cases.filter(c=>c.doctorId===currentUser.id);
-
-  document.getElementById("doctorMain").innerHTML=`
-
-    <div class="page-heading">
+    <div class="page-title">
 
       <div>
-        <h1>Overview</h1>
-        <p>Welcome back, ${esc(currentUser.name)}.</p>
+        <h2>Overview</h2>
+        <p>Welcome back, ${escapeHtml(currentUser.name)}</p>
       </div>
 
-      <button class="add-case-btn"
-        onclick="openNewCase()">
-        ＋ New Case
+      <button class="primary-btn"
+      style="width:auto;padding:11px 18px"
+      onclick="showNewCase()">
+        + New Case
       </button>
 
     </div>
+
 
     <div class="stats">
 
       <div class="stat-card">
-        <div class="stat-label">Total Cases</div>
-        <div class="stat-value">${mine.length}</div>
+        <span>Total Cases</span>
+        <strong>${total}</strong>
       </div>
 
       <div class="stat-card">
-        <div class="stat-label">New</div>
-        <div class="stat-value">
-          ${mine.filter(c=>c.status==="New").length}
-        </div>
+        <span>Active Cases</span>
+        <strong>${active}</strong>
       </div>
 
       <div class="stat-card">
-        <div class="stat-label">In Progress</div>
-        <div class="stat-value">
-          ${mine.filter(c=>c.status==="In Progress").length}
-        </div>
+        <span>Completed</span>
+        <strong>${completed}</strong>
       </div>
 
       <div class="stat-card">
-        <div class="stat-label">Completed</div>
-        <div class="stat-value">
-          ${mine.filter(c=>c.status==="Completed").length}
-        </div>
+        <span>Notifications</span>
+        <strong>${getNotificationsCount()}</strong>
       </div>
 
     </div>
+
 
     <div class="dashboard-grid">
 
-      <div class="panel">
+      <div class="card">
 
-        <div class="panel-title">
-          Case Type
+        <div class="card-header">
+          <h3>Case Type Overview</h3>
         </div>
 
-        <div class="case-chart">
-
-          <div class="donut">
-            <div class="donut-center">
-              <strong>${mine.length}</strong>
-              <span>This Month</span>
-            </div>
-          </div>
-
-          <div class="legend">
-
-            <div class="legend-row">
-              <span class="legend-dot"></span>
-              Crown
-            </div>
-
-            <div class="legend-row">
-              <span class="legend-dot"></span>
-              Bridge
-            </div>
-
-            <div class="legend-row">
-              <span class="legend-dot"></span>
-              Implant
-            </div>
-
-            <div class="legend-row">
-              <span class="legend-dot"></span>
-              Chape
-            </div>
-
-            <div class="legend-row">
-              <span class="legend-dot"></span>
-              Other
-            </div>
-
-          </div>
-
-        </div>
+        ${renderCaseChart(cases)}
 
       </div>
 
-      <div class="panel">
 
-        <div class="panel-title">
-          Recent Cases
+      <div class="card">
+
+        <div class="card-header">
+
+          <h3>Recent Cases</h3>
+
+          <button
+          class="secondary-btn"
+          onclick="showCases()">
+          View All
+          </button>
+
         </div>
 
-        ${caseTable(mine.slice(-6).reverse(),"doctor")}
+        ${renderRecentCases(cases)}
 
       </div>
 
     </div>
+
   `;
 }
 
-function doctorCases(){
 
-  const mine=cases
-    .filter(c=>c.doctorId===currentUser.id)
-    .reverse();
+/* =====================================================
+   ADMIN DASHBOARD
+===================================================== */
 
-  document.getElementById("doctorMain").innerHTML=`
+function showAdminDashboard(){
 
-    <div class="page-heading">
+  const cases = getCases();
+
+  const clients = getUsers();
+
+  const active =
+  cases.filter(c => c.status !== "Completed").length;
+
+  const completed =
+  cases.filter(c => c.status === "Completed").length;
+
+
+  document.getElementById("mainContent").innerHTML = `
+
+    <div class="page-title">
 
       <div>
-        <h1>My Cases</h1>
-        <p>All your submitted dental cases.</p>
-      </div>
-
-      <button class="add-case-btn"
-        onclick="openNewCase()">
-        ＋ New Case
-      </button>
-
-    </div>
-
-    <div class="panel">
-      ${caseTable(mine,"doctor")}
-    </div>
-  `;
-}
-
-
-/* =========================================================
-   ADMIN APP
-========================================================= */
-
-function renderAdmin(){
-
-  document.getElementById("app").innerHTML=`
-
-    <div class="app">
-
-      ${topbar("admin")}
-
-      <div class="layout">
-
-        <aside class="sidebar">
-
-          <div class="nav-title">Admin Portal</div>
-
-          <button class="nav-item active"
-            onclick="adminPage('dashboard')">
-            ◫ &nbsp; Dashboard
-          </button>
-
-          <button class="nav-item"
-            onclick="adminPage('all')">
-            ▣ &nbsp; All Cases
-          </button>
-
-          <button class="nav-item"
-            onclick="adminPage('new')">
-            ● &nbsp; New Cases
-          </button>
-
-          <button class="nav-item"
-            onclick="adminPage('progress')">
-            ◌ &nbsp; In Progress
-          </button>
-
-          <button class="nav-item"
-            onclick="adminPage('completed')">
-            ✓ &nbsp; Completed
-          </button>
-
-          <button class="nav-item"
-            onclick="adminPage('sent')">
-            ➜ &nbsp; Sent
-          </button>
-
-          <div style="margin-top:30px">
-
-            <button class="nav-item"
-              onclick="logout()">
-              ↪ &nbsp; Sign Out
-            </button>
-
-          </div>
-
-        </aside>
-
-        <main class="main" id="adminMain"></main>
-
-      </div>
-
-      <div id="overlayArea"></div>
-
-    </div>
-  `;
-
-  adminDashboard();
-}
-
-function adminPage(page){
-  activePage=page;
-
-  if(page==="dashboard") adminDashboard();
-  else adminCases(page);
-}
-
-function adminDashboard(){
-
-  document.getElementById("adminMain").innerHTML=`
-
-    <div class="page-heading">
-
-      <div>
-        <h1>Overview</h1>
-        <p>All dental cases received by HN Dental Lab.</p>
+        <h2>Admin Overview</h2>
+        <p>All clients and cases</p>
       </div>
 
     </div>
+
 
     <div class="stats">
 
       <div class="stat-card">
-        <div class="stat-label">Total Cases</div>
-        <div class="stat-value">${cases.length}</div>
+        <span>Total Clients</span>
+        <strong>${clients.length}</strong>
       </div>
 
       <div class="stat-card">
-        <div class="stat-label">New Cases</div>
-        <div class="stat-value">
-          ${cases.filter(c=>c.status==="New").length}
-        </div>
+        <span>Total Cases</span>
+        <strong>${cases.length}</strong>
       </div>
 
       <div class="stat-card">
-        <div class="stat-label">In Progress</div>
-        <div class="stat-value">
-          ${cases.filter(c=>c.status==="In Progress").length}
-        </div>
+        <span>Active Cases</span>
+        <strong>${active}</strong>
       </div>
 
       <div class="stat-card">
-        <div class="stat-label">Completed</div>
-        <div class="stat-value">
-          ${cases.filter(c=>c.status==="Completed").length}
-        </div>
+        <span>Completed</span>
+        <strong>${completed}</strong>
       </div>
 
     </div>
 
-    <div class="panel">
 
-      <div class="panel-title">
-        Recent Cases
+    <div class="dashboard-grid">
+
+      <div class="card">
+
+        <div class="card-header">
+          <h3>Case Type Overview</h3>
+        </div>
+
+        ${renderCaseChart(cases)}
+
       </div>
 
-      ${caseTable(cases.slice(-10).reverse(),"admin")}
+
+      <div class="card">
+
+        <div class="card-header">
+          <h3>Latest Cases</h3>
+
+          <button
+          class="secondary-btn"
+          onclick="showCases()">
+          View Cases
+          </button>
+        </div>
+
+        ${renderRecentCases(cases)}
+
+      </div>
 
     </div>
+
   `;
 }
 
-function adminCases(filter){
 
-  let list=[...cases];
+/* =====================================================
+   CHART
+===================================================== */
 
-  if(filter==="new")
-    list=list.filter(c=>c.status==="New");
+function renderCaseChart(cases){
 
-  if(filter==="progress")
-    list=list.filter(c=>c.status==="In Progress");
-
-  if(filter==="completed")
-    list=list.filter(c=>c.status==="Completed");
-
-  if(filter==="sent")
-    list=list.filter(c=>c.status==="Sent");
-
-  list.reverse();
-
-  document.getElementById("adminMain").innerHTML=`
-
-    <div class="page-heading">
-
-      <div>
-        <h1>${filter==="all"?"All Cases":filter.replace("-"," ")}</h1>
-        <p>Manage dental cases.</p>
-      </div>
-
-    </div>
-
-    <div class="panel">
-
-      <div style="margin-bottom:18px">
-
-        <input class="form-input"
-          placeholder="Search by patient, doctor or case ID..."
-          oninput="searchAdmin(this.value)">
-
-      </div>
-
-      <div id="adminTable">
-        ${caseTable(list,"admin")}
-      </div>
-
-    </div>
-  `;
-}
-
-function searchAdmin(query){
-
-  query=query.toLowerCase();
-
-  const list=cases.filter(c=>
-    c.id.toLowerCase().includes(query) ||
-    c.patient.toLowerCase().includes(query) ||
-    c.doctorName.toLowerCase().includes(query)
-  ).reverse();
-
-  document.getElementById("adminTable").innerHTML=
-    caseTable(list,"admin");
-}
-
-
-/* =========================================================
-   TABLE
-========================================================= */
-
-function caseTable(list,role){
-
-  if(!list.length){
+  if(cases.length === 0){
 
     return `
-      <div style="padding:40px;text-align:center;color:#8290A3">
+      <p style="color:#64748b;font-size:13px">
         No cases yet.
-      </div>
+      </p>
     `;
   }
 
-  return `
-    <div class="table-wrap">
 
-      <table>
+  const counts = {};
 
-        <thead>
-          <tr>
-            <th>Case ID</th>
-            ${role==="admin" ? "<th>Doctor</th>" : ""}
-            <th>Patient</th>
-            <th>Work</th>
-            <th>Date</th>
-            <th>Status</th>
-            <th></th>
-          </tr>
-        </thead>
+  cases.forEach(c => {
 
-        <tbody>
+    const type =
+    c.services?.length
+    ? c.services.join(", ")
+    : "Other";
 
-          ${list.map(c=>`
+    counts[type] =
+    (counts[type] || 0) + 1;
 
-            <tr class="${c.adminUnread&&role==="admin"?"case-unseen":""}">
+  });
 
-              <td>
-                ${c.adminUnread&&role==="admin"
-                  ? `<span class="unseen-dot"></span>`
-                  : ""}
-                <span class="case-id">${esc(c.id)}</span>
-              </td>
 
-              ${role==="admin"
-                ? `<td>${esc(c.doctorName)}</td>`
-                : ""}
+  return Object.entries(counts)
+  .map(([name,count]) => {
 
-              <td>${esc(c.patient)}</td>
+    const percentage =
+    Math.round((count/cases.length)*100);
 
-              <td>
-                ${esc(Object.values(c.teeth||{})[0] || c.work || "-")}
-              </td>
+    return `
 
-              <td>${formatDate(c.createdAt)}</td>
+      <div class="chart-row">
 
-              <td>
-                <span class="status ${statusClass(c.status)}">
-                  ${esc(c.status)}
-                </span>
-              </td>
+        <div class="chart-label">
 
-              <td>
-                <button class="view-btn"
-                  onclick="openCase('${c.id}')">
-                  View
-                </button>
-              </td>
+          <span>${escapeHtml(name)}</span>
+
+          <span>${percentage}%</span>
+
+        </div>
+
+        <div class="chart-bg">
+
+          <div class="chart-fill"
+          style="width:${percentage}%">
+          </div>
+
+        </div>
+
+      </div>
+
+    `;
+
+  }).join("");
+
+}
+
+
+/* =====================================================
+   RECENT CASES
+===================================================== */
+
+function renderRecentCases(cases){
+
+  if(!cases.length){
+
+    return `
+      <p style="color:#64748b;font-size:13px">
+        No cases yet.
+      </p>
+    `;
+  }
+
+
+  return cases
+  .slice()
+  .sort((a,b) =>
+    new Date(b.createdAt) -
+    new Date(a.createdAt)
+  )
+  .slice(0,5)
+  .map(c => `
+
+    <div
+    onclick="openCase('${c.id}')"
+    style="
+    padding:13px 0;
+    border-bottom:1px solid #edf1f5;
+    cursor:pointer;
+    ">
+
+      <strong style="font-size:13px">
+        ${c.id}
+      </strong>
+
+      <div style="
+      color:#64748b;
+      font-size:11px;
+      margin-top:4px">
+
+        ${escapeHtml(c.patientName)}
+        · ${escapeHtml(c.status)}
+
+      </div>
+
+    </div>
+
+  `).join("");
+
+}
+
+
+/* =====================================================
+   CASES
+===================================================== */
+
+function showCases(){
+
+  let cases = getCases();
+
+  if(currentRole === "client"){
+
+    cases =
+    cases.filter(c =>
+      c.userId === currentUser.id
+    );
+
+  }
+
+
+  cases.sort((a,b) => {
+
+    if(currentRole === "admin"){
+
+      if(a.readByAdmin !== b.readByAdmin){
+
+        return a.readByAdmin ? 1 : -1;
+
+      }
+
+    }
+
+    return new Date(b.createdAt) -
+    new Date(a.createdAt);
+
+  });
+
+
+  document.getElementById("mainContent").innerHTML = `
+
+    <div class="page-title">
+
+      <div>
+
+        <h2>Cases</h2>
+
+        <p>
+        ${currentRole === "admin"
+          ? "All client cases"
+          : "Your submitted cases"}
+        </p>
+
+      </div>
+
+
+      ${
+        currentRole === "client"
+
+        ? `
+
+        <button
+        class="primary-btn"
+        style="width:auto;padding:11px 18px"
+        onclick="showNewCase()">
+
+          + New Case
+
+        </button>
+
+        `
+
+        : ""
+
+      }
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="table-wrap">
+
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>Case ID</th>
+
+              ${
+                currentRole === "admin"
+                ? "<th>Client</th>"
+                : ""
+              }
+
+              <th>Patient</th>
+
+              <th>Service</th>
+
+              <th>Tooth</th>
+
+              <th>Status</th>
+
+              <th>Due Date</th>
 
             </tr>
 
-          `).join("")}
+          </thead>
 
-        </tbody>
 
-      </table>
+          <tbody>
 
-    </div>
-  `;
-}
+            ${
+              cases.length
+              ? cases.map(c => `
 
+                <tr
+                class="case-row
+                ${currentRole==="admin" && !c.readByAdmin
+                  ? "unread"
+                  : ""}"
+                onclick="openCase('${c.id}')">
 
-/* =========================================================
-   NEW CASE
-========================================================= */
+                  <td>
 
-function openNewCase(){
+                    ${
+                      currentRole==="admin" &&
+                      !c.readByAdmin
+                      ? '<span class="blue-dot"></span>'
+                      : ""
+                    }
 
-  selectedTeeth={};
-  selectedTooth=null;
+                    ${c.id}
 
-  document.getElementById("overlayArea").innerHTML=`
+                  </td>
 
-    <div class="modal-backdrop"
-      onclick="if(event.target===this)closeModal()">
 
-      <div class="modal">
+                  ${
+                    currentRole === "admin"
 
-        <div class="modal-head">
+                    ? `
+                      <td>
+                        ${escapeHtml(c.userName)}
+                      </td>
+                    `
 
-          <div>
-            <h2>New Dental Case</h2>
-            <p style="color:#7B8798;margin-top:5px">
-              Create and send a new case to HN Dental Lab.
-            </p>
-          </div>
+                    : ""
+                  }
 
-          <button class="close-btn"
-            onclick="closeModal()">×</button>
 
-        </div>
+                  <td>
+                    ${escapeHtml(c.patientName)}
+                  </td>
 
-        <form onsubmit="submitCase(event)">
 
-          <div class="form-grid">
+                  <td>
+                    ${escapeHtml(
+                      c.services.join(", ")
+                    )}
+                  </td>
 
-            <div class="form-group">
-              <label class="form-label">
-                Patient Name
-              </label>
 
-              <input id="patientName"
-                class="form-input"
-                placeholder="Patient name"
-                required>
-            </div>
+                  <td>
+                    ${c.teeth.join(", ")}
+                  </td>
 
-            <div class="form-group">
 
-              <label class="form-label">
-                Gender
-              </label>
+                  <td>
 
-              <div class="gender">
+                    <span class="status
+                    ${
+                      c.status === "Completed"
+                      ? "completed"
+                      : "received"
+                    }">
 
-                <label>
-                  <input type="radio"
-                    name="gender"
-                    value="Male"
-                    checked>
-                  <span>Male</span>
-                </label>
+                      ${c.status}
 
-                <label>
-                  <input type="radio"
-                    name="gender"
-                    value="Female">
-                  <span>Female</span>
-                </label>
+                    </span>
 
-              </div>
+                  </td>
 
-            </div>
 
-            <div class="full">
+                  <td>
+                    ${c.dueDate || "-"}
+                  </td>
 
-              <label class="form-label">
-                Teeth & Work
-              </label>
+                </tr>
 
-              <div class="arch-box">
+              `).join("")
 
-                <div class="arch-title">
-                  Upper Arch
-                </div>
+              :
 
-                <div class="arch"
-                  id="upperArch"></div>
+              `
+                <tr>
+                  <td colspan="7"
+                  style="text-align:center;padding:40px">
+                    No cases found.
+                  </td>
+                </tr>
+              `
+            }
 
-                <div class="arch-title"
-                  style="margin-top:8px">
-                  Lower Arch
-                </div>
+          </tbody>
 
-                <div class="arch"
-                  id="lowerArch"></div>
-
-              </div>
-
-              <div style="margin-top:13px">
-
-                <strong>Selected Teeth & Work</strong>
-
-                <div id="selectedSummary"
-                  style="margin-top:8px;color:#718096">
-                  Click a tooth to select the work.
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="form-group">
-
-              <label class="form-label">
-                Shade
-              </label>
-
-              <select id="shade"
-                class="form-select">
-
-                <option value="">Select shade</option>
-                <option>A1</option>
-                <option>A2</option>
-                <option>A3</option>
-                <option>A3.5</option>
-                <option>B1</option>
-                <option>B2</option>
-                <option>C1</option>
-                <option>D2</option>
-                <option>BL1</option>
-                <option>BL2</option>
-
-              </select>
-
-            </div>
-
-            <div class="form-group">
-
-              <label class="form-label">
-                Expected Delivery
-              </label>
-
-              <input id="deliveryDate"
-                type="date"
-                class="form-input"
-                required>
-
-            </div>
-
-            <div class="form-group full">
-
-              <label class="form-label">
-                Additional Instructions
-              </label>
-
-              <textarea id="instructions"
-                class="form-textarea"
-                placeholder="Write any instructions for the laboratory..."></textarea>
-
-            </div>
-
-            <div class="form-group full">
-
-              <label class="form-label">
-                Upload Files
-              </label>
-
-              <div class="upload">
-
-                <strong>
-                  Upload your dental files
-                </strong>
-
-                <small>
-                  STL, PLY, OBJ, JPG, PNG, ZIP
-                </small>
-
-                <input id="caseFiles"
-                  type="file"
-                  multiple
-                  accept=".stl,.ply,.obj,.jpg,.jpeg,.png,.zip"
-                  style="display:block;margin:20px auto 0;max-width:100%">
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="modal-actions">
-
-            <button type="button"
-              class="secondary-btn"
-              onclick="closeModal()">
-              Cancel
-            </button>
-
-            <button class="primary-btn">
-              Submit Case
-            </button>
-
-          </div>
-
-        </form>
+        </table>
 
       </div>
 
     </div>
+
   `;
-
-  drawArches();
 }
 
-function drawArches(){
 
-  drawArch("upperArch",UPPER,true);
-  drawArch("lowerArch",LOWER,false);
+/* =====================================================
+   NEW CASE
+===================================================== */
 
-}
+function showNewCase(){
 
-function drawArch(id,teeth,upper){
+  if(currentRole !== "client"){
+    return;
+  }
 
-  const container=document.getElementById(id);
 
-  if(!container) return;
+  document.getElementById("mainContent").innerHTML = `
 
-  container.innerHTML="";
+    <div class="page-title">
 
-  const count=teeth.length;
+      <div>
 
-  teeth.forEach((number,i)=>{
+        <h2>New Case</h2>
 
-    const tooth=document.createElement("button");
+        <p>Send a new dental case</p>
 
-    tooth.type="button";
-    tooth.className="tooth";
+      </div>
 
-    if(selectedTeeth[number])
-      tooth.classList.add("selected","has-work");
-
-    tooth.innerHTML=`
-      ${number}
-      <span class="work-badge"></span>
-    `;
-
-    /*
-      Creates a smooth dental arch.
-      This is intentionally calculated instead of using
-      a diagonal flex layout, so it stays stable on mobile.
-    */
-
-    const x=5+(i/(count-1))*90;
-
-    const center=(count-1)/2;
-
-    const distance=Math.abs(i-center);
-
-    const y=upper
-      ? 15 + Math.pow(distance,1.65)*4.1
-      : 15 + Math.pow(distance,1.65)*4.1;
-
-    const rotate=(i-center)*3.4;
-
-    tooth.style.left=`${x}%`;
-    tooth.style.top=`${Math.min(y,190)}px`;
-    tooth.style.transform=`translateX(-50%) rotate(${rotate}deg)`;
-
-    tooth.onclick=(e)=>{
-      e.stopPropagation();
-      openToothMenu(number,tooth);
-    };
-
-    container.appendChild(tooth);
-  });
-}
-
-function openToothMenu(number,button){
-
-  selectedTooth=number;
-
-  const old=document.querySelector(".tooth-popup");
-  if(old) old.remove();
-
-  const popup=document.createElement("div");
-  popup.className="tooth-popup";
-
-  popup.innerHTML=`
-    <div class="tooth-popup-title">
-      Tooth ${number} — Select work
     </div>
 
-    ${WORK_TYPES.map(work=>`
 
-      <button class="work-option"
-        onclick="selectToothWork('${number}','${work.replaceAll("'","\\'")}')">
-        ${work}
+    <div class="card">
+
+      <div class="form-group">
+
+        <label>Patient Name / Reference</label>
+
+        <input id="patientName"
+        placeholder="Patient name or reference">
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>Case Type</label>
+
+        <select id="caseType">
+
+          <option value="Crown">Crown</option>
+          <option value="Chape">Chape</option>
+          <option value="Bridge">Bridge</option>
+          <option value="Implant">Implant</option>
+          <option value="Veneer">Veneer</option>
+          <option value="Full Zirconia">Full Zirconia</option>
+          <option value="Other">Other</option>
+
+        </select>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>Select Teeth</label>
+
+        <div class="arch-wrapper">
+
+          <div class="dental-arch">
+
+            ${generateTeeth()}
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>Service</label>
+
+        <select id="serviceSelect">
+
+          <option value="Crown">Crown</option>
+          <option value="Chape">Chape</option>
+          <option value="Bridge">Bridge</option>
+          <option value="Implant">Implant</option>
+          <option value="Veneer">Veneer</option>
+          <option value="Full Zirconia">Full Zirconia</option>
+
+        </select>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>Shade</label>
+
+        <select id="shade">
+
+          <option value="">Select Shade</option>
+
+          <option>A1</option>
+          <option>A2</option>
+          <option>A3</option>
+          <option>A3.5</option>
+          <option>A4</option>
+
+          <option>B1</option>
+          <option>B2</option>
+          <option>B3</option>
+          <option>B4</option>
+
+          <option>C1</option>
+          <option>C2</option>
+          <option>C3</option>
+          <option>C4</option>
+
+          <option>D2</option>
+          <option>D3</option>
+          <option>D4</option>
+
+        </select>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>Due Date</label>
+
+        <input id="dueDate"
+        type="date">
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>Notes</label>
+
+        <textarea id="notes"
+        rows="4"
+        placeholder="Add instructions or notes about this case"></textarea>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>Upload Case File</label>
+
+        <input id="caseFile"
+        type="file">
+
+      </div>
+
+
+      <button
+      class="primary-btn"
+      onclick="submitCase()">
+
+        Submit Case
+
       </button>
 
-    `).join("")}
+    </div>
 
-    <button class="work-option"
-      style="color:#D95757"
-      onclick="removeTooth('${number}')">
-      Remove selection
-    </button>
   `;
-
-  document.body.appendChild(popup);
-
-  const rect=button.getBoundingClientRect();
-
-  let left=rect.left;
-  let top=rect.bottom+8;
-
-  if(left+220>window.innerWidth-10)
-    left=window.innerWidth-230;
-
-  if(top+300>window.innerHeight)
-    top=rect.top-310;
-
-  popup.style.left=Math.max(8,left)+"px";
-  popup.style.top=Math.max(8,top)+"px";
 }
 
-function selectToothWork(number,work){
 
-  selectedTeeth[number]=work;
+/* =====================================================
+   TEETH
+===================================================== */
 
-  closeToothMenu();
+function generateTeeth(){
 
-  drawArches();
-  updateSelectedSummary();
-}
+  const teeth = [
 
-function removeTooth(number){
+    11,12,13,14,15,16,17,18,
+    21,22,23,24,25,26,27,28,
+    38,37,36,35,34,33,32,31,
+    48,47,46,45,44,43,42,41
 
-  delete selectedTeeth[number];
+  ];
 
-  closeToothMenu();
 
-  drawArches();
-  updateSelectedSummary();
-}
+  return teeth.map(n => `
 
-function closeToothMenu(){
+    <div
+    class="tooth t${n}"
+    data-tooth="${n}"
+    onclick="selectTooth(${n})">
 
-  const popup=document.querySelector(".tooth-popup");
-  if(popup) popup.remove();
-}
+      ${n}
 
-document.addEventListener("click",e=>{
-  if(!e.target.closest(".tooth") &&
-     !e.target.closest(".tooth-popup")){
-    closeToothMenu();
-  }
-});
+    </div>
 
-function updateSelectedSummary(){
-
-  const box=document.getElementById("selectedSummary");
-
-  if(!box) return;
-
-  const entries=Object.entries(selectedTeeth);
-
-  if(!entries.length){
-    box.textContent="Click a tooth to select the work.";
-    return;
-  }
-
-  box.innerHTML=entries.map(([tooth,work])=>`
-    <span style="
-      display:inline-flex;
-      background:#EAF1FB;
-      color:#2F63D8;
-      padding:7px 10px;
-      border-radius:9px;
-      margin:3px;
-      font-size:12px;
-      font-weight:700;">
-      ${tooth} · ${esc(work)}
-    </span>
   `).join("");
+
 }
 
-function submitCase(e){
 
-  e.preventDefault();
+let selectedTeeth = [];
 
-  if(!Object.keys(selectedTeeth).length){
-    toast("Please select at least one tooth.");
-    return;
+
+function selectTooth(tooth){
+
+  const element =
+  document.querySelector(
+    `.tooth[data-tooth="${tooth}"]`
+  );
+
+
+  if(selectedTeeth.includes(tooth)){
+
+    selectedTeeth =
+    selectedTeeth.filter(t => t !== tooth);
+
+    element.classList.remove("selected");
+
+  }else{
+
+    selectedTeeth.push(tooth);
+
+    element.classList.add("selected");
+
   }
 
-  const files=[
-    ...document.getElementById("caseFiles").files
-  ].map(f=>({
-    name:f.name,
-    size:f.size,
-    type:f.type
-  }));
+}
 
-  const newCase={
 
-    id:"HN-"+String(Date.now()).slice(-6),
+/* =====================================================
+   SUBMIT CASE
+===================================================== */
 
-    doctorId:currentUser.id,
+function submitCase(){
 
-    doctorName:currentUser.name,
+  const patient =
+  document.getElementById("patientName")
+  .value.trim();
 
-    doctorEmail:currentUser.email,
+  const caseType =
+  document.getElementById("caseType").value;
 
-    patient:document.getElementById("patientName").value.trim(),
+  const service =
+  document.getElementById("serviceSelect").value;
 
-    gender:
-      document.querySelector('input[name="gender"]:checked')?.value || "",
+  const shade =
+  document.getElementById("shade").value;
 
-    teeth:{...selectedTeeth},
+  const dueDate =
+  document.getElementById("dueDate").value;
 
-    work:Object.values(selectedTeeth)[0],
+  const notes =
+  document.getElementById("notes").value.trim();
 
-    shade:document.getElementById("shade").value,
+  const file =
+  document.getElementById("caseFile").files[0];
 
-    deliveryDate:document.getElementById("deliveryDate").value,
 
-    instructions:document.getElementById("instructions").value.trim(),
+  if(!patient){
 
-    files,
+    alert("Please enter patient name/reference.");
+    return;
 
-    status:"New",
+  }
+
+
+  if(selectedTeeth.length === 0){
+
+    alert("Please select at least one tooth.");
+    return;
+
+  }
+
+
+  let cases = getCases();
+
+
+  const caseNumber =
+  String(cases.length + 1)
+  .padStart(4,"0");
+
+
+  const newCase = {
+
+    id:"HN-" +
+    new Date().getFullYear() +
+    "-" +
+    caseNumber,
+
+    userId:currentUser.id,
+
+    userName:currentUser.name,
+
+    patientName:patient,
+
+    caseType:caseType,
+
+    services:[service],
+
+    teeth:selectedTeeth.slice(),
+
+    shade:shade,
+
+    dueDate:dueDate,
+
+    notes:notes,
+
+    fileName:file ? file.name : "",
+
+    status:"Received",
+
+    readByAdmin:false,
 
     createdAt:new Date().toISOString(),
 
-    statusHistory:[
-      {
-        status:"New",
-        date:new Date().toISOString()
-      }
-    ],
+    updatedAt:new Date().toISOString()
 
-    doctorUnread:false,
-    adminUnread:true
   };
+
 
   cases.push(newCase);
 
-  save();
+  saveCases(cases);
 
-  closeModal();
 
-  toast("Case submitted successfully.");
+  selectedTeeth = [];
 
-  doctorDashboard();
+
+  alert(
+    "Case submitted successfully!\n\n" +
+    newCase.id
+  );
+
+
+  showCases();
+
+  updateNotifications();
+
 }
 
 
-/* =========================================================
-   CASE DETAILS
-========================================================= */
+/* =====================================================
+   OPEN CASE
+===================================================== */
 
 function openCase(id){
 
-  const c=cases.find(x=>x.id===id);
+  let cases = getCases();
 
-  if(!c) return;
+  const index =
+  cases.findIndex(c => c.id === id);
 
-  if(currentUser.role==="admin"){
-    c.adminUnread=false;
-  }else{
-    c.doctorUnread=false;
+
+  if(index === -1){
+
+    alert("Case not found.");
+    return;
+
   }
 
-  save();
 
-  document.getElementById("overlayArea").innerHTML=`
+  const c = cases[index];
 
-    <div class="modal-backdrop"
-      onclick="if(event.target===this)closeModal()">
 
-      <div class="modal">
+  /* ADMIN VIEW */
 
-        <div class="modal-head">
+  if(currentRole === "admin"){
 
-          <div>
-            <h2>Case ${esc(c.id)}</h2>
+    c.readByAdmin = true;
 
-            <p style="color:#7B8798;margin-top:5px">
-              ${formatDate(c.createdAt)}
-            </p>
-          </div>
+    c.updatedAt =
+    new Date().toISOString();
 
-          <button class="close-btn"
-            onclick="closeModal()">×</button>
+    cases[index] = c;
 
-        </div>
+    saveCases(cases);
 
-        <div class="case-details">
+  }
 
-          <div class="detail-box">
-            <label>Patient</label>
-            <strong>${esc(c.patient)}</strong>
-          </div>
 
-          <div class="detail-box">
-            <label>Gender</label>
-            <strong>${esc(c.gender)}</strong>
-          </div>
+  document.getElementById("mainContent").innerHTML = `
 
-          <div class="detail-box">
-            <label>Doctor / Clinic</label>
-            <strong>${esc(c.doctorName)}</strong>
-          </div>
+    <div class="page-title">
 
-          <div class="detail-box">
-            <label>Email</label>
-            <strong>${esc(c.doctorEmail)}</strong>
-          </div>
+      <div>
 
-          <div class="detail-box">
-            <label>Shade</label>
-            <strong>${esc(c.shade||"-")}</strong>
-          </div>
+        <h2>Case ${c.id}</h2>
 
-          <div class="detail-box">
-            <label>Expected Delivery</label>
-            <strong>${formatDate(c.deliveryDate)}</strong>
-          </div>
+        <p>
+        Case details
+        </p>
 
-          <div class="detail-box" style="grid-column:1/-1">
+      </div>
 
-            <label>Selected Teeth & Work</label>
 
-            <div style="margin-top:7px">
+      <button
+      class="secondary-btn"
+      onclick="showCases()">
 
-              ${Object.entries(c.teeth||{}).map(([tooth,work])=>`
-                <span style="
-                  display:inline-flex;
-                  background:#EAF1FB;
-                  color:#2F63D8;
-                  padding:8px 10px;
-                  border-radius:9px;
-                  margin:3px;
-                  font-size:12px;
-                  font-weight:700;">
-                  Tooth ${tooth}: ${esc(work)}
-                </span>
-              `).join("")}
+        ← Back to Cases
 
-            </div>
+      </button>
 
-          </div>
+    </div>
 
-          <div class="detail-box" style="grid-column:1/-1">
 
-            <label>Instructions</label>
+    <div class="case-details">
 
-            <div style="margin-top:7px">
-              ${esc(c.instructions||"No additional instructions.")}
-            </div>
 
-          </div>
+      <div class="card">
 
-          <div class="detail-box" style="grid-column:1/-1">
+        <div class="card-header">
 
-            <label>Uploaded Files</label>
-
-            <div style="margin-top:7px">
-
-              ${
-                c.files?.length
-                ? c.files.map(f=>`
-                    <div style="padding:7px 0">
-                      📎 ${esc(f.name)}
-                    </div>
-                  `).join("")
-                : "No files uploaded."
-              }
-
-            </div>
-
-          </div>
+          <h3>Dental Arch</h3>
 
         </div>
 
-        ${
-          currentUser.role==="admin"
-          ? `
 
-            <div style="margin-top:25px">
+        <div class="arch-wrapper">
 
-              <strong>Case Status</strong>
+          <div class="dental-arch">
 
-              <div class="status-buttons">
-
-                ${[
-                  "New",
-                  "Seen - Not Started",
-                  "In Progress",
-                  "Completed",
-                  "Sent"
-                ].map(status=>`
-
-                  <button
-                    class="status-btn ${c.status===status?"active":""}"
-                    onclick="changeStatus('${c.id}','${status}')">
-                    ${status}
-                  </button>
-
-                `).join("")}
-
-              </div>
-
-            </div>
-
-          `
-          : ""
-        }
-
-        <div style="margin-top:25px">
-
-          <strong>Status History</strong>
-
-          <div style="margin-top:12px">
-
-            ${(c.statusHistory||[]).map(h=>`
-
-              <div style="
-                display:flex;
-                justify-content:space-between;
-                padding:11px 0;
-                border-bottom:1px solid #EDF1F5;">
-
-                <span>${esc(h.status)}</span>
-
-                <span style="color:#8290A3;font-size:12px">
-                  ${new Date(h.date).toLocaleString()}
-                </span>
-
-              </div>
-
-            `).join("")}
+            ${generateReadOnlyArch(c.teeth)}
 
           </div>
 
@@ -2671,306 +2112,656 @@ function openCase(id){
 
       </div>
 
+
+      <div class="card">
+
+        <div class="card-header">
+
+          <h3>Case Information</h3>
+
+        </div>
+
+
+        <div class="info-grid">
+
+          <div class="info-box">
+
+            <small>Case ID</small>
+
+            <strong>${c.id}</strong>
+
+          </div>
+
+
+          ${
+            currentRole === "admin"
+
+            ? `
+
+              <div class="info-box">
+
+                <small>Client</small>
+
+                <strong>
+                ${escapeHtml(c.userName)}
+                </strong>
+
+              </div>
+
+            `
+
+            : ""
+
+          }
+
+
+          <div class="info-box">
+
+            <small>Patient</small>
+
+            <strong>
+            ${escapeHtml(c.patientName)}
+            </strong>
+
+          </div>
+
+
+          <div class="info-box">
+
+            <small>Case Type</small>
+
+            <strong>
+            ${escapeHtml(c.caseType)}
+            </strong>
+
+          </div>
+
+
+          <div class="info-box">
+
+            <small>Service</small>
+
+            <strong>
+            ${escapeHtml(c.services.join(", "))}
+            </strong>
+
+          </div>
+
+
+          <div class="info-box">
+
+            <small>Teeth</small>
+
+            <strong>
+            ${c.teeth.join(", ")}
+            </strong>
+
+          </div>
+
+
+          <div class="info-box">
+
+            <small>Shade</small>
+
+            <strong>
+            ${c.shade || "-"}
+            </strong>
+
+          </div>
+
+
+          <div class="info-box">
+
+            <small>Due Date</small>
+
+            <strong>
+            ${c.dueDate || "-"}
+            </strong>
+
+          </div>
+
+
+          <div class="info-box">
+
+            <small>Status</small>
+
+            <strong>
+            ${c.status}
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="file-box">
+
+          <small style="
+          color:#64748b;
+          display:block;
+          margin-bottom:6px">
+
+            Notes
+
+          </small>
+
+          <div style="font-size:13px">
+
+            ${
+              escapeHtml(c.notes)
+              || "No notes."
+            }
+
+          </div>
+
+        </div>
+
+
+        <div class="file-box">
+
+          <small style="
+          color:#64748b;
+          display:block;
+          margin-bottom:6px">
+
+            File
+
+          </small>
+
+          <div style="font-size:13px">
+
+            ${
+              c.fileName
+              ? escapeHtml(c.fileName)
+              : "No file uploaded."
+            }
+
+          </div>
+
+        </div>
+
+
+        ${
+          currentRole === "admin"
+
+          ? `
+
+          <div style="margin-top:20px">
+
+            <label style="
+            display:block;
+            font-size:12px;
+            font-weight:bold;
+            margin-bottom:7px">
+
+              Update Status
+
+            </label>
+
+            <select id="adminStatus"
+            style="
+            width:100%;
+            padding:12px;
+            border:1px solid #d8e0e8;
+            border-radius:10px">
+
+              <option
+              ${c.status==="Received"?"selected":""}>
+              Received
+              </option>
+
+              <option
+              ${c.status==="Opened"?"selected":""}>
+              Opened
+              </option>
+
+              <option
+              ${c.status==="In Design"?"selected":""}>
+              In Design
+              </option>
+
+              <option
+              ${c.status==="In Production"?"selected":""}>
+              In Production
+              </option>
+
+              <option
+              ${c.status==="Completed"?"selected":""}>
+              Completed
+              </option>
+
+              <option
+              ${c.status==="Sent"?"selected":""}>
+              Sent
+              </option>
+
+            </select>
+
+
+            <button
+            class="primary-btn"
+            style="margin-top:10px"
+            onclick="updateCaseStatus('${c.id}')">
+
+              Update Status
+
+            </button>
+
+          </div>
+
+          `
+
+          : ""
+
+        }
+
+      </div>
+
     </div>
+
   `;
+
+
+  updateNotifications();
+
 }
 
-function changeStatus(id,status){
 
-  const c=cases.find(x=>x.id===id);
+/* =====================================================
+   READ ONLY ARCH
+===================================================== */
 
-  if(!c) return;
+function generateReadOnlyArch(selected){
 
-  c.status=status;
+  const teeth = [
 
-  c.statusHistory=c.statusHistory||[];
+    11,12,13,14,15,16,17,18,
+    21,22,23,24,25,26,27,28,
+    38,37,36,35,34,33,32,31,
+    48,47,46,45,44,43,42,41
 
-  c.statusHistory.push({
-    status,
-    date:new Date().toISOString()
-  });
+  ];
 
-  c.doctorUnread=true;
 
-  save();
+  return teeth.map(n => `
+
+    <div
+    class="tooth t${n}
+    ${selected.includes(n) ? "selected" : ""}">
+
+      ${n}
+
+    </div>
+
+  `).join("");
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateCaseStatus(id){
+
+  const newStatus =
+  document.getElementById("adminStatus").value;
+
+
+  let cases = getCases();
+
+  const index =
+  cases.findIndex(c => c.id === id);
+
+
+  if(index === -1){
+    return;
+  }
+
+
+  cases[index].status = newStatus;
+
+  cases[index].updatedAt =
+  new Date().toISOString();
+
+
+  saveCases(cases);
+
+
+  alert("Case status updated.");
 
   openCase(id);
 
-  toast("Status updated.");
+  updateNotifications();
+
 }
 
 
-/* =========================================================
-   NOTIFICATIONS
-========================================================= */
-
-function toggleNotifications(role){
-
-  notificationOpen=!notificationOpen;
-
-  const old=document.getElementById("notificationDropdown");
-
-  if(old){
-    old.remove();
-    return;
-  }
-
-  const relevant=role==="admin"
-    ? cases.filter(c=>c.adminUnread)
-    : cases.filter(c=>
-        c.doctorId===currentUser.id &&
-        c.doctorUnread
-      );
-
-  const box=document.createElement("div");
-
-  box.id="notificationDropdown";
-  box.className="dropdown";
-
-  box.innerHTML=`
-
-    <strong style="display:block;padding:8px">
-      Notifications
-    </strong>
-
-    ${
-      relevant.length
-      ? relevant.slice(-6).reverse().map(c=>`
-          <div class="notification-item"
-            onclick="openCase('${c.id}')">
-
-            <strong>${esc(c.id)}</strong>
-
-            <div style="color:#718096;margin-top:4px">
-              Case status: ${esc(c.status)}
-            </div>
-
-          </div>
-        `).join("")
-      : `
-        <div style="
-          padding:25px;
-          text-align:center;
-          color:#8290A3">
-          No new notifications.
-        </div>
-      `
-    }
-
-  `;
-
-  document.body.appendChild(box);
-
-  const btn=document.querySelector(".icon-btn");
-  const rect=btn.getBoundingClientRect();
-
-  box.style.position="fixed";
-  box.style.top=(rect.bottom+8)+"px";
-  box.style.right="20px";
-}
-
-function toggleProfile(){
-
-  const old=document.getElementById("profileDropdown");
-
-  if(old){
-    old.remove();
-    return;
-  }
-
-  const box=document.createElement("div");
-
-  box.id="profileDropdown";
-  box.className="dropdown profile-card";
-
-  box.innerHTML=`
-
-    <div class="profile-photo">
-      ${initials(currentUser?.name)}
-    </div>
-
-    <h3>${esc(currentUser.name)}</h3>
-
-    <p style="color:#718096;margin:6px 0 20px">
-      ${esc(currentUser.email||"")}
-    </p>
-
-    <button class="secondary-btn"
-      style="width:100%"
-      onclick="openProfile()">
-      Profile Settings
-    </button>
-
-    <button class="secondary-btn"
-      style="width:100%;margin-top:8px"
-      onclick="logout()">
-      Sign Out
-    </button>
-  `;
-
-  document.body.appendChild(box);
-
-  const btn=document.querySelector(".profile-btn");
-  const rect=btn.getBoundingClientRect();
-
-  box.style.position="fixed";
-  box.style.top=(rect.bottom+8)+"px";
-  box.style.right="20px";
-}
-
-
-/* =========================================================
+/* =====================================================
    PROFILE
-========================================================= */
+===================================================== */
 
 function openProfile(){
 
-  document.querySelectorAll(".dropdown").forEach(x=>x.remove());
+  document.getElementById("mainContent").innerHTML = `
 
-  document.getElementById("overlayArea").innerHTML=`
+    <div class="page-title">
 
-    <div class="modal-backdrop"
-      onclick="if(event.target===this)closeModal()">
+      <div>
 
-      <div class="modal" style="max-width:500px">
+        <h2>Profile</h2>
 
-        <div class="modal-head">
+        <p>Your account information</p>
 
-          <h2>Profile</h2>
+      </div>
 
-          <button class="close-btn"
-            onclick="closeModal()">×</button>
+    </div>
+
+
+    <div class="card profile-panel">
+
+      <div style="
+      display:flex;
+      align-items:center;
+      gap:15px;
+      margin-bottom:25px">
+
+        <div class="avatar"
+        style="width:70px;height:70px;font-size:20px">
+
+          ${currentUser.name
+            .substring(0,2)
+            .toUpperCase()}
 
         </div>
 
-        <div class="profile-card">
+        <div>
 
-          <div class="profile-photo">
-            ${initials(currentUser.name)}
-          </div>
+          <h3>
+          ${escapeHtml(currentUser.name)}
+          </h3>
 
-          <input type="file"
-            accept="image/*"
-            onchange="changeProfilePhoto(event)">
+          <p style="
+          color:#64748b;
+          font-size:12px;
+          margin-top:5px">
 
-          <div style="margin-top:25px;text-align:left">
+            ${escapeHtml(currentUser.email)}
 
-            <div class="form-group">
+          </p>
 
-              <label class="form-label">Name</label>
+        </div>
 
-              <input id="profileName"
-                class="form-input"
-                value="${esc(currentUser.name)}">
+      </div>
 
-            </div>
 
-            <div class="form-group">
+      <div class="info-grid">
 
-              <label class="form-label">Email</label>
+        <div class="info-box">
 
-              <input class="form-input"
-                value="${esc(currentUser.email)}"
-                disabled>
+          <small>Name</small>
 
-            </div>
+          <strong>
+          ${escapeHtml(currentUser.name)}
+          </strong>
 
-          </div>
+        </div>
 
-          <button class="primary-btn"
-            onclick="saveProfile()">
-            Save Changes
-          </button>
+
+        <div class="info-box">
+
+          <small>Email</small>
+
+          <strong>
+          ${escapeHtml(currentUser.email)}
+          </strong>
+
+        </div>
+
+
+        <div class="info-box">
+
+          <small>Account Type</small>
+
+          <strong>
+          ${escapeHtml(currentUser.type)}
+          </strong>
+
+        </div>
+
+
+        <div class="info-box">
+
+          <small>Account ID</small>
+
+          <strong>
+          ${currentUser.id}
+          </strong>
 
         </div>
 
       </div>
 
     </div>
+
   `;
+
 }
 
-function changeProfilePhoto(e){
 
-  const file=e.target.files[0];
+/* =====================================================
+   NOTIFICATIONS
+===================================================== */
 
-  if(!file) return;
+function getNotificationsCount(){
 
-  const reader=new FileReader();
+  const cases = getCases();
 
-  reader.onload=()=>{
 
-    currentUser.photo=reader.result;
+  if(currentRole === "admin"){
 
-    const user=users.find(u=>u.id===currentUser.id);
+    return cases.filter(c =>
+      !c.readByAdmin
+    ).length;
 
-    if(user) user.photo=reader.result;
+  }
 
-    save();
 
-    toast("Profile photo updated.");
-  };
+  return cases.filter(c =>
+    c.userId === currentUser.id
+    &&
+    c.status !== "Completed"
+  ).length;
 
-  reader.readAsDataURL(file);
 }
 
-function saveProfile(){
 
-  const name=document.getElementById("profileName").value.trim();
+function updateNotifications(){
 
-  if(!name){
-    toast("Name cannot be empty.");
+  const count =
+  getNotificationsCount();
+
+
+  document.getElementById(
+    "notificationCount"
+  ).textContent = count;
+
+}
+
+
+function showNotifications(){
+
+  const cases = getCases();
+
+
+  let list;
+
+
+  if(currentRole === "admin"){
+
+    list =
+    cases.filter(c =>
+      !c.readByAdmin
+    );
+
+  }else{
+
+    list =
+    cases.filter(c =>
+      c.userId === currentUser.id
+    );
+
+  }
+
+
+  if(!list.length){
+
+    alert("No new notifications.");
+    return;
+
+  }
+
+
+  alert(
+    list.map(c =>
+      `${c.id} — ${c.status}`
+    ).join("\n")
+  );
+
+}
+
+
+/* =====================================================
+   FORGOT PASSWORD
+===================================================== */
+
+function forgotPassword(){
+
+  const email =
+  prompt("Enter your registered email:");
+
+  if(!email){
     return;
   }
 
-  currentUser.name=name;
 
-  const user=users.find(u=>u.id===currentUser.id);
+  const users = getUsers();
 
-  if(user) user.name=name;
-
-  save();
-
-  closeModal();
-
-  renderDoctor();
-
-  toast("Profile updated.");
-}
+  const user =
+  users.find(u =>
+    u.email === email.trim().toLowerCase()
+  );
 
 
-/* =========================================================
-   MODAL
-========================================================= */
+  if(!user){
 
-function closeModal(){
+    alert("No account found with this email.");
+    return;
 
-  document.getElementById("overlayArea").innerHTML="";
-
-  selectedTeeth={};
-  selectedTooth=null;
-
-  closeToothMenu();
-}
-
-
-/* =========================================================
-   START
-========================================================= */
-
-if(currentUser){
-
-  if(currentUser.role==="admin"){
-    renderAdmin();
-  }else{
-    renderDoctor();
   }
 
-}else{
 
-  authPage("login");
+  alert(
+    "For the final version, password recovery will be connected to email.\n\n" +
+    "Your account was found successfully."
+  );
 
 }
+
+
+function forgotAdminPassword(){
+
+  alert(
+    "Admin password recovery will be connected to secure email recovery in the production version."
+  );
+
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+function logout(){
+
+  currentUser = null;
+
+  currentRole = null;
+
+  localStorage.removeItem("hn_current_user");
+
+  localStorage.removeItem("hn_role");
+
+
+  document.getElementById("app")
+  .classList.add("hidden");
+
+  document.getElementById("authPage")
+  .classList.remove("hidden");
+
+
+  showLogin();
+
+}
+
+
+/* =====================================================
+   AUTO LOGIN
+===================================================== */
+
+function checkSession(){
+
+  const savedUser =
+  localStorage.getItem("hn_current_user");
+
+  const savedRole =
+  localStorage.getItem("hn_role");
+
+
+  if(savedUser && savedRole){
+
+    currentUser =
+    JSON.parse(savedUser);
+
+    currentRole =
+    savedRole;
+
+    openApp();
+
+  }else{
+
+    showLogin();
+
+  }
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHtml(text){
+
+  if(text === undefined || text === null){
+    return "";
+  }
+
+  return String(text)
+  .replace(/&/g,"&amp;")
+  .replace(/</g,"&lt;")
+  .replace(/>/g,"&gt;")
+  .replace(/"/g,"&quot;")
+  .replace(/'/g,"&#039;");
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+checkSession();
 
 </script>
 
