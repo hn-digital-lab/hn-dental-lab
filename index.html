@@ -6,35 +6,37 @@
 <title>HN Dental Lab</title>
 
 <style>
-:root{
-  --blue:#1769e0;
-  --blue-dark:#0f4fae;
-  --blue-soft:#eaf2ff;
-  --navy:#172a3a;
-  --gray:#64748b;
-  --light:#f4f7fb;
-  --border:#dfe6ef;
-  --white:#ffffff;
-  --green:#18a66a;
-  --orange:#f2a900;
-  --red:#e04b4b;
-  --shadow:0 10px 30px rgba(24,55,90,.08);
-  --radius:14px;
-}
-
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
 }
 
-body{
-  font-family:Inter,Arial,sans-serif;
-  background:#f5f8fc;
-  color:var(--navy);
+:root{
+  --blue:#2F63D8;
+  --blue-dark:#204FAF;
+  --navy:#182638;
+  --text:#243447;
+  --muted:#718096;
+  --bg:#F3F6FA;
+  --card:#FFFFFF;
+  --border:#DCE4EE;
+  --soft:#EAF1FB;
+  --green:#3A9B72;
+  --orange:#E5A23C;
+  --red:#D95757;
 }
 
-button,input,select,textarea{
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+button,
+input,
+select,
+textarea{
   font:inherit;
 }
 
@@ -51,28 +53,34 @@ button{
 .logo{
   display:flex;
   align-items:center;
-  gap:10px;
-  font-weight:800;
-  color:#111827;
-  letter-spacing:-.5px;
+  gap:12px;
+  user-select:none;
 }
 
 .logo-mark{
-  font-size:29px;
+  font-size:38px;
   font-weight:900;
+  letter-spacing:-4px;
+  color:#111827;
   line-height:1;
 }
 
 .logo-text{
-  font-size:18px;
-  line-height:1;
+  border-left:2px solid #1F2937;
+  padding-left:12px;
+}
+
+.logo-main{
+  font-size:25px;
+  font-weight:800;
+  color:#111827;
 }
 
 .logo-sub{
-  font-size:8px;
+  font-size:10px;
   letter-spacing:4px;
-  margin-top:5px;
-  color:#555;
+  color:#596579;
+  margin-top:4px;
 }
 
 /* ================= AUTH ================= */
@@ -80,271 +88,157 @@ button{
 .auth-page{
   min-height:100vh;
   display:flex;
-  align-items:center;
   justify-content:center;
-  padding:30px;
+  align-items:center;
+  padding:30px 16px;
   background:
-    radial-gradient(circle at 15% 15%,#e8f2ff 0,transparent 30%),
-    radial-gradient(circle at 90% 80%,#eaf4ff 0,transparent 30%),
-    #f6f9fd;
+    radial-gradient(circle at top left,#E8F0FC 0,#F3F6FA 38%,#EEF2F7 100%);
 }
 
-.auth-wrap{
+.auth-card{
   width:100%;
-  max-width:1100px;
-  min-height:650px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
+  max-width:570px;
   background:white;
   border:1px solid var(--border);
-  border-radius:24px;
-  overflow:hidden;
-  box-shadow:0 25px 70px rgba(24,55,90,.12);
+  border-radius:28px;
+  padding:42px;
+  box-shadow:0 25px 70px rgba(36,52,71,.12);
 }
 
-.auth-visual{
-  position:relative;
-  padding:55px;
-  background:
-    linear-gradient(135deg,rgba(23,105,224,.96),rgba(15,79,174,.96)),
-    url("https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1200&q=80");
-  background-size:cover;
-  background-position:center;
-  color:white;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-}
-
-.auth-visual .logo{
-  color:white;
-}
-
-.auth-visual .logo-sub{
-  color:#dceaff;
-}
-
-.auth-visual h1{
-  font-size:42px;
-  line-height:1.1;
-  max-width:430px;
-}
-
-.auth-visual p{
-  margin-top:18px;
-  max-width:430px;
-  color:#e8f1ff;
-  line-height:1.7;
-}
-
-.auth-badge{
-  display:inline-flex;
-  padding:9px 14px;
-  background:rgba(255,255,255,.13);
-  border:1px solid rgba(255,255,255,.25);
-  border-radius:30px;
-  margin-bottom:20px;
-  font-size:13px;
-}
-
-.auth-form-area{
-  padding:45px;
-  display:flex;
-  align-items:center;
+.auth-logo{
   justify-content:center;
+  margin-bottom:38px;
 }
 
-.auth-box{
-  width:100%;
-  max-width:410px;
+.portal-tabs{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  background:#EDF2F8;
+  border-radius:18px;
+  padding:5px;
+  margin-bottom:34px;
 }
 
-.auth-logo-mobile{
-  display:none;
-  margin-bottom:25px;
+.portal-tab{
+  border:0;
+  background:transparent;
+  padding:15px;
+  border-radius:14px;
+  color:#66758B;
+  font-weight:700;
+  font-size:17px;
 }
 
-.auth-box h2{
-  font-size:30px;
+.portal-tab.active{
+  background:white;
+  color:var(--blue);
+  box-shadow:0 7px 20px rgba(36,52,71,.09);
+}
+
+.auth-title{
+  font-size:42px;
   margin-bottom:8px;
+  color:#182638;
 }
 
-.auth-box .subtitle{
-  color:var(--gray);
-  font-size:14px;
+.auth-subtitle{
+  color:#708099;
+  font-size:18px;
   margin-bottom:30px;
 }
 
-.auth-tabs{
-  display:flex;
-  background:#f1f5f9;
-  border-radius:12px;
-  padding:4px;
-  margin-bottom:25px;
+.form-group{
+  margin-bottom:19px;
 }
 
-.auth-tabs button{
-  flex:1;
-  border:0;
-  background:transparent;
-  padding:11px;
-  border-radius:9px;
-  color:var(--gray);
-}
-
-.auth-tabs button.active{
-  background:white;
-  color:var(--blue);
-  font-weight:700;
-  box-shadow:0 2px 8px rgba(0,0,0,.07);
-}
-
-.field{
-  margin-bottom:17px;
-}
-
-.field label{
+.form-label{
   display:block;
-  font-size:13px;
   font-weight:700;
-  margin-bottom:7px;
+  margin-bottom:8px;
+  color:#243447;
 }
 
-.field input,
-.field select,
-.field textarea{
+.form-input,
+.form-select,
+.form-textarea{
   width:100%;
-  border:1px solid var(--border);
+  border:2px solid #DCE4EE;
   background:#fff;
-  border-radius:10px;
-  padding:13px 14px;
+  border-radius:15px;
+  padding:15px 16px;
   outline:none;
-  color:var(--navy);
+  color:#243447;
   transition:.2s;
 }
 
-.field textarea{
-  min-height:110px;
-  resize:vertical;
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus{
+  border-color:var(--blue);
+  box-shadow:0 0 0 4px rgba(47,99,216,.10);
 }
 
-.field input:focus,
-.field select:focus,
-.field textarea:focus{
-  border-color:var(--blue);
-  box-shadow:0 0 0 3px rgba(23,105,224,.10);
+.form-textarea{
+  min-height:120px;
+  resize:vertical;
 }
 
 .primary-btn{
   width:100%;
   border:0;
+  border-radius:15px;
+  padding:16px;
   background:var(--blue);
   color:white;
-  padding:14px 18px;
-  border-radius:10px;
-  font-weight:700;
-  box-shadow:0 7px 18px rgba(23,105,224,.20);
+  font-weight:800;
+  font-size:17px;
+  box-shadow:0 10px 24px rgba(47,99,216,.22);
+  transition:.2s;
 }
 
 .primary-btn:hover{
   background:var(--blue-dark);
+  transform:translateY(-1px);
 }
 
 .secondary-btn{
-  border:1px solid var(--border);
+  border:2px solid var(--border);
   background:white;
-  color:var(--navy);
-  padding:11px 15px;
-  border-radius:10px;
-  font-weight:600;
-}
-
-.text-btn{
-  background:none;
-  border:0;
-  color:var(--blue);
-  font-size:13px;
+  color:var(--text);
+  border-radius:15px;
+  padding:14px 20px;
   font-weight:700;
 }
 
-.auth-bottom{
+.forgot{
+  display:block;
+  text-align:right;
+  margin:-3px 0 20px;
+  color:var(--blue);
+  font-weight:700;
+  cursor:pointer;
+}
+
+.switch-auth{
   text-align:center;
-  margin-top:18px;
-  color:var(--gray);
-  font-size:13px;
+  color:#718096;
+  margin-top:22px;
 }
 
-.auth-bottom button{
-  background:none;
-  border:0;
+.switch-auth span{
   color:var(--blue);
-  font-weight:700;
+  font-weight:800;
+  cursor:pointer;
 }
 
 /* ================= APP ================= */
 
 .app{
   min-height:100vh;
-  display:flex;
-}
-
-.sidebar{
-  width:245px;
-  background:white;
-  border-right:1px solid var(--border);
-  padding:25px 16px;
-  position:fixed;
-  left:0;
-  top:0;
-  bottom:0;
-  z-index:10;
-}
-
-.sidebar .logo{
-  padding:8px 10px 30px;
-}
-
-.nav-title{
-  font-size:10px;
-  color:#94a3b8;
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:1.5px;
-  padding:12px;
-}
-
-.nav-btn{
-  width:100%;
-  border:0;
-  background:transparent;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:12px;
-  border-radius:10px;
-  margin-bottom:5px;
-  color:#64748b;
-  text-align:left;
-  font-weight:600;
-}
-
-.nav-btn:hover{
-  background:#f5f8fc;
-  color:var(--blue);
-}
-
-.nav-btn.active{
-  background:var(--blue-soft);
-  color:var(--blue);
-}
-
-.main{
-  margin-left:245px;
-  width:calc(100% - 245px);
 }
 
 .topbar{
-  height:75px;
+  height:76px;
   background:white;
   border-bottom:1px solid var(--border);
   display:flex;
@@ -353,330 +247,283 @@ button{
   padding:0 30px;
   position:sticky;
   top:0;
-  z-index:8;
+  z-index:50;
 }
 
-.top-right{
+.topbar-logo .logo-mark{
+  font-size:30px;
+}
+
+.topbar-logo .logo-main{
+  font-size:20px;
+}
+
+.topbar-logo .logo-sub{
+  font-size:8px;
+}
+
+.top-actions{
   display:flex;
   align-items:center;
-  gap:18px;
+  gap:12px;
 }
 
 .icon-btn{
-  width:40px;
-  height:40px;
-  border:0;
-  border-radius:10px;
-  background:#f5f8fc;
+  width:44px;
+  height:44px;
+  border:1px solid var(--border);
+  background:white;
+  border-radius:13px;
   position:relative;
-  font-size:18px;
+  font-size:20px;
 }
 
 .notification-dot{
-  width:8px;
-  height:8px;
-  background:#e33c48;
-  border-radius:50%;
   position:absolute;
-  top:8px;
-  right:8px;
+  top:7px;
+  right:7px;
+  width:9px;
+  height:9px;
+  background:#3478E5;
   border:2px solid white;
+  border-radius:50%;
 }
 
-.profile-mini{
+.profile-btn{
   display:flex;
   align-items:center;
   gap:9px;
-  padding:5px 8px;
-  border:0;
+  border:1px solid var(--border);
   background:white;
-  border-radius:12px;
+  border-radius:14px;
+  padding:6px 12px 6px 6px;
 }
 
 .avatar{
-  width:35px;
-  height:35px;
+  width:34px;
+  height:34px;
   border-radius:50%;
-  background:var(--blue);
-  color:white;
+  background:#DDE8FA;
+  color:var(--blue);
   display:flex;
   align-items:center;
   justify-content:center;
+  font-weight:800;
+}
+
+.layout{
+  display:flex;
+  min-height:calc(100vh - 76px);
+}
+
+.sidebar{
+  width:245px;
+  background:#fff;
+  border-right:1px solid var(--border);
+  padding:25px 16px;
+}
+
+.nav-title{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  color:#94A0B1;
+  padding:0 12px;
+  margin:10px 0;
+}
+
+.nav-item{
+  width:100%;
+  border:0;
+  background:transparent;
+  color:#65748A;
+  text-align:left;
+  padding:13px 14px;
+  border-radius:12px;
+  margin-bottom:5px;
   font-weight:700;
 }
 
-.profile-mini span{
-  font-size:13px;
-  font-weight:700;
+.nav-item:hover,
+.nav-item.active{
+  background:#EAF1FB;
+  color:var(--blue);
 }
 
-.content{
-  padding:30px;
-  max-width:1500px;
-  margin:auto;
+.main{
+  flex:1;
+  padding:32px;
+  min-width:0;
 }
 
-.page-title{
+.page-heading{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-bottom:25px;
+  gap:20px;
+  margin-bottom:26px;
 }
 
-.page-title h1{
-  font-size:27px;
+.page-heading h1{
+  font-size:31px;
 }
 
-.page-title p{
-  color:var(--gray);
-  font-size:13px;
-  margin-top:5px;
+.page-heading p{
+  color:var(--muted);
+  margin-top:6px;
 }
 
-/* ================= STATS ================= */
+.add-case-btn{
+  border:0;
+  background:var(--blue);
+  color:white;
+  border-radius:13px;
+  padding:14px 20px;
+  font-weight:800;
+  white-space:nowrap;
+}
 
 .stats{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:17px;
-  margin-bottom:22px;
+  margin-bottom:25px;
 }
 
 .stat-card{
   background:white;
   border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:20px;
-  box-shadow:var(--shadow);
-}
-
-.stat-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.stat-icon{
-  width:40px;
-  height:40px;
-  border-radius:10px;
-  background:var(--blue-soft);
-  color:var(--blue);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.stat-value{
-  font-size:28px;
-  font-weight:800;
-  margin-top:16px;
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 5px 20px rgba(36,52,71,.04);
 }
 
 .stat-label{
-  color:var(--gray);
-  font-size:12px;
-  margin-top:3px;
+  color:#78869A;
+  font-size:14px;
+  font-weight:700;
 }
 
-/* ================= DASHBOARD GRID ================= */
+.stat-value{
+  font-size:31px;
+  font-weight:900;
+  margin-top:9px;
+  color:#1D2B3A;
+}
+
+/* ================= DOCTOR OVERVIEW ================= */
 
 .dashboard-grid{
   display:grid;
-  grid-template-columns:1fr 1.4fr;
+  grid-template-columns:1.1fr 1.9fr;
   gap:20px;
-  margin-bottom:22px;
+  margin-bottom:25px;
 }
 
-.card{
+.panel{
   background:white;
   border:1px solid var(--border);
-  border-radius:var(--radius);
+  border-radius:20px;
   padding:22px;
-  box-shadow:var(--shadow);
+  box-shadow:0 5px 20px rgba(36,52,71,.04);
 }
 
-.card-header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+.panel-title{
+  font-size:19px;
+  font-weight:800;
   margin-bottom:20px;
 }
 
-.card-header h3{
-  font-size:16px;
-}
-
-.card-header p{
-  font-size:12px;
-  color:var(--gray);
-}
-
-.chart-area{
-  min-height:260px;
+.case-chart{
+  min-height:270px;
   display:flex;
   align-items:center;
   justify-content:center;
+  gap:25px;
 }
 
 .donut{
-  width:190px;
-  height:190px;
+  width:170px;
+  height:170px;
   border-radius:50%;
   background:conic-gradient(
-    #1769e0 0 35%,
-    #2d9cdb 35% 60%,
-    #18a66a 60% 75%,
-    #f2a900 75% 87%,
-    #8b5cf6 87% 95%,
-    #94a3b8 95% 100%
+    #2F63D8 0 32%,
+    #4C82E6 32% 54%,
+    #6A9AEF 54% 68%,
+    #8DB2F5 68% 79%,
+    #B9D0F8 79% 100%
   );
-  position:relative;
-}
-
-.donut::after{
-  content:"";
-  position:absolute;
-  width:105px;
-  height:105px;
-  background:white;
-  border-radius:50%;
-  top:42px;
-  left:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .donut-center{
-  position:absolute;
-  inset:0;
-  z-index:2;
+  width:105px;
+  height:105px;
+  border-radius:50%;
+  background:white;
   display:flex;
   flex-direction:column;
-  align-items:center;
   justify-content:center;
-  font-weight:800;
+  align-items:center;
 }
 
-.donut-center small{
-  color:var(--gray);
-  font-weight:500;
+.donut-center strong{
+  font-size:27px;
+}
+
+.donut-center span{
+  font-size:12px;
+  color:#7B8798;
 }
 
 .legend{
-  margin-left:30px;
+  display:flex;
+  flex-direction:column;
+  gap:11px;
 }
 
-.legend-item{
+.legend-row{
   display:flex;
   align-items:center;
-  gap:8px;
-  margin:9px 0;
-  font-size:12px;
+  gap:9px;
+  font-size:13px;
 }
 
 .legend-dot{
-  width:9px;
-  height:9px;
+  width:10px;
+  height:10px;
   border-radius:50%;
+  background:#2F63D8;
 }
-
-/* fake bars */
-
-.bars{
-  height:220px;
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-around;
-  gap:9px;
-  padding:15px 5px 0;
-}
-
-.bar{
-  width:22px;
-  border-radius:6px 6px 0 0;
-  background:#1769e0;
-  opacity:.9;
-}
-
-.bar:nth-child(1){height:35%}
-.bar:nth-child(2){height:48%}
-.bar:nth-child(3){height:58%}
-.bar:nth-child(4){height:70%}
-.bar:nth-child(5){height:55%}
-.bar:nth-child(6){height:78%}
-.bar:nth-child(7){height:62%}
-.bar:nth-child(8){height:85%}
-.bar:nth-child(9){height:67%}
-.bar:nth-child(10){height:75%}
-.bar:nth-child(11){height:60%}
-.bar:nth-child(12){height:82%}
 
 /* ================= TABLE ================= */
 
-.table-card{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  overflow:hidden;
-}
-
-.table-head{
-  padding:20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
-}
-
-.table-tools{
-  display:flex;
-  gap:9px;
-  flex-wrap:wrap;
-}
-
-.search{
-  border:1px solid var(--border);
-  padding:10px 12px;
-  border-radius:9px;
-  outline:none;
-  min-width:210px;
-}
-
-.filter{
-  border:1px solid var(--border);
-  padding:10px 12px;
-  border-radius:9px;
-  background:white;
-}
-
 .table-wrap{
-  overflow:auto;
+  overflow-x:auto;
 }
 
 table{
   width:100%;
   border-collapse:collapse;
-  min-width:850px;
+  min-width:680px;
 }
 
 th{
-  background:#f8fafc;
-  color:#64748b;
   text-align:left;
-  font-size:11px;
+  font-size:12px;
+  color:#8793A5;
   text-transform:uppercase;
-  letter-spacing:.5px;
-  padding:13px 18px;
+  letter-spacing:.7px;
+  padding:13px 12px;
+  border-bottom:1px solid var(--border);
 }
 
 td{
-  padding:15px 18px;
-  border-top:1px solid #edf1f5;
-  font-size:13px;
-}
-
-tr.unread{
-  background:#f5f9ff;
+  padding:17px 12px;
+  border-bottom:1px solid #EDF1F5;
+  font-size:14px;
 }
 
 .case-id{
@@ -686,231 +533,89 @@ tr.unread{
 
 .status{
   display:inline-flex;
-  align-items:center;
-  gap:6px;
-  padding:6px 9px;
+  padding:7px 10px;
   border-radius:20px;
-  font-size:11px;
-  font-weight:700;
+  font-size:12px;
+  font-weight:800;
 }
 
-.status-dot{
-  width:7px;
-  height:7px;
-  border-radius:50%;
+.status.new{
+  background:#E5EEFF;
+  color:#2F63D8;
 }
 
-.status-new{
-  background:#eaf2ff;
-  color:#1769e0;
+.status.seen{
+  background:#F0F3F7;
+  color:#68788D;
 }
 
-.status-seen{
-  background:#eef2f7;
-  color:#64748b;
+.status.progress{
+  background:#FFF1D8;
+  color:#B87812;
 }
 
-.status-progress{
-  background:#fff5db;
-  color:#a76a00;
+.status.completed{
+  background:#E4F6ED;
+  color:#28835D;
 }
 
-.status-completed{
-  background:#e8f8f0;
-  color:#128252;
-}
-
-.status-sent{
-  background:#f1efff;
-  color:#6956c8;
-}
-
-.unread-dot{
-  display:inline-block;
-  width:8px;
-  height:8px;
-  background:#1769e0;
-  border-radius:50%;
-  margin-right:7px;
+.status.sent{
+  background:#E8E8F8;
+  color:#5B58A4;
 }
 
 .view-btn{
-  border:1px solid #d5e3fb;
-  color:var(--blue);
-  background:#f4f8ff;
-  padding:7px 10px;
-  border-radius:8px;
-  font-size:11px;
-  font-weight:700;
-}
-
-/* ================= MODAL ================= */
-
-.modal-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(15,30,50,.45);
-  backdrop-filter:blur(4px);
-  z-index:50;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-}
-
-.modal{
-  width:100%;
-  max-width:900px;
-  max-height:92vh;
-  overflow:auto;
-  background:white;
-  border-radius:18px;
-  box-shadow:0 25px 80px rgba(0,0,0,.22);
-}
-
-.modal-header{
-  padding:20px 24px;
-  border-bottom:1px solid var(--border);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.close-btn{
   border:0;
-  background:#f1f5f9;
-  width:35px;
-  height:35px;
+  background:#EDF3FF;
+  color:var(--blue);
   border-radius:9px;
-  font-size:18px;
-}
-
-.modal-body{
-  padding:24px;
-}
-
-/* ================= NEW CASE ================= */
-
-.steps{
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:30px;
-  position:relative;
-}
-
-.steps::before{
-  content:"";
-  position:absolute;
-  left:8%;
-  right:8%;
-  top:18px;
-  height:2px;
-  background:#e2e8f0;
-}
-
-.step{
-  position:relative;
-  z-index:2;
-  text-align:center;
-  background:white;
-  padding:0 8px;
-  color:#94a3b8;
-  font-size:11px;
-}
-
-.step-number{
-  width:36px;
-  height:36px;
-  border-radius:50%;
-  background:#e9eef5;
-  color:#64748b;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin:auto auto 7px;
+  padding:8px 12px;
   font-weight:800;
 }
 
-.step.active{
-  color:var(--blue);
-  font-weight:700;
-}
-
-.step.active .step-number{
-  background:var(--blue);
-  color:white;
-}
-
-.case-layout{
-  display:grid;
-  grid-template-columns:1fr 1.3fr;
-  gap:22px;
-}
-
-.section-title{
-  font-size:15px;
-  font-weight:800;
-  margin-bottom:15px;
-}
-
-.radio-group{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-}
-
-.radio{
-  border:1px solid var(--border);
-  padding:10px 14px;
-  border-radius:9px;
-  cursor:pointer;
-  font-size:12px;
-}
-
-.radio.active{
-  border-color:var(--blue);
-  background:var(--blue-soft);
-  color:var(--blue);
-  font-weight:700;
-}
+/* ================= TEETH ================= */
 
 .arch-box{
   border:1px solid var(--border);
-  border-radius:15px;
-  background:#fafcff;
-  padding:22px;
+  background:#FBFCFE;
+  border-radius:20px;
+  padding:25px 15px 30px;
+  overflow:hidden;
 }
 
 .arch-title{
   text-align:center;
-  font-size:12px;
-  font-weight:700;
-  color:var(--gray);
-  margin:7px 0;
+  font-size:18px;
+  font-weight:800;
+  color:#52637A;
+  margin-bottom:10px;
 }
 
 .arch{
-  position:relative;
-  width:330px;
-  height:240px;
+  width:min(620px,100%);
+  height:250px;
   margin:auto;
+  position:relative;
 }
 
 .tooth{
   position:absolute;
-  width:34px;
-  height:34px;
+  width:42px;
+  height:42px;
   border-radius:50%;
-  border:1px solid #bac4d0;
-  background:linear-gradient(145deg,#ffffff,#cfd6df);
-  color:#243447;
-  font-size:10px;
-  font-weight:800;
+  border:2px solid #C9D3DF;
+  background:linear-gradient(145deg,#fff,#E7EDF4);
+  box-shadow:
+    0 5px 10px rgba(37,52,71,.12),
+    inset 0 1px 2px white;
   display:flex;
   align-items:center;
   justify-content:center;
-  cursor:pointer;
-  box-shadow:0 3px 6px rgba(0,0,0,.08);
+  color:#334155;
+  font-weight:800;
+  font-size:12px;
+  transition:.18s;
+  z-index:2;
 }
 
 .tooth:hover{
@@ -919,367 +624,370 @@ tr.unread{
 }
 
 .tooth.selected{
-  background:var(--blue);
+  background:#2F63D8;
+  border-color:#204FAF;
   color:white;
-  border-color:var(--blue-dark);
-  box-shadow:0 4px 12px rgba(23,105,224,.35);
+  box-shadow:0 7px 18px rgba(47,99,216,.30);
 }
 
-.upper .t1{left:115px;top:10px}
-.upper .t2{left:150px;top:6px}
-.upper .t3{left:185px;top:10px}
-.upper .t4{left:215px;top:20px}
-.upper .t5{left:240px;top:38px}
-.upper .t6{left:257px;top:62px}
-.upper .t7{left:264px;top:90px}
-.upper .t8{left:264px;top:120px}
-.upper .t9{left:252px;top:150px}
-.upper .t10{left:228px;top:172px}
-.upper .t11{left:198px;top:187px}
-.upper .t12{left:164px;top:194px}
-.upper .t13{left:130px;top:194px}
-.upper .t14{left:97px;top:187px}
-.upper .t15{left:68px;top:172px}
-.upper .t16{left:44px;top:150px}
-.upper .t17{left:32px;top:120px}
-.upper .t18{left:32px;top:90px}
-.upper .t19{left:39px;top:62px}
-.upper .t20{left:56px;top:38px}
-.upper .t21{left:81px;top:20px}
-
-.selected-list{
-  display:flex;
-  flex-direction:column;
-  gap:9px;
-  margin-top:15px;
+.work-badge{
+  position:absolute;
+  bottom:-7px;
+  right:-5px;
+  min-width:17px;
+  height:17px;
+  border-radius:50%;
+  background:#E5A23C;
+  border:2px solid white;
+  display:none;
 }
 
-.selected-item{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.tooth.has-work .work-badge{
+  display:block;
+}
+
+.tooth-popup{
+  position:fixed;
+  z-index:1000;
+  width:220px;
+  background:white;
   border:1px solid var(--border);
+  border-radius:15px;
+  box-shadow:0 20px 45px rgba(0,0,0,.18);
+  padding:10px;
+}
+
+.tooth-popup-title{
+  font-size:12px;
+  color:#7A8798;
+  font-weight:700;
+  padding:5px 8px 8px;
+}
+
+.work-option{
+  width:100%;
+  border:0;
+  background:white;
+  text-align:left;
   padding:10px;
   border-radius:9px;
-  font-size:12px;
+  font-size:13px;
 }
 
-.work-select{
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:7px;
-  margin-left:8px;
+.work-option:hover{
+  background:#EDF3FF;
+  color:var(--blue);
 }
 
-.file-drop{
-  border:1.5px dashed #aebed3;
-  border-radius:12px;
-  padding:30px 15px;
-  text-align:center;
-  background:#f9fbfe;
-  color:var(--gray);
-}
+/* ================= MODAL ================= */
 
-.file-drop strong{
-  display:block;
-  color:var(--navy);
-  margin-bottom:5px;
-}
-
-.file-list{
-  margin-top:10px;
-}
-
-.file-item{
+.modal-backdrop{
+  position:fixed;
+  inset:0;
+  background:rgba(19,31,45,.48);
+  z-index:200;
   display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal{
+  background:white;
+  width:100%;
+  max-width:850px;
+  max-height:92vh;
+  overflow-y:auto;
+  border-radius:24px;
+  padding:28px;
+}
+
+.modal-head{
+  display:flex;
+  align-items:center;
   justify-content:space-between;
-  padding:8px;
-  background:#f5f8fc;
-  border-radius:7px;
-  margin-top:5px;
-  font-size:11px;
+  gap:15px;
+  margin-bottom:24px;
+}
+
+.close-btn{
+  width:40px;
+  height:40px;
+  border:0;
+  background:#EEF2F6;
+  border-radius:12px;
+  font-size:20px;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.full{
+  grid-column:1/-1;
+}
+
+.gender{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.gender label{
+  border:2px solid var(--border);
+  padding:13px;
+  border-radius:13px;
+  text-align:center;
+  cursor:pointer;
+}
+
+.gender input{
+  display:none;
+}
+
+.gender input:checked + span{
+  color:var(--blue);
+  font-weight:800;
+}
+
+.upload{
+  border:2px dashed #B8C9E3;
+  background:#F7FAFE;
+  border-radius:16px;
+  padding:28px;
+  text-align:center;
+}
+
+.upload strong{
+  display:block;
+  margin-bottom:7px;
+}
+
+.upload small{
+  color:#8190A4;
 }
 
 .modal-actions{
   display:flex;
-  justify-content:space-between;
-  gap:10px;
+  justify-content:flex-end;
+  gap:12px;
   margin-top:25px;
 }
 
-.modal-actions button{
+.modal-actions .primary-btn{
   width:auto;
-  min-width:130px;
+  padding:14px 25px;
 }
 
-/* ================= ARCH DETAILS ================= */
+/* ================= PROFILE / NOTIFICATIONS ================= */
 
-.details-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-
-.info-list{
-  display:grid;
-  gap:10px;
-}
-
-.info-row{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  padding:10px 0;
-  border-bottom:1px solid #edf1f5;
-  font-size:12px;
-}
-
-.info-row span:first-child{
-  color:var(--gray);
-}
-
-.timeline{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  margin:30px 0;
-}
-
-.timeline-item{
-  flex:1;
-  text-align:center;
-  position:relative;
-}
-
-.timeline-item:not(:last-child)::after{
-  content:"";
+.dropdown{
   position:absolute;
-  top:11px;
-  left:55%;
-  width:90%;
-  height:2px;
-  background:#e2e8f0;
-}
-
-.timeline-item.done:not(:last-child)::after{
-  background:var(--blue);
-}
-
-.timeline-dot{
-  width:24px;
-  height:24px;
-  border-radius:50%;
-  background:#e2e8f0;
-  margin:auto;
-  position:relative;
-  z-index:2;
-}
-
-.timeline-item.done .timeline-dot{
-  background:var(--blue);
-}
-
-.timeline-item small{
-  display:block;
-  margin-top:8px;
-  color:var(--gray);
-  font-size:10px;
-}
-
-/* ================= NOTIFICATIONS ================= */
-
-.notification-panel{
-  position:fixed;
+  right:25px;
   top:65px;
-  right:30px;
-  width:370px;
-  max-height:500px;
-  overflow:auto;
+  width:300px;
   background:white;
   border:1px solid var(--border);
-  border-radius:15px;
-  box-shadow:0 20px 50px rgba(0,0,0,.15);
-  z-index:30;
+  border-radius:16px;
+  box-shadow:0 20px 45px rgba(0,0,0,.14);
+  padding:12px;
+  z-index:80;
 }
 
-.notification-header{
-  padding:16px;
-  border-bottom:1px solid var(--border);
-  display:flex;
-  justify-content:space-between;
+.notification-item{
+  padding:13px;
+  border-bottom:1px solid #EDF1F5;
 }
 
-.notification{
-  padding:14px 16px;
-  display:flex;
-  gap:10px;
-  border-bottom:1px solid #edf1f5;
+.notification-item:last-child{
+  border-bottom:0;
 }
 
-.notification.unread{
-  background:#f5f9ff;
+.profile-card{
+  text-align:center;
 }
 
-.notification p{
-  font-size:12px;
-  line-height:1.5;
-}
-
-.notification small{
-  color:#94a3b8;
-}
-
-/* ================= PROFILE ================= */
-
-.profile-panel{
-  position:fixed;
-  top:65px;
-  right:30px;
-  width:320px;
-  background:white;
-  border:1px solid var(--border);
-  border-radius:15px;
-  box-shadow:0 20px 50px rgba(0,0,0,.15);
-  z-index:30;
-  padding:20px;
-}
-
-.profile-big{
-  width:80px;
-  height:80px;
+.profile-photo{
+  width:90px;
+  height:90px;
   border-radius:50%;
-  background:var(--blue-soft);
-  color:var(--blue);
+  background:#E7EEF9;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:26px;
-  font-weight:800;
-  margin:0 auto 12px;
-  position:relative;
+  margin:5px auto 15px;
+  font-size:30px;
+  color:var(--blue);
+  font-weight:900;
+  overflow:hidden;
 }
 
-.profile-name{
-  text-align:center;
-  font-weight:800;
-}
-
-.profile-email{
-  text-align:center;
-  color:var(--gray);
-  font-size:12px;
-  margin:4px 0 20px;
-}
-
-.profile-action{
+.profile-photo img{
   width:100%;
-  border:0;
-  background:#f5f8fc;
-  padding:11px;
-  border-radius:9px;
-  text-align:left;
-  margin-top:6px;
-  font-size:12px;
+  height:100%;
+  object-fit:cover;
 }
 
 /* ================= ADMIN ================= */
 
-.admin-case-grid{
-  display:grid;
-  grid-template-columns:1fr 1.3fr;
-  gap:20px;
+.case-unseen{
+  background:#F5F9FF;
 }
 
-.client-chip{
-  display:inline-flex;
-  align-items:center;
-  gap:5px;
-  background:#eef5ff;
-  color:var(--blue);
-  padding:5px 8px;
-  border-radius:8px;
-  font-size:10px;
+.unseen-dot{
+  width:9px;
+  height:9px;
+  background:#3478E5;
+  border-radius:50%;
+  display:inline-block;
+  margin-right:7px;
+}
+
+.case-details{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.detail-box{
+  background:#F7F9FC;
+  border-radius:14px;
+  padding:15px;
+}
+
+.detail-box label{
+  display:block;
+  color:#8491A3;
+  font-size:12px;
+  margin-bottom:5px;
+}
+
+.detail-box strong{
+  font-size:15px;
+}
+
+.status-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:18px;
+}
+
+.status-btn{
+  border:1px solid var(--border);
+  background:white;
+  padding:10px 13px;
+  border-radius:10px;
   font-weight:700;
+}
+
+.status-btn.active{
+  background:var(--blue);
+  color:white;
+  border-color:var(--blue);
 }
 
 /* ================= TOAST ================= */
 
 .toast{
   position:fixed;
-  right:25px;
-  bottom:25px;
-  background:#172a3a;
+  right:22px;
+  bottom:22px;
+  z-index:500;
+  background:#182638;
   color:white;
-  padding:13px 18px;
-  border-radius:10px;
-  box-shadow:0 12px 30px rgba(0,0,0,.2);
-  z-index:100;
-  font-size:13px;
+  padding:15px 20px;
+  border-radius:14px;
+  box-shadow:0 15px 35px rgba(0,0,0,.2);
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= MOBILE ================= */
 
-@media(max-width:1000px){
+@media(max-width:900px){
+
   .sidebar{
-    width:80px;
-  }
-
-  .sidebar .logo-text,
-  .sidebar .logo-sub,
-  .nav-title,
-  .nav-btn span{
     display:none;
   }
 
-  .sidebar .logo{
-    justify-content:center;
-  }
-
   .main{
-    margin-left:80px;
-    width:calc(100% - 80px);
+    padding:20px 15px;
   }
 
   .stats{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .dashboard-grid,
-  .case-layout,
-  .details-grid,
-  .admin-case-grid{
+  .dashboard-grid{
     grid-template-columns:1fr;
-  }
-}
-
-@media(max-width:700px){
-  .auth-wrap{
-    grid-template-columns:1fr;
-  }
-
-  .auth-visual{
-    display:none;
-  }
-
-  .auth-logo-mobile{
-    display:block;
-  }
-
-  .sidebar{
-    display:none;
-  }
-
-  .main{
-    margin-left:0;
-    width:100%;
-  }
-
-  .content{
-    padding:18px;
   }
 
   .topbar{
     padding:0 15px;
+  }
+
+  .topbar-logo .logo-main{
+    font-size:17px;
+  }
+
+  .topbar-logo .logo-sub{
+    display:none;
+  }
+
+  .profile-btn span{
+    display:none;
+  }
+
+  .page-heading{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .add-case-btn{
+    width:100%;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .full{
+    grid-column:auto;
+  }
+}
+
+@media(max-width:600px){
+
+  .auth-page{
+    padding:12px;
+    align-items:flex-start;
+  }
+
+  .auth-card{
+    margin-top:12px;
+    padding:25px 18px;
+    border-radius:23px;
+  }
+
+  .auth-logo .logo-mark{
+    font-size:34px;
+  }
+
+  .auth-logo .logo-main{
+    font-size:21px;
+  }
+
+  .auth-title{
+    font-size:34px;
+  }
+
+  .auth-subtitle{
+    font-size:16px;
+  }
+
+  .topbar{
+    height:68px;
   }
 
   .stats{
@@ -1288,23 +996,67 @@ tr.unread{
   }
 
   .stat-card{
-    padding:14px;
+    padding:16px;
   }
 
   .stat-value{
-    font-size:22px;
+    font-size:25px;
   }
 
-  .notification-panel,
-  .profile-panel{
-    right:15px;
-    width:calc(100% - 30px);
+  .case-chart{
+    flex-direction:column;
+  }
+
+  .donut{
+    width:145px;
+    height:145px;
+  }
+
+  .arch-box{
+    padding:20px 5px 25px;
   }
 
   .arch{
-    transform:scale(.85);
-    transform-origin:top center;
+    height:210px;
+    transform:scale(.84);
+    transform-origin:center top;
     margin-bottom:-30px;
+  }
+
+  .tooth{
+    width:37px;
+    height:37px;
+    font-size:10px;
+  }
+
+  .modal-backdrop{
+    padding:8px;
+    align-items:flex-end;
+  }
+
+  .modal{
+    max-height:95vh;
+    border-radius:22px 22px 0 0;
+    padding:20px 15px;
+  }
+
+  .modal-actions{
+    flex-direction:column-reverse;
+  }
+
+  .modal-actions button{
+    width:100%!important;
+  }
+
+  .case-details{
+    grid-template-columns:1fr;
+  }
+
+  .toast{
+    left:15px;
+    right:15px;
+    bottom:15px;
+    text-align:center;
   }
 }
 </style>
@@ -1312,856 +1064,89 @@ tr.unread{
 
 <body>
 
-<!-- =========================================================
-     AUTH
-========================================================= -->
-
-<section id="authPage" class="auth-page">
-
-  <div class="auth-wrap">
-
-    <div class="auth-visual">
-
-      <div>
-        <div class="logo">
-          <div class="logo-mark">HN</div>
-          <div>
-            <div class="logo-text">DENTAL LAB</div>
-            <div class="logo-sub">DENTAL DIGITAL LAB</div>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <div class="auth-badge">DIGITAL DENTAL WORKFLOW</div>
-
-        <h1>
-          Precision.<br>
-          Simplicity.<br>
-          Better Workflow.
-        </h1>
-
-        <p>
-          A modern digital platform connecting dental clinics,
-          laboratories and HN Dental Lab.
-        </p>
-      </div>
-
-      <div style="font-size:12px;color:#dceaff;">
-        © 2026 HN Dental Lab
-      </div>
-
-    </div>
-
-    <div class="auth-form-area">
-
-      <div class="auth-box">
-
-        <div class="auth-logo-mobile">
-          <div class="logo">
-            <div class="logo-mark">HN</div>
-            <div>
-              <div class="logo-text">DENTAL LAB</div>
-              <div class="logo-sub">DENTAL DIGITAL LAB</div>
-            </div>
-          </div>
-        </div>
-
-        <div id="authContent"></div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     DOCTOR / ADMIN APP
-========================================================= -->
-
-<div id="app" class="app hidden">
-
-  <aside class="sidebar">
-
-    <div class="logo">
-      <div class="logo-mark">HN</div>
-      <div>
-        <div class="logo-text">DENTAL LAB</div>
-        <div class="logo-sub">DIGITAL LAB</div>
-      </div>
-    </div>
-
-    <div class="nav-title">Main</div>
-
-    <button class="nav-btn active" onclick="showPage('dashboard')">
-      <span>▦</span>
-      <span>Overview</span>
-    </button>
-
-    <button class="nav-btn" onclick="showPage('cases')">
-      <span>▤</span>
-      <span>Cases</span>
-    </button>
-
-    <div class="nav-title">Support</div>
-
-    <button class="nav-btn" onclick="openProfile()">
-      <span>♙</span>
-      <span>Profile</span>
-    </button>
-
-    <button class="nav-btn" onclick="logout()">
-      <span>↪</span>
-      <span>Logout</span>
-    </button>
-
-  </aside>
-
-
-  <main class="main">
-
-    <header class="topbar">
-
-      <div>
-        <strong id="pageHeaderTitle">Overview</strong>
-      </div>
-
-      <div class="top-right">
-
-        <button class="icon-btn" onclick="toggleNotifications()">
-          🔔
-          <span id="notificationDot" class="notification-dot"></span>
-        </button>
-
-        <button class="profile-mini" onclick="openProfile()">
-          <div class="avatar" id="topAvatar">A</div>
-          <span id="topName">Doctor</span>
-          <span>⌄</span>
-        </button>
-
-      </div>
-
-    </header>
-
-
-    <!-- NOTIFICATIONS -->
-
-    <div id="notificationPanel" class="notification-panel hidden">
-
-      <div class="notification-header">
-        <strong>Notifications</strong>
-        <button class="text-btn" onclick="markNotificationsRead()">
-          Mark all as read
-        </button>
-      </div>
-
-      <div id="notificationsList"></div>
-
-    </div>
-
-
-    <!-- PROFILE -->
-
-    <div id="profilePanel" class="profile-panel hidden">
-
-      <div class="profile-big" id="profileAvatar">A</div>
-
-      <div class="profile-name" id="profilePanelName">
-        Doctor
-      </div>
-
-      <div class="profile-email" id="profilePanelEmail">
-        email@example.com
-      </div>
-
-      <button class="profile-action" onclick="editProfile()">
-        👤 Edit Profile
-      </button>
-
-      <button class="profile-action" onclick="changePassword()">
-        🔒 Change Password
-      </button>
-
-      <button class="profile-action" onclick="logout()" style="color:#d33;">
-        ↪ Logout
-      </button>
-
-    </div>
-
-
-    <div class="content">
-
-      <!-- DASHBOARD -->
-
-      <section id="dashboardPage">
-
-        <div class="page-title">
-
-          <div>
-            <h1 id="welcomeTitle">Overview</h1>
-            <p>Your digital dental workflow at a glance.</p>
-          </div>
-
-          <button class="primary-btn" style="width:auto;" onclick="openNewCase()">
-            ＋ New Case
-          </button>
-
-        </div>
-
-
-        <div class="stats">
-
-          <div class="stat-card">
-            <div class="stat-top">
-              <span class="stat-icon">▣</span>
-            </div>
-            <div class="stat-value" id="totalCases">0</div>
-            <div class="stat-label">Total Cases</div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-top">
-              <span class="stat-icon">＋</span>
-            </div>
-            <div class="stat-value" id="newCases">0</div>
-            <div class="stat-label">New Cases</div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-top">
-              <span class="stat-icon">◷</span>
-            </div>
-            <div class="stat-value" id="progressCases">0</div>
-            <div class="stat-label">In Progress</div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-top">
-              <span class="stat-icon">✓</span>
-            </div>
-            <div class="stat-value" id="completedCases">0</div>
-            <div class="stat-label">Completed</div>
-          </div>
-
-        </div>
-
-
-        <div class="dashboard-grid">
-
-          <div class="card">
-
-            <div class="card-header">
-              <div>
-                <h3>Case Type</h3>
-                <p id="caseTypeSubtitle">This Month</p>
-              </div>
-
-              <select class="filter" onchange="renderDashboard()">
-                <option>This Month</option>
-                <option>This Year</option>
-              </select>
-            </div>
-
-            <div class="chart-area">
-
-              <div class="donut">
-                <div class="donut-center">
-                  <span id="donutTotal">0</span>
-                  <small>Cases</small>
-                </div>
-              </div>
-
-              <div class="legend" id="caseLegend"></div>
-
-            </div>
-
-          </div>
-
-
-          <div class="card">
-
-            <div class="card-header">
-              <div>
-                <h3>Cases</h3>
-                <p>Monthly case activity</p>
-              </div>
-
-              <select class="filter">
-                <option>This Year</option>
-              </select>
-            </div>
-
-            <div class="bars">
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="table-card">
-
-          <div class="table-head">
-
-            <div>
-              <h3>Recent Cases</h3>
-            </div>
-
-            <div class="table-tools">
-
-              <input
-                class="search"
-                id="dashboardSearch"
-                placeholder="Search patient or Case ID..."
-                oninput="renderCasesTable()"
-              >
-
-              <button class="primary-btn" style="width:auto;" onclick="openNewCase()">
-                ＋ New Case
-              </button>
-
-            </div>
-
-          </div>
-
-          <div class="table-wrap">
-
-            <table>
-
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Patient</th>
-                  <th>Work</th>
-                  <th>Date</th>
-                  <th>Delivery</th>
-                  <th>Status</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-
-              <tbody id="dashboardCasesBody"></tbody>
-
-            </table>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      <!-- CASES -->
-
-      <section id="casesPage" class="hidden">
-
-        <div class="page-title">
-
-          <div>
-            <h1>Cases</h1>
-            <p>Manage and track your dental cases.</p>
-          </div>
-
-          <button class="primary-btn" style="width:auto;" onclick="openNewCase()">
-            ＋ New Case
-          </button>
-
-        </div>
-
-        <div class="table-card">
-
-          <div class="table-head">
-
-            <h3>All Cases</h3>
-
-            <div class="table-tools">
-
-              <input
-                class="search"
-                id="caseSearch"
-                placeholder="Search..."
-                oninput="renderCasesTable()"
-              >
-
-              <select class="filter" id="caseStatusFilter" onchange="renderCasesTable()">
-                <option value="">All Status</option>
-                <option>New</option>
-                <option>Seen - Not Started</option>
-                <option>In Progress</option>
-                <option>Completed</option>
-                <option>Sent</option>
-              </select>
-
-            </div>
-
-          </div>
-
-          <div class="table-wrap">
-
-            <table>
-
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Patient</th>
-                  <th>Doctor</th>
-                  <th>Work</th>
-                  <th>Date</th>
-                  <th>Delivery</th>
-                  <th>Status</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-
-              <tbody id="casesBody"></tbody>
-
-            </table>
-
-          </div>
-
-        </div>
-
-      </section>
-
-    </div>
-
-  </main>
-
-</div>
-
-
-<!-- =========================================================
-     NEW CASE MODAL
-========================================================= -->
-
-<div id="newCaseModal" class="modal-overlay hidden">
-
-  <div class="modal">
-
-    <div class="modal-header">
-      <strong>New Case</strong>
-      <button class="close-btn" onclick="closeNewCase()">×</button>
-    </div>
-
-    <div class="modal-body">
-
-      <div class="steps">
-
-        <div class="step active">
-          <div class="step-number">1</div>
-          Patient Info
-        </div>
-
-        <div class="step active">
-          <div class="step-number">2</div>
-          Tooth Selection
-        </div>
-
-        <div class="step active">
-          <div class="step-number">3</div>
-          Details & Files
-        </div>
-
-        <div class="step">
-          <div class="step-number">4</div>
-          Confirm
-        </div>
-
-      </div>
-
-
-      <div class="case-layout">
-
-        <div>
-
-          <div class="section-title">
-            Patient Information
-          </div>
-
-          <div class="field">
-            <label>Patient Name</label>
-            <input id="patientName" placeholder="Enter patient name">
-          </div>
-
-          <div class="field">
-            <label>Patient Type</label>
-            <select id="patientType">
-              <option value="">Select</option>
-              <option>Male</option>
-              <option>Female</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label>Expected Delivery Date</label>
-            <input id="deliveryDate" type="date">
-          </div>
-
-          <div class="field">
-            <label>Shade</label>
-            <select id="shade">
-              <option>A1</option>
-              <option>A2</option>
-              <option>A3</option>
-              <option>A3.5</option>
-              <option>A4</option>
-              <option>B1</option>
-              <option>B2</option>
-              <option>B3</option>
-              <option>C1</option>
-              <option>C2</option>
-              <option>D2</option>
-              <option>BL1</option>
-              <option>BL2</option>
-              <option>BL3</option>
-              <option>Other</option>
-            </select>
-          </div>
-
-          <div class="field">
-
-            <label>Additional Instructions</label>
-
-            <textarea
-              id="instructions"
-              placeholder="Write any specific instructions..."
-            ></textarea>
-
-          </div>
-
-        </div>
-
-
-        <div>
-
-          <div class="section-title">
-            Tooth Selection
-          </div>
-
-          <div class="arch-box">
-
-            <div class="arch-title">Upper Arch</div>
-
-            <div class="arch upper" id="upperArch"></div>
-
-            <div class="arch-title">Lower Arch</div>
-
-            <div class="arch upper" id="lowerArch"></div>
-
-          </div>
-
-          <div style="margin-top:15px;">
-
-            <div class="section-title">
-              Selected Teeth & Work
-            </div>
-
-            <div id="selectedTeethList" class="selected-list">
-              <div style="color:#94a3b8;font-size:12px;">
-                Click a tooth to select the work.
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div style="margin-top:25px;">
-
-        <div class="section-title">
-          Upload Files
-        </div>
-
-        <label class="file-drop">
-
-          <strong>☁ Upload your dental files</strong>
-
-          <span>
-            STL, PLY, OBJ, JPG, PNG, ZIP
-          </span>
-
-          <input
-            id="caseFiles"
-            type="file"
-            multiple
-            accept=".stl,.ply,.obj,.jpg,.jpeg,.png,.zip"
-            style="display:none"
-            onchange="handleFiles()"
-          >
-
-        </label>
-
-        <div id="fileList" class="file-list"></div>
-
-      </div>
-
-
-      <div class="modal-actions">
-
-        <button
-          class="secondary-btn"
-          onclick="closeNewCase()"
-        >
-          Cancel
-        </button>
-
-        <button
-          class="primary-btn"
-          onclick="submitCase()"
-        >
-          Submit Case
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- =========================================================
-     WORK TYPE MODAL
-========================================================= -->
-
-<div id="workModal" class="modal-overlay hidden">
-
-  <div class="modal" style="max-width:430px;">
-
-    <div class="modal-header">
-      <strong id="workModalTitle">Select Work Type</strong>
-      <button class="close-btn" onclick="closeWorkModal()">×</button>
-    </div>
-
-    <div class="modal-body">
-
-      <div class="field">
-
-        <label>Work Type</label>
-
-        <select id="workTypeSelect">
-
-          <option>Chape</option>
-          <option>Crown</option>
-          <option>Crown on Implant</option>
-          <option>Inlay / Onlay</option>
-          <option>Veneer</option>
-          <option>Bridge 2 Units</option>
-          <option>Bridge 3 Units</option>
-          <option>Bridge 4–5 Units</option>
-          <option>Bridge 6+ Units</option>
-          <option>Bridge on Implant</option>
-          <option>Full Arch</option>
-          <option>Full Arch on Implant</option>
-          <option>All-on-4</option>
-          <option>All-on-6</option>
-          <option>DSD / Smile Design</option>
-          <option>Digital Mock-up</option>
-
-        </select>
-
-      </div>
-
-      <button
-        class="primary-btn"
-        onclick="confirmWorkType()"
-      >
-        Select Work
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- =========================================================
-     CASE DETAILS MODAL
-========================================================= -->
-
-<div id="caseDetailsModal" class="modal-overlay hidden">
-
-  <div class="modal">
-
-    <div class="modal-header">
-
-      <div>
-        <strong id="detailsCaseTitle">Case Details</strong>
-        <div style="font-size:11px;color:#64748b;margin-top:4px;">
-          Dental case information
-        </div>
-      </div>
-
-      <button class="close-btn" onclick="closeCaseDetails()">×</button>
-
-    </div>
-
-    <div class="modal-body">
-
-      <div class="details-grid">
-
-        <div class="card" style="box-shadow:none;">
-
-          <div class="section-title">
-            Dental Arch
-          </div>
-
-          <div class="arch-box">
-
-            <div class="arch-title">Upper Arch</div>
-
-            <div class="arch upper" id="detailsArch"></div>
-
-          </div>
-
-        </div>
-
-
-        <div class="card" style="box-shadow:none;">
-
-          <div class="section-title">
-            Patient Information
-          </div>
-
-          <div id="caseInfo" class="info-list"></div>
-
-        </div>
-
-      </div>
-
-
-      <div class="card" style="box-shadow:none;margin-top:20px;">
-
-        <div class="section-title">
-          Case Status
-        </div>
-
-        <div id="caseTimeline" class="timeline"></div>
-
-      </div>
-
-
-      <div class="card" style="box-shadow:none;margin-top:20px;">
-
-        <div class="section-title">
-          Files
-        </div>
-
-        <div id="caseDetailFiles"></div>
-
-      </div>
-
-
-      <div id="adminStatusArea" class="card hidden" style="box-shadow:none;margin-top:20px;">
-
-        <div class="section-title">
-          Update Status
-        </div>
-
-        <div style="display:flex;gap:10px;">
-
-          <select id="adminStatusSelect" class="filter" style="flex:1;">
-            <option>New</option>
-            <option>Seen - Not Started</option>
-            <option>In Progress</option>
-            <option>Completed</option>
-            <option>Sent</option>
-          </select>
-
-          <button class="primary-btn" style="width:auto;" onclick="updateCaseStatus()">
-            Update
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<div id="toast" class="toast hidden"></div>
-
+<div id="app"></div>
 
 <script>
 
 /* =========================================================
-   STORAGE
+   DATA
 ========================================================= */
 
-const USERS_KEY = "hn_users_v2";
-const CASES_KEY = "hn_cases_v2";
-const CURRENT_KEY = "hn_current_v2";
-const NOTIFICATIONS_KEY = "hn_notifications_v2";
+const ADMIN_EMAIL = "admin@hndentaldigitallab.com";
+const ADMIN_PASSWORD = "admin123";
 
-let users = JSON.parse(localStorage.getItem(USERS_KEY) || "[]");
-let cases = JSON.parse(localStorage.getItem(CASES_KEY) || "[]");
-let notifications = JSON.parse(localStorage.getItem(NOTIFICATIONS_KEY) || "[]");
-let currentUser = JSON.parse(localStorage.getItem(CURRENT_KEY) || "null");
+const WORK_TYPES = [
+  "Chape",
+  "Crown",
+  "Crown on Implant",
+  "Inlay / Onlay",
+  "Bridge 2 Units",
+  "Bridge 3 Units",
+  "Bridge 4–5 Units",
+  "Bridge 6+ Units",
+  "Bridge on Implant",
+  "Full Arch",
+  "Full Arch on Implant",
+  "All-on-4",
+  "All-on-6",
+  "DSD / Smile Design",
+  "Digital Mock-up"
+];
 
-let currentRole = "doctor";
+const UPPER = [
+  "18","17","16","15","14","13","12","11",
+  "21","22","23","24","25","26","27","28"
+];
+
+const LOWER = [
+  "48","47","46","45","44","43","42","41",
+  "31","32","33","34","35","36","37","38"
+];
+
+let users = JSON.parse(localStorage.getItem("hn_users") || "[]");
+let cases = JSON.parse(localStorage.getItem("hn_cases") || "[]");
+let currentUser = JSON.parse(localStorage.getItem("hn_current_user") || "null");
+
+let activePortal = "doctor";
+let activePage = "dashboard";
 let selectedTeeth = {};
-let selectedToothForWork = null;
-let selectedFiles = [];
-let openedCaseId = null;
+let selectedTooth = null;
+let notificationOpen = false;
+let profileOpen = false;
 
 
 /* =========================================================
    HELPERS
 ========================================================= */
 
-function saveAll(){
-  localStorage.setItem(USERS_KEY,JSON.stringify(users));
-  localStorage.setItem(CASES_KEY,JSON.stringify(cases));
-  localStorage.setItem(NOTIFICATIONS_KEY,JSON.stringify(notifications));
+function save(){
+  localStorage.setItem("hn_users",JSON.stringify(users));
+  localStorage.setItem("hn_cases",JSON.stringify(cases));
+  localStorage.setItem("hn_current_user",JSON.stringify(currentUser));
+}
+
+function esc(str=""){
+  return String(str)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;");
 }
 
 function toast(message){
-  const el=document.getElementById("toast");
+  const old=document.querySelector(".toast");
+  if(old) old.remove();
+
+  const el=document.createElement("div");
+  el.className="toast";
   el.textContent=message;
-  el.classList.remove("hidden");
+  document.body.appendChild(el);
 
-  setTimeout(()=>{
-    el.classList.add("hidden");
-  },2800);
-}
-
-function escapeHTML(value){
-  return String(value || "")
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
+  setTimeout(()=>el.remove(),2800);
 }
 
 function initials(name){
-  if(!name) return "U";
-
-  return name
+  return (name||"U")
     .split(" ")
     .filter(Boolean)
     .slice(0,2)
@@ -2170,196 +1155,235 @@ function initials(name){
     .toUpperCase();
 }
 
+function statusClass(status){
+  if(status==="New") return "new";
+  if(status==="Seen - Not Started") return "seen";
+  if(status==="In Progress") return "progress";
+  if(status==="Completed") return "completed";
+  return "sent";
+}
+
+function formatDate(date){
+  if(!date) return "-";
+  return new Date(date).toLocaleDateString("en-GB");
+}
+
 
 /* =========================================================
-   AUTH SCREENS
+   AUTH PAGE
 ========================================================= */
 
-function renderAuth(type="doctor",screen="login"){
+function authPage(mode="login"){
 
-  currentRole=type;
+  activePortal = activePortal || "doctor";
 
-  const box=document.getElementById("authContent");
+  const isSignup = mode==="signup";
 
-  if(screen==="signup"){
+  document.getElementById("app").innerHTML = `
+    <div class="auth-page">
 
-    box.innerHTML=`
+      <div class="auth-card">
 
-      <div class="auth-tabs">
-        <button class="active">Doctor</button>
-        <button onclick="renderAuth('admin','login')">Admin</button>
+        <div class="logo auth-logo">
+          <div class="logo-mark">HN</div>
+          <div class="logo-text">
+            <div class="logo-main">DENTAL LAB</div>
+            <div class="logo-sub">DENTAL DIGITAL LAB</div>
+          </div>
+        </div>
+
+        <div class="portal-tabs">
+          <button class="portal-tab ${activePortal==="doctor"?"active":""}"
+            onclick="switchPortal('doctor')">
+            Doctor
+          </button>
+
+          <button class="portal-tab ${activePortal==="admin"?"active":""}"
+            onclick="switchPortal('admin')">
+            Admin
+          </button>
+        </div>
+
+        ${
+          activePortal==="doctor"
+          ? doctorAuth(mode,isSignup)
+          : adminAuth()
+        }
+
       </div>
+    </div>
+  `;
+}
 
-      <h2>Create an Account</h2>
+function doctorAuth(mode,isSignup){
 
-      <p class="subtitle">
-        Join HN Dental Lab to submit and track your cases.
+  if(isSignup){
+
+    return `
+      <h1 class="auth-title">Create Account</h1>
+      <p class="auth-subtitle">
+        Create your dental professional account.
       </p>
 
-      <div class="field">
-        <label>Name</label>
-        <input id="signupName" placeholder="Your name, clinic, lab or hospital">
-      </div>
+      <form onsubmit="doctorSignup(event)">
 
-      <div class="field">
-        <label>Email</label>
-        <input id="signupEmail" type="email" placeholder="Enter your email">
-      </div>
+        <div class="form-group">
+          <label class="form-label">Name</label>
+          <input id="signupName"
+                 class="form-input"
+                 placeholder="Your name, clinic, lab or hospital"
+                 required>
+        </div>
 
-      <div class="field">
-        <label>Password</label>
-        <input id="signupPassword" type="password" placeholder="Create a password">
-      </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input id="signupEmail"
+                 type="email"
+                 class="form-input"
+                 placeholder="your@email.com"
+                 required>
+        </div>
 
-      <div class="field">
-        <label>Confirm Password</label>
-        <input id="signupConfirm" type="password" placeholder="Confirm your password">
-      </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input id="signupPassword"
+                 type="password"
+                 class="form-input"
+                 placeholder="Create a password"
+                 required>
+        </div>
 
-      <button class="primary-btn" onclick="createAccount()">
-        Create Account
-      </button>
+        <div class="form-group">
+          <label class="form-label">Confirm Password</label>
+          <input id="signupConfirm"
+                 type="password"
+                 class="form-input"
+                 placeholder="Confirm your password"
+                 required>
+        </div>
 
-      <div class="auth-bottom">
-        Already have an account?
-        <button onclick="renderAuth('doctor','login')">Sign In</button>
-      </div>
-
-    `;
-
-    return;
-  }
-
-
-  if(screen==="forgot"){
-
-    box.innerHTML=`
-
-      <div style="text-align:center;margin-bottom:25px;">
-        <div style="font-size:42px;">🔒</div>
-      </div>
-
-      <h2>Forgot Password?</h2>
-
-      <p class="subtitle">
-        Enter your email and we'll send you a reset link.
-      </p>
-
-      <div class="field">
-        <label>Email</label>
-        <input id="forgotEmail" type="email" placeholder="Enter your email">
-      </div>
-
-      <button class="primary-btn" onclick="resetPassword()">
-        Send Reset Link
-      </button>
-
-      <div class="auth-bottom">
-        <button onclick="renderAuth('doctor','login')">
-          ← Back to Sign In
-        </button>
-      </div>
-
-    `;
-
-    return;
-  }
-
-
-  const isAdmin=type==="admin";
-
-  box.innerHTML=`
-
-    <div class="auth-tabs">
-
-      <button
-        class="${!isAdmin?'active':''}"
-        onclick="renderAuth('doctor','login')"
-      >
-        Doctor
-      </button>
-
-      <button
-        class="${isAdmin?'active':''}"
-        onclick="renderAuth('admin','login')"
-      >
-        Admin
-      </button>
-
-    </div>
-
-    <h2>${isAdmin ? "Admin Portal" : "Welcome Back"}</h2>
-
-    <p class="subtitle">
-      ${isAdmin
-        ? "Sign in to manage all dental cases."
-        : "Sign in to your account to manage your cases."}
-    </p>
-
-    <div class="field">
-      <label>Name or Email</label>
-      <input id="loginIdentifier" placeholder="Enter your name or email">
-    </div>
-
-    <div class="field">
-      <label>Password</label>
-      <input id="loginPassword" type="password" placeholder="Enter your password">
-    </div>
-
-    <div style="text-align:right;margin-top:-5px;margin-bottom:18px;">
-      <button
-        class="text-btn"
-        onclick="renderAuth('${type}','forgot')"
-      >
-        Forgot Password?
-      </button>
-    </div>
-
-    <button class="primary-btn" onclick="login()">
-      Sign In
-    </button>
-
-    ${
-      !isAdmin
-      ?
-      `
-      <div class="auth-bottom">
-        Don't have an account?
-        <button onclick="renderAuth('doctor','signup')">
+        <button class="primary-btn">
           Create Account
         </button>
-      </div>
-      `
-      :
-      `
-      <div class="auth-bottom">
-        Doctor Portal?
-        <button onclick="renderAuth('doctor','login')">
-          Sign In
-        </button>
-      </div>
-      `
-    }
 
+      </form>
+
+      <div class="switch-auth">
+        Already have an account?
+        <span onclick="authPage('login')">Sign In</span>
+      </div>
+    `;
+  }
+
+  return `
+    <h1 class="auth-title">Doctor Portal</h1>
+    <p class="auth-subtitle">
+      Sign in to manage your dental cases.
+    </p>
+
+    <form onsubmit="doctorLogin(event)">
+
+      <div class="form-group">
+        <label class="form-label">Name or Email</label>
+        <input id="loginIdentity"
+               class="form-input"
+               placeholder="Name or email"
+               required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Password</label>
+        <input id="loginPassword"
+               type="password"
+               class="form-input"
+               placeholder="Password"
+               required>
+      </div>
+
+      <span class="forgot" onclick="forgotPassword()">
+        Forgot Password?
+      </span>
+
+      <button class="primary-btn">
+        Sign In
+      </button>
+
+    </form>
+
+    <div class="switch-auth">
+      Don't have an account?
+      <span onclick="authPage('signup')">Create Account</span>
+    </div>
+  `;
+}
+
+function adminAuth(){
+
+  return `
+    <h1 class="auth-title">Admin Portal</h1>
+
+    <p class="auth-subtitle">
+      Sign in to manage all dental cases.
+    </p>
+
+    <form onsubmit="adminLogin(event)">
+
+      <div class="form-group">
+        <label class="form-label">Name or Email</label>
+
+        <input id="adminIdentity"
+               class="form-input"
+               value=""
+               placeholder="Admin email"
+               autocomplete="username"
+               required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Password</label>
+
+        <input id="adminPassword"
+               type="password"
+               class="form-input"
+               placeholder="Password"
+               autocomplete="current-password"
+               required>
+      </div>
+
+      <span class="forgot" onclick="forgotAdmin()">
+        Forgot Password?
+      </span>
+
+      <button class="primary-btn">
+        Sign In
+      </button>
+
+    </form>
+
+    <div class="switch-auth">
+      Doctor Portal?
+      <span onclick="switchPortal('doctor')">Sign In</span>
+    </div>
   `;
 }
 
 
 /* =========================================================
-   CREATE ACCOUNT
+   AUTH ACTIONS
 ========================================================= */
 
-function createAccount(){
+function switchPortal(portal){
+  activePortal=portal;
+  authPage("login");
+}
+
+function doctorSignup(e){
+  e.preventDefault();
 
   const name=document.getElementById("signupName").value.trim();
   const email=document.getElementById("signupEmail").value.trim().toLowerCase();
   const password=document.getElementById("signupPassword").value;
   const confirm=document.getElementById("signupConfirm").value;
-
-  if(!name || !email || !password || !confirm){
-    toast("Please complete all fields.");
-    return;
-  }
 
   if(password!==confirm){
     toast("Passwords do not match.");
@@ -2367,408 +1391,636 @@ function createAccount(){
   }
 
   if(users.some(u=>u.email===email)){
-    toast("An account with this email already exists.");
+    toast("This email is already registered.");
     return;
   }
 
   users.push({
-    id:"U-"+Date.now(),
+    id:"USR-"+Date.now(),
     name,
     email,
     password,
-    role:"doctor",
-    clinic:name,
-    avatar:"",
+    photo:"",
     createdAt:new Date().toISOString()
   });
 
-  saveAll();
+  save();
 
   toast("Account created successfully.");
 
-  setTimeout(()=>{
-    renderAuth("doctor","login");
-  },700);
+  setTimeout(()=>authPage("login"),700);
 }
 
+function doctorLogin(e){
+  e.preventDefault();
 
-/* =========================================================
-   LOGIN
-========================================================= */
-
-function login(){
-
-  const identifier=document.getElementById("loginIdentifier").value.trim().toLowerCase();
+  const identity=document.getElementById("loginIdentity").value.trim().toLowerCase();
   const password=document.getElementById("loginPassword").value;
 
-  if(currentRole==="admin"){
-
-    if(
-      identifier==="admin@hndentaldigitallab.com" &&
-      password==="admin123"
-    ){
-
-      currentUser={
-        id:"ADMIN",
-        name:"HN Dental Lab",
-        email:"admin@hndentaldigitallab.com",
-        role:"admin"
-      };
-
-      localStorage.setItem(CURRENT_KEY,JSON.stringify(currentUser));
-
-      openApp();
-
-      return;
-    }
-
-    toast("Invalid admin login.");
-    return;
-  }
-
   const user=users.find(u=>
-    (u.email===identifier || u.name.toLowerCase()===identifier)
-    && u.password===password
+    (u.email.toLowerCase()===identity ||
+     u.name.toLowerCase()===identity) &&
+    u.password===password
   );
 
   if(!user){
-    toast("Incorrect name/email or password.");
+    toast("Invalid name/email or password.");
     return;
   }
 
-  currentUser=user;
+  currentUser={
+    role:"doctor",
+    ...user
+  };
 
-  localStorage.setItem(CURRENT_KEY,JSON.stringify(currentUser));
-
-  openApp();
+  save();
+  renderDoctor();
 }
 
+function adminLogin(e){
+  e.preventDefault();
 
-/* =========================================================
-   PASSWORD RESET
-========================================================= */
+  const identity=document
+    .getElementById("adminIdentity")
+    .value
+    .trim()
+    .toLowerCase();
 
-function resetPassword(){
+  const password=document
+    .getElementById("adminPassword")
+    .value;
 
-  const email=document.getElementById("forgotEmail").value.trim().toLowerCase();
+  if(
+    identity===ADMIN_EMAIL.toLowerCase() &&
+    password===ADMIN_PASSWORD
+  ){
+    currentUser={
+      role:"admin",
+      name:"HN Dental Lab",
+      email:ADMIN_EMAIL
+    };
 
-  if(!email){
-    toast("Please enter your email.");
+    save();
+    renderAdmin();
     return;
   }
 
-  const exists=users.some(u=>u.email===email);
-
-  if(!exists){
-    toast("No account found with this email.");
-    return;
-  }
-
-  toast("Reset link sent to your email.");
-
-  setTimeout(()=>{
-    renderAuth("doctor","login");
-  },1200);
+  toast("Invalid admin login.");
 }
 
+function forgotPassword(){
 
-/* =========================================================
-   APP OPEN
-========================================================= */
+  const email=prompt("Enter your registered email:");
 
-function openApp(){
+  if(!email) return;
 
-  document.getElementById("authPage").classList.add("hidden");
-  document.getElementById("app").classList.remove("hidden");
+  const user=users.find(
+    u=>u.email.toLowerCase()===email.trim().toLowerCase()
+  );
 
-  document.getElementById("topName").textContent=currentUser.name;
-  document.getElementById("topAvatar").textContent=initials(currentUser.name);
-  document.getElementById("profileAvatar").textContent=initials(currentUser.name);
-  document.getElementById("profilePanelName").textContent=currentUser.name;
-  document.getElementById("profilePanelEmail").textContent=currentUser.email;
-
-  renderDashboard();
-  renderCasesTable();
-  renderNotifications();
-
-  if(currentUser.role==="admin"){
-    document.getElementById("welcomeTitle").textContent="Admin Overview";
+  if(user){
+    toast("Password recovery instructions would be sent by email.");
   }else{
-    document.getElementById("welcomeTitle").textContent="Doctor Overview";
+    toast("No account found with this email.");
   }
 }
 
+function forgotAdmin(){
+  toast("Admin password recovery will be connected to email in the final backend version.");
+}
 
 function logout(){
-
-  localStorage.removeItem(CURRENT_KEY);
-
   currentUser=null;
-
-  document.getElementById("app").classList.add("hidden");
-  document.getElementById("authPage").classList.remove("hidden");
-
-  renderAuth("doctor","login");
+  localStorage.removeItem("hn_current_user");
+  activePortal="doctor";
+  authPage("login");
 }
 
 
 /* =========================================================
-   NAVIGATION
+   DOCTOR APP
 ========================================================= */
 
-function showPage(page){
+function renderDoctor(){
 
-  document.getElementById("dashboardPage").classList.toggle(
-    "hidden",
-    page!=="dashboard"
-  );
+  activePage="dashboard";
 
-  document.getElementById("casesPage").classList.toggle(
-    "hidden",
-    page!=="cases"
-  );
+  document.getElementById("app").innerHTML=`
+    <div class="app">
 
-  document.getElementById("pageHeaderTitle").textContent =
-    page==="dashboard" ? "Overview" : "Cases";
+      ${topbar("doctor")}
 
-  document.querySelectorAll(".nav-btn").forEach(x=>{
-    x.classList.remove("active");
-  });
+      <div class="layout">
 
-  const buttons=document.querySelectorAll(".nav-btn");
+        <aside class="sidebar">
 
-  if(page==="dashboard") buttons[0].classList.add("active");
-  if(page==="cases") buttons[1].classList.add("active");
+          <div class="nav-title">Doctor Portal</div>
 
-  renderCasesTable();
-}
-
-
-/* =========================================================
-   DASHBOARD
-========================================================= */
-
-function getVisibleCases(){
-
-  if(!currentUser) return [];
-
-  if(currentUser.role==="admin"){
-    return cases;
-  }
-
-  return cases.filter(c=>c.userId===currentUser.id);
-}
-
-
-function renderDashboard(){
-
-  const visible=getVisibleCases();
-
-  const total=visible.length;
-  const newCount=visible.filter(c=>c.status==="New").length;
-  const progress=visible.filter(c=>c.status==="In Progress").length;
-  const completed=visible.filter(c=>c.status==="Completed").length;
-
-  document.getElementById("totalCases").textContent=total;
-  document.getElementById("newCases").textContent=newCount;
-  document.getElementById("progressCases").textContent=progress;
-  document.getElementById("completedCases").textContent=completed;
-  document.getElementById("donutTotal").textContent=total;
-
-  const types={};
-
-  visible.forEach(c=>{
-    c.teeth.forEach(t=>{
-      types[t.work]=(types[t.work]||0)+1;
-    });
-  });
-
-  const legend=document.getElementById("caseLegend");
-
-  const colors=[
-    "#1769e0",
-    "#2d9cdb",
-    "#18a66a",
-    "#f2a900",
-    "#8b5cf6",
-    "#94a3b8"
-  ];
-
-  const entries=Object.entries(types).sort((a,b)=>b[1]-a[1]).slice(0,6);
-
-  if(!entries.length){
-    legend.innerHTML=`
-      <div style="font-size:12px;color:#94a3b8;">
-        No case data yet.
-      </div>
-    `;
-  }else{
-
-    legend.innerHTML=entries.map((item,i)=>{
-
-      const percent=total
-        ? Math.round((item[1]/Math.max(total,1))*100)
-        : 0;
-
-      return `
-        <div class="legend-item">
-          <span
-            class="legend-dot"
-            style="background:${colors[i]}"
-          ></span>
-
-          <span>${escapeHTML(item[0])}</span>
-
-          <strong>${percent}%</strong>
-        </div>
-      `;
-
-    }).join("");
-  }
-
-  renderCasesTable();
-}
-
-
-/* =========================================================
-   CASE TABLE
-========================================================= */
-
-function renderCasesTable(){
-
-  if(!currentUser) return;
-
-  const isAdmin=currentUser.role==="admin";
-
-  let list=getVisibleCases();
-
-  const searchEl=
-    document.getElementById("caseSearch") ||
-    document.getElementById("dashboardSearch");
-
-  const search=searchEl ? searchEl.value.toLowerCase().trim() : "";
-
-  const statusFilter=document.getElementById("caseStatusFilter");
-
-  const filter=statusFilter ? statusFilter.value : "";
-
-  if(search){
-
-    list=list.filter(c=>
-      c.id.toLowerCase().includes(search) ||
-      c.patient.toLowerCase().includes(search) ||
-      c.doctor.toLowerCase().includes(search)
-    );
-
-  }
-
-  if(filter){
-    list=list.filter(c=>c.status===filter);
-  }
-
-  list=list.slice().reverse();
-
-  const body1=document.getElementById("dashboardCasesBody");
-  const body2=document.getElementById("casesBody");
-
-  const html=list.map(c=>{
-
-    const work=c.teeth.map(t=>t.work).join(", ");
-
-    const statusClass={
-      "New":"status-new",
-      "Seen - Not Started":"status-seen",
-      "In Progress":"status-progress",
-      "Completed":"status-completed",
-      "Sent":"status-sent"
-    }[c.status] || "status-seen";
-
-    const unread=c.unread;
-
-    return `
-
-      <tr class="${unread ? "unread":""}">
-
-        <td>
-          ${unread ? '<span class="unread-dot"></span>' : ''}
-          <span class="case-id">
-            ${escapeHTML(c.id)}
-          </span>
-        </td>
-
-        <td>${escapeHTML(c.patient)}</td>
-
-        ${
-          isAdmin
-          ? `<td>${escapeHTML(c.doctor)}</td>`
-          : ""
-        }
-
-        <td>${escapeHTML(work)}</td>
-
-        <td>
-          ${new Date(c.createdAt).toLocaleDateString()}
-        </td>
-
-        <td>
-          ${c.delivery || "-"}
-        </td>
-
-        <td>
-
-          <span class="status ${statusClass}">
-
-            <span class="status-dot"></span>
-
-            ${escapeHTML(c.status)}
-
-          </span>
-
-        </td>
-
-        <td>
-
-          <button
-            class="view-btn"
-            onclick="openCaseDetails('${c.id}')"
-          >
-            View
+          <button class="nav-item active"
+            onclick="doctorPage('dashboard')">
+            ◫ &nbsp; Dashboard
           </button>
 
-        </td>
+          <button class="nav-item"
+            onclick="doctorPage('cases')">
+            ▣ &nbsp; My Cases
+          </button>
 
-      </tr>
+          <button class="nav-item"
+            onclick="openNewCase()">
+            ＋ &nbsp; New Case
+          </button>
 
+          <button class="nav-item"
+            onclick="openProfile()">
+            ◯ &nbsp; Profile
+          </button>
+
+          <div style="margin-top:30px">
+            <button class="nav-item" onclick="logout()">
+              ↪ &nbsp; Sign Out
+            </button>
+          </div>
+
+        </aside>
+
+        <main class="main" id="doctorMain"></main>
+
+      </div>
+
+      <div id="overlayArea"></div>
+
+    </div>
+  `;
+
+  doctorDashboard();
+}
+
+function topbar(role){
+
+  const unread=cases.filter(c=>
+    role==="admin" ? c.adminUnread : c.doctorUnread
+  ).length;
+
+  return `
+    <header class="topbar">
+
+      <div class="logo topbar-logo">
+        <div class="logo-mark">HN</div>
+        <div class="logo-text">
+          <div class="logo-main">DENTAL LAB</div>
+          <div class="logo-sub">DENTAL DIGITAL LAB</div>
+        </div>
+      </div>
+
+      <div class="top-actions">
+
+        <button class="icon-btn"
+          onclick="toggleNotifications('${role}')">
+          🔔
+          ${unread ? `<span class="notification-dot"></span>` : ""}
+        </button>
+
+        <button class="profile-btn"
+          onclick="toggleProfile()">
+          <div class="avatar">
+            ${initials(currentUser?.name)}
+          </div>
+          <span>${esc(currentUser?.name || "Profile")}</span>
+          ▾
+        </button>
+
+      </div>
+
+    </header>
+  `;
+}
+
+function doctorPage(page){
+  activePage=page;
+
+  if(page==="dashboard") doctorDashboard();
+  if(page==="cases") doctorCases();
+}
+
+function doctorDashboard(){
+
+  const mine=cases.filter(c=>c.doctorId===currentUser.id);
+
+  document.getElementById("doctorMain").innerHTML=`
+
+    <div class="page-heading">
+
+      <div>
+        <h1>Overview</h1>
+        <p>Welcome back, ${esc(currentUser.name)}.</p>
+      </div>
+
+      <button class="add-case-btn"
+        onclick="openNewCase()">
+        ＋ New Case
+      </button>
+
+    </div>
+
+    <div class="stats">
+
+      <div class="stat-card">
+        <div class="stat-label">Total Cases</div>
+        <div class="stat-value">${mine.length}</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">New</div>
+        <div class="stat-value">
+          ${mine.filter(c=>c.status==="New").length}
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">In Progress</div>
+        <div class="stat-value">
+          ${mine.filter(c=>c.status==="In Progress").length}
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">Completed</div>
+        <div class="stat-value">
+          ${mine.filter(c=>c.status==="Completed").length}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="dashboard-grid">
+
+      <div class="panel">
+
+        <div class="panel-title">
+          Case Type
+        </div>
+
+        <div class="case-chart">
+
+          <div class="donut">
+            <div class="donut-center">
+              <strong>${mine.length}</strong>
+              <span>This Month</span>
+            </div>
+          </div>
+
+          <div class="legend">
+
+            <div class="legend-row">
+              <span class="legend-dot"></span>
+              Crown
+            </div>
+
+            <div class="legend-row">
+              <span class="legend-dot"></span>
+              Bridge
+            </div>
+
+            <div class="legend-row">
+              <span class="legend-dot"></span>
+              Implant
+            </div>
+
+            <div class="legend-row">
+              <span class="legend-dot"></span>
+              Chape
+            </div>
+
+            <div class="legend-row">
+              <span class="legend-dot"></span>
+              Other
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="panel">
+
+        <div class="panel-title">
+          Recent Cases
+        </div>
+
+        ${caseTable(mine.slice(-6).reverse(),"doctor")}
+
+      </div>
+
+    </div>
+  `;
+}
+
+function doctorCases(){
+
+  const mine=cases
+    .filter(c=>c.doctorId===currentUser.id)
+    .reverse();
+
+  document.getElementById("doctorMain").innerHTML=`
+
+    <div class="page-heading">
+
+      <div>
+        <h1>My Cases</h1>
+        <p>All your submitted dental cases.</p>
+      </div>
+
+      <button class="add-case-btn"
+        onclick="openNewCase()">
+        ＋ New Case
+      </button>
+
+    </div>
+
+    <div class="panel">
+      ${caseTable(mine,"doctor")}
+    </div>
+  `;
+}
+
+
+/* =========================================================
+   ADMIN APP
+========================================================= */
+
+function renderAdmin(){
+
+  document.getElementById("app").innerHTML=`
+
+    <div class="app">
+
+      ${topbar("admin")}
+
+      <div class="layout">
+
+        <aside class="sidebar">
+
+          <div class="nav-title">Admin Portal</div>
+
+          <button class="nav-item active"
+            onclick="adminPage('dashboard')">
+            ◫ &nbsp; Dashboard
+          </button>
+
+          <button class="nav-item"
+            onclick="adminPage('all')">
+            ▣ &nbsp; All Cases
+          </button>
+
+          <button class="nav-item"
+            onclick="adminPage('new')">
+            ● &nbsp; New Cases
+          </button>
+
+          <button class="nav-item"
+            onclick="adminPage('progress')">
+            ◌ &nbsp; In Progress
+          </button>
+
+          <button class="nav-item"
+            onclick="adminPage('completed')">
+            ✓ &nbsp; Completed
+          </button>
+
+          <button class="nav-item"
+            onclick="adminPage('sent')">
+            ➜ &nbsp; Sent
+          </button>
+
+          <div style="margin-top:30px">
+
+            <button class="nav-item"
+              onclick="logout()">
+              ↪ &nbsp; Sign Out
+            </button>
+
+          </div>
+
+        </aside>
+
+        <main class="main" id="adminMain"></main>
+
+      </div>
+
+      <div id="overlayArea"></div>
+
+    </div>
+  `;
+
+  adminDashboard();
+}
+
+function adminPage(page){
+  activePage=page;
+
+  if(page==="dashboard") adminDashboard();
+  else adminCases(page);
+}
+
+function adminDashboard(){
+
+  document.getElementById("adminMain").innerHTML=`
+
+    <div class="page-heading">
+
+      <div>
+        <h1>Overview</h1>
+        <p>All dental cases received by HN Dental Lab.</p>
+      </div>
+
+    </div>
+
+    <div class="stats">
+
+      <div class="stat-card">
+        <div class="stat-label">Total Cases</div>
+        <div class="stat-value">${cases.length}</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">New Cases</div>
+        <div class="stat-value">
+          ${cases.filter(c=>c.status==="New").length}
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">In Progress</div>
+        <div class="stat-value">
+          ${cases.filter(c=>c.status==="In Progress").length}
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">Completed</div>
+        <div class="stat-value">
+          ${cases.filter(c=>c.status==="Completed").length}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="panel">
+
+      <div class="panel-title">
+        Recent Cases
+      </div>
+
+      ${caseTable(cases.slice(-10).reverse(),"admin")}
+
+    </div>
+  `;
+}
+
+function adminCases(filter){
+
+  let list=[...cases];
+
+  if(filter==="new")
+    list=list.filter(c=>c.status==="New");
+
+  if(filter==="progress")
+    list=list.filter(c=>c.status==="In Progress");
+
+  if(filter==="completed")
+    list=list.filter(c=>c.status==="Completed");
+
+  if(filter==="sent")
+    list=list.filter(c=>c.status==="Sent");
+
+  list.reverse();
+
+  document.getElementById("adminMain").innerHTML=`
+
+    <div class="page-heading">
+
+      <div>
+        <h1>${filter==="all"?"All Cases":filter.replace("-"," ")}</h1>
+        <p>Manage dental cases.</p>
+      </div>
+
+    </div>
+
+    <div class="panel">
+
+      <div style="margin-bottom:18px">
+
+        <input class="form-input"
+          placeholder="Search by patient, doctor or case ID..."
+          oninput="searchAdmin(this.value)">
+
+      </div>
+
+      <div id="adminTable">
+        ${caseTable(list,"admin")}
+      </div>
+
+    </div>
+  `;
+}
+
+function searchAdmin(query){
+
+  query=query.toLowerCase();
+
+  const list=cases.filter(c=>
+    c.id.toLowerCase().includes(query) ||
+    c.patient.toLowerCase().includes(query) ||
+    c.doctorName.toLowerCase().includes(query)
+  ).reverse();
+
+  document.getElementById("adminTable").innerHTML=
+    caseTable(list,"admin");
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+function caseTable(list,role){
+
+  if(!list.length){
+
+    return `
+      <div style="padding:40px;text-align:center;color:#8290A3">
+        No cases yet.
+      </div>
     `;
-
-  }).join("");
-
-
-  if(body1){
-
-    body1.innerHTML=html ||
-      `
-      <tr>
-        <td colspan="${isAdmin?8:7}" style="text-align:center;color:#94a3b8;padding:40px;">
-          No cases yet.
-        </td>
-      </tr>
-      `;
-
   }
 
-  if(body2){
+  return `
+    <div class="table-wrap">
 
-    body2.innerHTML=html ||
-      `
-      <tr>
-        <td colspan="${isAdmin?8:7}" style="text-align:center;color:#94a3b8;padding:40px;">
-          No cases found.
-        </td>
-      </tr>
-      `;
+      <table>
 
-  }
+        <thead>
+          <tr>
+            <th>Case ID</th>
+            ${role==="admin" ? "<th>Doctor</th>" : ""}
+            <th>Patient</th>
+            <th>Work</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          ${list.map(c=>`
+
+            <tr class="${c.adminUnread&&role==="admin"?"case-unseen":""}">
+
+              <td>
+                ${c.adminUnread&&role==="admin"
+                  ? `<span class="unseen-dot"></span>`
+                  : ""}
+                <span class="case-id">${esc(c.id)}</span>
+              </td>
+
+              ${role==="admin"
+                ? `<td>${esc(c.doctorName)}</td>`
+                : ""}
+
+              <td>${esc(c.patient)}</td>
+
+              <td>
+                ${esc(Object.values(c.teeth||{})[0] || c.work || "-")}
+              </td>
+
+              <td>${formatDate(c.createdAt)}</td>
+
+              <td>
+                <span class="status ${statusClass(c.status)}">
+                  ${esc(c.status)}
+                </span>
+              </td>
+
+              <td>
+                <button class="view-btn"
+                  onclick="openCase('${c.id}')">
+                  View
+                </button>
+              </td>
+
+            </tr>
+
+          `).join("")}
+
+        </tbody>
+
+      </table>
+
+    </div>
+  `;
 }
 
 
@@ -2778,338 +2030,452 @@ function renderCasesTable(){
 
 function openNewCase(){
 
-  if(currentUser.role==="admin"){
-    toast("Admin cannot create a doctor case from this demo.");
-    return;
-  }
-
   selectedTeeth={};
-  selectedFiles=[];
+  selectedTooth=null;
 
-  document.getElementById("patientName").value="";
-  document.getElementById("patientType").value="";
-  document.getElementById("deliveryDate").value="";
-  document.getElementById("shade").value="A1";
-  document.getElementById("instructions").value="";
-  document.getElementById("fileList").innerHTML="";
+  document.getElementById("overlayArea").innerHTML=`
 
-  document.getElementById("newCaseModal").classList.remove("hidden");
+    <div class="modal-backdrop"
+      onclick="if(event.target===this)closeModal()">
 
-  renderArchs();
-  renderSelectedTeeth();
-}
+      <div class="modal">
 
+        <div class="modal-head">
 
-function closeNewCase(){
-  document.getElementById("newCaseModal").classList.add("hidden");
-}
+          <div>
+            <h2>New Dental Case</h2>
+            <p style="color:#7B8798;margin-top:5px">
+              Create and send a new case to HN Dental Lab.
+            </p>
+          </div>
 
+          <button class="close-btn"
+            onclick="closeModal()">×</button>
 
-/* =========================================================
-   ARCH
-========================================================= */
+        </div>
 
-const upperTeeth=[
-  18,17,16,15,14,13,12,11,
-  21,22,23,24,25,26,27,28
-];
+        <form onsubmit="submitCase(event)">
 
-const lowerTeeth=[
-  48,47,46,45,44,43,42,41,
-  31,32,33,34,35,36,37,38
-];
+          <div class="form-grid">
 
+            <div class="form-group">
+              <label class="form-label">
+                Patient Name
+              </label>
 
-function renderArchs(){
+              <input id="patientName"
+                class="form-input"
+                placeholder="Patient name"
+                required>
+            </div>
 
-  const upper=document.getElementById("upperArch");
-  const lower=document.getElementById("lowerArch");
+            <div class="form-group">
 
-  upper.innerHTML="";
-  lower.innerHTML="";
+              <label class="form-label">
+                Gender
+              </label>
 
-  upperTeeth.forEach((tooth,index)=>{
+              <div class="gender">
 
-    const btn=document.createElement("button");
+                <label>
+                  <input type="radio"
+                    name="gender"
+                    value="Male"
+                    checked>
+                  <span>Male</span>
+                </label>
 
-    btn.className="tooth";
+                <label>
+                  <input type="radio"
+                    name="gender"
+                    value="Female">
+                  <span>Female</span>
+                </label>
 
-    if(selectedTeeth[tooth]){
-      btn.classList.add("selected");
-    }
+              </div>
 
-    btn.textContent=tooth;
+            </div>
 
-    btn.onclick=()=>selectTooth(tooth);
+            <div class="full">
 
-    btn.style.left=
-      `${15 + Math.sin(index/(upperTeeth.length-1)*Math.PI)*120 + index*0.2}px`;
+              <label class="form-label">
+                Teeth & Work
+              </label>
 
-    btn.style.top=
-      `${8 + Math.sin(index/(upperTeeth.length-1)*Math.PI)*175}px`;
+              <div class="arch-box">
 
-    upper.appendChild(btn);
+                <div class="arch-title">
+                  Upper Arch
+                </div>
 
-  });
+                <div class="arch"
+                  id="upperArch"></div>
 
+                <div class="arch-title"
+                  style="margin-top:8px">
+                  Lower Arch
+                </div>
 
-  lowerTeeth.forEach((tooth,index)=>{
+                <div class="arch"
+                  id="lowerArch"></div>
 
-    const btn=document.createElement("button");
+              </div>
 
-    btn.className="tooth";
+              <div style="margin-top:13px">
 
-    if(selectedTeeth[tooth]){
-      btn.classList.add("selected");
-    }
+                <strong>Selected Teeth & Work</strong>
 
-    btn.textContent=tooth;
+                <div id="selectedSummary"
+                  style="margin-top:8px;color:#718096">
+                  Click a tooth to select the work.
+                </div>
 
-    btn.onclick=()=>selectTooth(tooth);
+              </div>
 
-    btn.style.left=
-      `${15 + Math.sin(index/(lowerTeeth.length-1)*Math.PI)*120 + index*0.2}px`;
+            </div>
 
-    btn.style.top=
-      `${8 + Math.sin(index/(lowerTeeth.length-1)*Math.PI)*175}px`;
+            <div class="form-group">
 
-    lower.appendChild(btn);
+              <label class="form-label">
+                Shade
+              </label>
 
-  });
+              <select id="shade"
+                class="form-select">
 
-}
+                <option value="">Select shade</option>
+                <option>A1</option>
+                <option>A2</option>
+                <option>A3</option>
+                <option>A3.5</option>
+                <option>B1</option>
+                <option>B2</option>
+                <option>C1</option>
+                <option>D2</option>
+                <option>BL1</option>
+                <option>BL2</option>
 
+              </select>
 
-/* =========================================================
-   TOOTH SELECT
-========================================================= */
+            </div>
 
-function selectTooth(tooth){
+            <div class="form-group">
 
-  selectedToothForWork=tooth;
+              <label class="form-label">
+                Expected Delivery
+              </label>
 
-  document.getElementById("workModalTitle").textContent=
-    `Tooth ${tooth} — Select Work Type`;
+              <input id="deliveryDate"
+                type="date"
+                class="form-input"
+                required>
 
-  document.getElementById("workModal").classList.remove("hidden");
-}
+            </div>
 
+            <div class="form-group full">
 
-function closeWorkModal(){
-  document.getElementById("workModal").classList.add("hidden");
-}
+              <label class="form-label">
+                Additional Instructions
+              </label>
 
+              <textarea id="instructions"
+                class="form-textarea"
+                placeholder="Write any instructions for the laboratory..."></textarea>
 
-function confirmWorkType(){
+            </div>
 
-  const work=document.getElementById("workTypeSelect").value;
+            <div class="form-group full">
 
-  selectedTeeth[selectedToothForWork]={
-    tooth:selectedToothForWork,
-    work
-  };
+              <label class="form-label">
+                Upload Files
+              </label>
 
-  closeWorkModal();
+              <div class="upload">
 
-  renderArchs();
-  renderSelectedTeeth();
-}
+                <strong>
+                  Upload your dental files
+                </strong>
 
+                <small>
+                  STL, PLY, OBJ, JPG, PNG, ZIP
+                </small>
 
-function renderSelectedTeeth(){
+                <input id="caseFiles"
+                  type="file"
+                  multiple
+                  accept=".stl,.ply,.obj,.jpg,.jpeg,.png,.zip"
+                  style="display:block;margin:20px auto 0;max-width:100%">
 
-  const container=document.getElementById("selectedTeethList");
+              </div>
 
-  const values=Object.values(selectedTeeth);
+            </div>
 
-  if(!values.length){
+          </div>
 
-    container.innerHTML=`
-      <div style="color:#94a3b8;font-size:12px;">
-        Click a tooth to select the work.
+          <div class="modal-actions">
+
+            <button type="button"
+              class="secondary-btn"
+              onclick="closeModal()">
+              Cancel
+            </button>
+
+            <button class="primary-btn">
+              Submit Case
+            </button>
+
+          </div>
+
+        </form>
+
       </div>
-    `;
-
-    return;
-  }
-
-  container.innerHTML=values.map(t=>`
-
-    <div class="selected-item">
-
-      <strong>Tooth ${t.tooth}</strong>
-
-      <select
-        class="work-select"
-        onchange="changeToothWork(${t.tooth},this.value)"
-      >
-
-        ${[
-          "Chape",
-          "Crown",
-          "Crown on Implant",
-          "Inlay / Onlay",
-          "Veneer",
-          "Bridge 2 Units",
-          "Bridge 3 Units",
-          "Bridge 4–5 Units",
-          "Bridge 6+ Units",
-          "Bridge on Implant",
-          "Full Arch",
-          "Full Arch on Implant",
-          "All-on-4",
-          "All-on-6",
-          "DSD / Smile Design",
-          "Digital Mock-up"
-        ].map(x=>
-          `<option ${x===t.work?"selected":""}>${x}</option>`
-        ).join("")}
-
-      </select>
-
-      <button
-        onclick="removeTooth(${t.tooth})"
-        style="border:0;background:none;color:#d33;font-size:16px;"
-      >
-        ×
-      </button>
 
     </div>
+  `;
 
+  drawArches();
+}
+
+function drawArches(){
+
+  drawArch("upperArch",UPPER,true);
+  drawArch("lowerArch",LOWER,false);
+
+}
+
+function drawArch(id,teeth,upper){
+
+  const container=document.getElementById(id);
+
+  if(!container) return;
+
+  container.innerHTML="";
+
+  const count=teeth.length;
+
+  teeth.forEach((number,i)=>{
+
+    const tooth=document.createElement("button");
+
+    tooth.type="button";
+    tooth.className="tooth";
+
+    if(selectedTeeth[number])
+      tooth.classList.add("selected","has-work");
+
+    tooth.innerHTML=`
+      ${number}
+      <span class="work-badge"></span>
+    `;
+
+    /*
+      Creates a smooth dental arch.
+      This is intentionally calculated instead of using
+      a diagonal flex layout, so it stays stable on mobile.
+    */
+
+    const x=5+(i/(count-1))*90;
+
+    const center=(count-1)/2;
+
+    const distance=Math.abs(i-center);
+
+    const y=upper
+      ? 15 + Math.pow(distance,1.65)*4.1
+      : 15 + Math.pow(distance,1.65)*4.1;
+
+    const rotate=(i-center)*3.4;
+
+    tooth.style.left=`${x}%`;
+    tooth.style.top=`${Math.min(y,190)}px`;
+    tooth.style.transform=`translateX(-50%) rotate(${rotate}deg)`;
+
+    tooth.onclick=(e)=>{
+      e.stopPropagation();
+      openToothMenu(number,tooth);
+    };
+
+    container.appendChild(tooth);
+  });
+}
+
+function openToothMenu(number,button){
+
+  selectedTooth=number;
+
+  const old=document.querySelector(".tooth-popup");
+  if(old) old.remove();
+
+  const popup=document.createElement("div");
+  popup.className="tooth-popup";
+
+  popup.innerHTML=`
+    <div class="tooth-popup-title">
+      Tooth ${number} — Select work
+    </div>
+
+    ${WORK_TYPES.map(work=>`
+
+      <button class="work-option"
+        onclick="selectToothWork('${number}','${work.replaceAll("'","\\'")}')">
+        ${work}
+      </button>
+
+    `).join("")}
+
+    <button class="work-option"
+      style="color:#D95757"
+      onclick="removeTooth('${number}')">
+      Remove selection
+    </button>
+  `;
+
+  document.body.appendChild(popup);
+
+  const rect=button.getBoundingClientRect();
+
+  let left=rect.left;
+  let top=rect.bottom+8;
+
+  if(left+220>window.innerWidth-10)
+    left=window.innerWidth-230;
+
+  if(top+300>window.innerHeight)
+    top=rect.top-310;
+
+  popup.style.left=Math.max(8,left)+"px";
+  popup.style.top=Math.max(8,top)+"px";
+}
+
+function selectToothWork(number,work){
+
+  selectedTeeth[number]=work;
+
+  closeToothMenu();
+
+  drawArches();
+  updateSelectedSummary();
+}
+
+function removeTooth(number){
+
+  delete selectedTeeth[number];
+
+  closeToothMenu();
+
+  drawArches();
+  updateSelectedSummary();
+}
+
+function closeToothMenu(){
+
+  const popup=document.querySelector(".tooth-popup");
+  if(popup) popup.remove();
+}
+
+document.addEventListener("click",e=>{
+  if(!e.target.closest(".tooth") &&
+     !e.target.closest(".tooth-popup")){
+    closeToothMenu();
+  }
+});
+
+function updateSelectedSummary(){
+
+  const box=document.getElementById("selectedSummary");
+
+  if(!box) return;
+
+  const entries=Object.entries(selectedTeeth);
+
+  if(!entries.length){
+    box.textContent="Click a tooth to select the work.";
+    return;
+  }
+
+  box.innerHTML=entries.map(([tooth,work])=>`
+    <span style="
+      display:inline-flex;
+      background:#EAF1FB;
+      color:#2F63D8;
+      padding:7px 10px;
+      border-radius:9px;
+      margin:3px;
+      font-size:12px;
+      font-weight:700;">
+      ${tooth} · ${esc(work)}
+    </span>
   `).join("");
 }
 
+function submitCase(e){
 
-function changeToothWork(tooth,work){
+  e.preventDefault();
 
-  if(selectedTeeth[tooth]){
-    selectedTeeth[tooth].work=work;
-  }
-
-}
-
-
-function removeTooth(tooth){
-
-  delete selectedTeeth[tooth];
-
-  renderArchs();
-  renderSelectedTeeth();
-}
-
-
-/* =========================================================
-   FILES
-========================================================= */
-
-function handleFiles(){
-
-  const input=document.getElementById("caseFiles");
-
-  selectedFiles=Array.from(input.files);
-
-  document.getElementById("fileList").innerHTML=
-    selectedFiles.map(file=>`
-
-      <div class="file-item">
-
-        <span>
-          📎 ${escapeHTML(file.name)}
-        </span>
-
-        <span>
-          ${(file.size/1024/1024).toFixed(1)} MB
-        </span>
-
-      </div>
-
-    `).join("");
-}
-
-
-/* =========================================================
-   SUBMIT CASE
-========================================================= */
-
-function submitCase(){
-
-  const patient=document.getElementById("patientName").value.trim();
-  const type=document.getElementById("patientType").value;
-  const delivery=document.getElementById("deliveryDate").value;
-  const shade=document.getElementById("shade").value;
-  const instructions=document.getElementById("instructions").value.trim();
-
-  const teeth=Object.values(selectedTeeth);
-
-  if(!patient){
-    toast("Please enter the patient name.");
-    return;
-  }
-
-  if(!type){
-    toast("Please select the patient type.");
-    return;
-  }
-
-  if(!teeth.length){
+  if(!Object.keys(selectedTeeth).length){
     toast("Please select at least one tooth.");
     return;
   }
 
-  if(!delivery){
-    toast("Please select the delivery date.");
-    return;
-  }
-
-  const number=String(cases.length+1).padStart(4,"0");
+  const files=[
+    ...document.getElementById("caseFiles").files
+  ].map(f=>({
+    name:f.name,
+    size:f.size,
+    type:f.type
+  }));
 
   const newCase={
-    id:`HN-${new Date().getFullYear()}-${number}`,
-    userId:currentUser.id,
-    doctor:currentUser.name,
-    clinic:currentUser.clinic || currentUser.name,
-    patient,
-    patientType:type,
-    teeth,
-    shade,
-    delivery,
-    instructions,
-    files:selectedFiles.map(f=>({
-      name:f.name,
-      size:f.size,
-      type:f.type
-    })),
+
+    id:"HN-"+String(Date.now()).slice(-6),
+
+    doctorId:currentUser.id,
+
+    doctorName:currentUser.name,
+
+    doctorEmail:currentUser.email,
+
+    patient:document.getElementById("patientName").value.trim(),
+
+    gender:
+      document.querySelector('input[name="gender"]:checked')?.value || "",
+
+    teeth:{...selectedTeeth},
+
+    work:Object.values(selectedTeeth)[0],
+
+    shade:document.getElementById("shade").value,
+
+    deliveryDate:document.getElementById("deliveryDate").value,
+
+    instructions:document.getElementById("instructions").value.trim(),
+
+    files,
+
     status:"New",
-    unread:true,
+
     createdAt:new Date().toISOString(),
-    history:[
+
+    statusHistory:[
       {
         status:"New",
         date:new Date().toISOString()
       }
-    ]
+    ],
+
+    doctorUnread:false,
+    adminUnread:true
   };
 
   cases.push(newCase);
 
-  notifications.unshift({
-    id:"N-"+Date.now(),
-    type:"case",
-    title:"New case submitted",
-    message:`Case ${newCase.id} was submitted successfully.`,
-    date:new Date().toISOString(),
-    read:false,
-    userId:currentUser.id
-  });
+  save();
 
-  saveAll();
+  closeModal();
 
-  closeNewCase();
+  toast("Case submitted successfully.");
 
-  renderDashboard();
-  renderNotifications();
-
-  toast(`Case ${newCase.id} submitted successfully.`);
+  doctorDashboard();
 }
 
 
@@ -3117,226 +2483,220 @@ function submitCase(){
    CASE DETAILS
 ========================================================= */
 
-function openCaseDetails(id){
+function openCase(id){
 
   const c=cases.find(x=>x.id===id);
 
   if(!c) return;
 
-  openedCaseId=id;
-
-  c.unread=false;
-
-  saveAll();
-
-  document.getElementById("detailsCaseTitle").textContent=
-    `Case #${c.id}`;
-
-  const arch=document.getElementById("detailsArch");
-
-  arch.innerHTML="";
-
-  upperTeeth.forEach((tooth,index)=>{
-
-    const btn=document.createElement("div");
-
-    btn.className="tooth";
-
-    const selected=c.teeth.some(x=>x.tooth===tooth);
-
-    if(selected){
-      btn.classList.add("selected");
-    }
-
-    btn.textContent=tooth;
-
-    btn.style.left=
-      `${15 + Math.sin(index/(upperTeeth.length-1)*Math.PI)*120 + index*0.2}px`;
-
-    btn.style.top=
-      `${8 + Math.sin(index/(upperTeeth.length-1)*Math.PI)*175}px`;
-
-    arch.appendChild(btn);
-
-  });
-
-
-  document.getElementById("caseInfo").innerHTML=`
-
-    <div class="info-row">
-      <span>Patient</span>
-      <strong>${escapeHTML(c.patient)}</strong>
-    </div>
-
-    <div class="info-row">
-      <span>Type</span>
-      <strong>${escapeHTML(c.patientType)}</strong>
-    </div>
-
-    <div class="info-row">
-      <span>Doctor</span>
-      <strong>${escapeHTML(c.doctor)}</strong>
-    </div>
-
-    <div class="info-row">
-      <span>Clinic</span>
-      <strong>${escapeHTML(c.clinic)}</strong>
-    </div>
-
-    <div class="info-row">
-      <span>Work</span>
-      <strong>
-        ${c.teeth.map(t=>`${t.tooth}: ${t.work}`).join("<br>")}
-      </strong>
-    </div>
-
-    <div class="info-row">
-      <span>Shade</span>
-      <strong>${escapeHTML(c.shade)}</strong>
-    </div>
-
-    <div class="info-row">
-      <span>Delivery Date</span>
-      <strong>${escapeHTML(c.delivery)}</strong>
-    </div>
-
-    <div class="info-row">
-      <span>Instructions</span>
-      <strong>${escapeHTML(c.instructions || "—")}</strong>
-    </div>
-
-  `;
-
-
-  document.getElementById("caseDetailFiles").innerHTML=
-    c.files.length
-    ?
-    c.files.map(f=>`
-
-      <div class="file-item">
-
-        <span>📎 ${escapeHTML(f.name)}</span>
-
-        <span>
-          ${(f.size/1024/1024).toFixed(1)} MB
-        </span>
-
-      </div>
-
-    `).join("")
-    :
-    `<div style="color:#94a3b8;font-size:12px;">No files uploaded.</div>`;
-
-
-  renderTimeline(c);
-
-
-  const statusArea=document.getElementById("adminStatusArea");
-
   if(currentUser.role==="admin"){
-
-    statusArea.classList.remove("hidden");
-
-    document.getElementById("adminStatusSelect").value=c.status;
-
+    c.adminUnread=false;
   }else{
-
-    statusArea.classList.add("hidden");
-
+    c.doctorUnread=false;
   }
 
+  save();
 
-  document.getElementById("caseDetailsModal").classList.remove("hidden");
+  document.getElementById("overlayArea").innerHTML=`
 
-  renderCasesTable();
-  renderNotifications();
-}
+    <div class="modal-backdrop"
+      onclick="if(event.target===this)closeModal()">
 
+      <div class="modal">
 
-function closeCaseDetails(){
-  document.getElementById("caseDetailsModal").classList.add("hidden");
-}
+        <div class="modal-head">
 
+          <div>
+            <h2>Case ${esc(c.id)}</h2>
 
-/* =========================================================
-   TIMELINE
-========================================================= */
+            <p style="color:#7B8798;margin-top:5px">
+              ${formatDate(c.createdAt)}
+            </p>
+          </div>
 
-function renderTimeline(c){
+          <button class="close-btn"
+            onclick="closeModal()">×</button>
 
-  const statuses=[
-    "New",
-    "Seen - Not Started",
-    "In Progress",
-    "Completed",
-    "Sent"
-  ];
+        </div>
 
-  const currentIndex=statuses.indexOf(c.status);
+        <div class="case-details">
 
-  document.getElementById("caseTimeline").innerHTML=
-    statuses.map((s,i)=>`
+          <div class="detail-box">
+            <label>Patient</label>
+            <strong>${esc(c.patient)}</strong>
+          </div>
 
-      <div class="timeline-item ${i<=currentIndex?"done":""}">
+          <div class="detail-box">
+            <label>Gender</label>
+            <strong>${esc(c.gender)}</strong>
+          </div>
 
-        <div class="timeline-dot"></div>
+          <div class="detail-box">
+            <label>Doctor / Clinic</label>
+            <strong>${esc(c.doctorName)}</strong>
+          </div>
 
-        <small>
-          ${escapeHTML(s)}
-        </small>
+          <div class="detail-box">
+            <label>Email</label>
+            <strong>${esc(c.doctorEmail)}</strong>
+          </div>
+
+          <div class="detail-box">
+            <label>Shade</label>
+            <strong>${esc(c.shade||"-")}</strong>
+          </div>
+
+          <div class="detail-box">
+            <label>Expected Delivery</label>
+            <strong>${formatDate(c.deliveryDate)}</strong>
+          </div>
+
+          <div class="detail-box" style="grid-column:1/-1">
+
+            <label>Selected Teeth & Work</label>
+
+            <div style="margin-top:7px">
+
+              ${Object.entries(c.teeth||{}).map(([tooth,work])=>`
+                <span style="
+                  display:inline-flex;
+                  background:#EAF1FB;
+                  color:#2F63D8;
+                  padding:8px 10px;
+                  border-radius:9px;
+                  margin:3px;
+                  font-size:12px;
+                  font-weight:700;">
+                  Tooth ${tooth}: ${esc(work)}
+                </span>
+              `).join("")}
+
+            </div>
+
+          </div>
+
+          <div class="detail-box" style="grid-column:1/-1">
+
+            <label>Instructions</label>
+
+            <div style="margin-top:7px">
+              ${esc(c.instructions||"No additional instructions.")}
+            </div>
+
+          </div>
+
+          <div class="detail-box" style="grid-column:1/-1">
+
+            <label>Uploaded Files</label>
+
+            <div style="margin-top:7px">
+
+              ${
+                c.files?.length
+                ? c.files.map(f=>`
+                    <div style="padding:7px 0">
+                      📎 ${esc(f.name)}
+                    </div>
+                  `).join("")
+                : "No files uploaded."
+              }
+
+            </div>
+
+          </div>
+
+        </div>
+
+        ${
+          currentUser.role==="admin"
+          ? `
+
+            <div style="margin-top:25px">
+
+              <strong>Case Status</strong>
+
+              <div class="status-buttons">
+
+                ${[
+                  "New",
+                  "Seen - Not Started",
+                  "In Progress",
+                  "Completed",
+                  "Sent"
+                ].map(status=>`
+
+                  <button
+                    class="status-btn ${c.status===status?"active":""}"
+                    onclick="changeStatus('${c.id}','${status}')">
+                    ${status}
+                  </button>
+
+                `).join("")}
+
+              </div>
+
+            </div>
+
+          `
+          : ""
+        }
+
+        <div style="margin-top:25px">
+
+          <strong>Status History</strong>
+
+          <div style="margin-top:12px">
+
+            ${(c.statusHistory||[]).map(h=>`
+
+              <div style="
+                display:flex;
+                justify-content:space-between;
+                padding:11px 0;
+                border-bottom:1px solid #EDF1F5;">
+
+                <span>${esc(h.status)}</span>
+
+                <span style="color:#8290A3;font-size:12px">
+                  ${new Date(h.date).toLocaleString()}
+                </span>
+
+              </div>
+
+            `).join("")}
+
+          </div>
+
+        </div>
 
       </div>
 
-    `).join("");
+    </div>
+  `;
 }
 
+function changeStatus(id,status){
 
-/* =========================================================
-   ADMIN STATUS
-========================================================= */
-
-function updateCaseStatus(){
-
-  if(currentUser.role!=="admin") return;
-
-  const c=cases.find(x=>x.id===openedCaseId);
+  const c=cases.find(x=>x.id===id);
 
   if(!c) return;
 
-  const newStatus=document.getElementById("adminStatusSelect").value;
+  c.status=status;
 
-  if(c.status===newStatus){
-    toast("Status is already selected.");
-    return;
-  }
+  c.statusHistory=c.statusHistory||[];
 
-  c.status=newStatus;
-
-  c.history.push({
-    status:newStatus,
+  c.statusHistory.push({
+    status,
     date:new Date().toISOString()
   });
 
-  c.unread=false;
+  c.doctorUnread=true;
 
-  notifications.unshift({
-    id:"N-"+Date.now(),
-    type:"status",
-    title:"Case status updated",
-    message:`${c.id} is now ${newStatus}.`,
-    date:new Date().toISOString(),
-    read:false,
-    userId:c.userId
-  });
+  save();
 
-  saveAll();
+  openCase(id);
 
-  renderTimeline(c);
-  renderDashboard();
-  renderCasesTable();
-  renderNotifications();
-
-  toast("Case status updated.");
+  toast("Status updated.");
 }
 
 
@@ -3344,90 +2704,118 @@ function updateCaseStatus(){
    NOTIFICATIONS
 ========================================================= */
 
-function toggleNotifications(){
+function toggleNotifications(role){
 
-  document.getElementById("notificationPanel").classList.toggle("hidden");
+  notificationOpen=!notificationOpen;
 
-  document.getElementById("profilePanel").classList.add("hidden");
+  const old=document.getElementById("notificationDropdown");
 
-  renderNotifications();
-}
-
-
-function renderNotifications(){
-
-  const list=document.getElementById("notificationsList");
-
-  if(!list) return;
-
-  let visible=notifications;
-
-  if(currentUser && currentUser.role!=="admin"){
-    visible=notifications.filter(
-      n=>!n.userId || n.userId===currentUser.id
-    );
+  if(old){
+    old.remove();
+    return;
   }
 
-  visible=visible.slice(0,15);
+  const relevant=role==="admin"
+    ? cases.filter(c=>c.adminUnread)
+    : cases.filter(c=>
+        c.doctorId===currentUser.id &&
+        c.doctorUnread
+      );
 
-  if(!visible.length){
+  const box=document.createElement("div");
 
-    list.innerHTML=`
-      <div style="padding:25px;text-align:center;color:#94a3b8;font-size:12px;">
-        No notifications.
-      </div>
-    `;
+  box.id="notificationDropdown";
+  box.className="dropdown";
 
-  }else{
+  box.innerHTML=`
 
-    list.innerHTML=visible.map(n=>`
+    <strong style="display:block;padding:8px">
+      Notifications
+    </strong>
 
-      <div class="notification ${n.read?"":"unread"}">
+    ${
+      relevant.length
+      ? relevant.slice(-6).reverse().map(c=>`
+          <div class="notification-item"
+            onclick="openCase('${c.id}')">
 
-        <div style="color:${n.read?"#94a3b8":"#1769e0"};">
-          ●
+            <strong>${esc(c.id)}</strong>
+
+            <div style="color:#718096;margin-top:4px">
+              Case status: ${esc(c.status)}
+            </div>
+
+          </div>
+        `).join("")
+      : `
+        <div style="
+          padding:25px;
+          text-align:center;
+          color:#8290A3">
+          No new notifications.
         </div>
-
-        <div>
-
-          <p>
-            <strong>${escapeHTML(n.title)}</strong><br>
-            ${escapeHTML(n.message)}
-          </p>
-
-          <small>
-            ${new Date(n.date).toLocaleString()}
-          </small>
-
-        </div>
-
-      </div>
-
-    `).join("");
-
-  }
-
-  const unread=visible.some(n=>!n.read);
-
-  document.getElementById("notificationDot")
-    .classList.toggle("hidden",!unread);
-}
-
-
-function markNotificationsRead(){
-
-  notifications.forEach(n=>{
-    if(
-      currentUser.role==="admin" ||
-      n.userId===currentUser.id
-    ){
-      n.read=true;
+      `
     }
-  });
 
-  saveAll();
+  `;
 
-  renderNotifications();
+  document.body.appendChild(box);
+
+  const btn=document.querySelector(".icon-btn");
+  const rect=btn.getBoundingClientRect();
+
+  box.style.position="fixed";
+  box.style.top=(rect.bottom+8)+"px";
+  box.style.right="20px";
+}
+
+function toggleProfile(){
+
+  const old=document.getElementById("profileDropdown");
+
+  if(old){
+    old.remove();
+    return;
+  }
+
+  const box=document.createElement("div");
+
+  box.id="profileDropdown";
+  box.className="dropdown profile-card";
+
+  box.innerHTML=`
+
+    <div class="profile-photo">
+      ${initials(currentUser?.name)}
+    </div>
+
+    <h3>${esc(currentUser.name)}</h3>
+
+    <p style="color:#718096;margin:6px 0 20px">
+      ${esc(currentUser.email||"")}
+    </p>
+
+    <button class="secondary-btn"
+      style="width:100%"
+      onclick="openProfile()">
+      Profile Settings
+    </button>
+
+    <button class="secondary-btn"
+      style="width:100%;margin-top:8px"
+      onclick="logout()">
+      Sign Out
+    </button>
+  `;
+
+  document.body.appendChild(box);
+
+  const btn=document.querySelector(".profile-btn");
+  const rect=btn.getBoundingClientRect();
+
+  box.style.position="fixed";
+  box.style.top=(rect.bottom+8)+"px";
+  box.style.right="20px";
 }
 
 
@@ -3437,119 +2825,132 @@ function markNotificationsRead(){
 
 function openProfile(){
 
-  document.getElementById("profilePanel").classList.toggle("hidden");
+  document.querySelectorAll(".dropdown").forEach(x=>x.remove());
 
-  document.getElementById("notificationPanel").classList.add("hidden");
+  document.getElementById("overlayArea").innerHTML=`
+
+    <div class="modal-backdrop"
+      onclick="if(event.target===this)closeModal()">
+
+      <div class="modal" style="max-width:500px">
+
+        <div class="modal-head">
+
+          <h2>Profile</h2>
+
+          <button class="close-btn"
+            onclick="closeModal()">×</button>
+
+        </div>
+
+        <div class="profile-card">
+
+          <div class="profile-photo">
+            ${initials(currentUser.name)}
+          </div>
+
+          <input type="file"
+            accept="image/*"
+            onchange="changeProfilePhoto(event)">
+
+          <div style="margin-top:25px;text-align:left">
+
+            <div class="form-group">
+
+              <label class="form-label">Name</label>
+
+              <input id="profileName"
+                class="form-input"
+                value="${esc(currentUser.name)}">
+
+            </div>
+
+            <div class="form-group">
+
+              <label class="form-label">Email</label>
+
+              <input class="form-input"
+                value="${esc(currentUser.email)}"
+                disabled>
+
+            </div>
+
+          </div>
+
+          <button class="primary-btn"
+            onclick="saveProfile()">
+            Save Changes
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+  `;
 }
 
+function changeProfilePhoto(e){
 
-function editProfile(){
+  const file=e.target.files[0];
 
-  const newName=prompt(
-    "Enter your new name:",
-    currentUser.name
-  );
+  if(!file) return;
 
-  if(!newName) return;
+  const reader=new FileReader();
 
-  if(currentUser.role==="doctor"){
+  reader.onload=()=>{
+
+    currentUser.photo=reader.result;
 
     const user=users.find(u=>u.id===currentUser.id);
 
-    if(user){
-      user.name=newName;
-      currentUser.name=newName;
-    }
+    if(user) user.photo=reader.result;
 
-  }else{
+    save();
 
-    currentUser.name=newName;
+    toast("Profile photo updated.");
+  };
 
+  reader.readAsDataURL(file);
+}
+
+function saveProfile(){
+
+  const name=document.getElementById("profileName").value.trim();
+
+  if(!name){
+    toast("Name cannot be empty.");
+    return;
   }
 
-  localStorage.setItem(CURRENT_KEY,JSON.stringify(currentUser));
+  currentUser.name=name;
 
-  saveAll();
+  const user=users.find(u=>u.id===currentUser.id);
 
-  openApp();
+  if(user) user.name=name;
+
+  save();
+
+  closeModal();
+
+  renderDoctor();
 
   toast("Profile updated.");
 }
 
 
-function changePassword(){
-
-  if(currentUser.role==="admin"){
-
-    toast("Admin password is fixed in this prototype.");
-
-    return;
-  }
-
-  const newPassword=prompt("Enter your new password:");
-
-  if(!newPassword) return;
-
-  const user=users.find(u=>u.id===currentUser.id);
-
-  if(user){
-
-    user.password=newPassword;
-
-    saveAll();
-
-    toast("Password changed successfully.");
-
-  }
-}
-
-
 /* =========================================================
-   CLOSE PANELS WHEN CLICKING OUTSIDE
+   MODAL
 ========================================================= */
 
-document.addEventListener("click",function(e){
+function closeModal(){
 
-  const profile=document.getElementById("profilePanel");
-  const notifications=document.getElementById("notificationPanel");
+  document.getElementById("overlayArea").innerHTML="";
 
-  if(
-    !e.target.closest(".profile-mini") &&
-    !e.target.closest("#profilePanel")
-  ){
-    profile.classList.add("hidden");
-  }
+  selectedTeeth={};
+  selectedTooth=null;
 
-  if(
-    !e.target.closest(".icon-btn") &&
-    !e.target.closest("#notificationPanel")
-  ){
-    notifications.classList.add("hidden");
-  }
-
-});
-
-
-/* =========================================================
-   DEMO DATA
-========================================================= */
-
-function createDemoUser(){
-
-  if(users.length) return;
-
-  users.push({
-    id:"U-DEMO",
-    name:"Dr. Ahmed",
-    email:"doctor@example.com",
-    password:"123456",
-    role:"doctor",
-    clinic:"Dental Clinic",
-    avatar:"",
-    createdAt:new Date().toISOString()
-  });
-
-  saveAll();
+  closeToothMenu();
 }
 
 
@@ -3557,15 +2958,17 @@ function createDemoUser(){
    START
 ========================================================= */
 
-createDemoUser();
-
 if(currentUser){
 
-  openApp();
+  if(currentUser.role==="admin"){
+    renderAdmin();
+  }else{
+    renderDoctor();
+  }
 
 }else{
 
-  renderAuth("doctor","login");
+  authPage("login");
 
 }
 
